@@ -5,7 +5,6 @@
 <title>Title of the document</title>
 <link href="styles.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <style type="text/css">
 .container {
   clear: both;
@@ -170,10 +169,10 @@
 <body>
 <div class="container">
   <div class="Header">
-    <p>Header Title</p>
+    <div class='alert alert-success'><p>Welcome, {{$firstname}}!</p></div>
   </div>
   <div class="Leftpanel">
-<div class="leftpanel_rows">Status {{$test}}</div>
+<div class="leftpanel_rows">Status</div>
 <div class="leftpanel_rows">My Profile</div>
 <div class="leftpanel_rows">Calendar</div>
 <div class="leftpanel_rows">Question</div>
@@ -225,7 +224,7 @@
     <div class="subtitle_div">How Are you Feeling Today?</div>
     
     <div class="historygraph">Your Health History</div>
-  <div class="historygraphbox_div">Andreja</div>
+  <div class="historygraphbox_div">history graph</div>
     <div class="rank_div">Ranking goes here</div>
     <p>&nbsp;</p>
     <p>&nbsp;</p>

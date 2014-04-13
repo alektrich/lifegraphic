@@ -16,8 +16,6 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/go', function()
-{
-	$test['test'] = 'Trying to test';
-	return View::make('lifegraphic', $test);
-});
+Route::post('dashboard', 'UsersController@postLogin');
+
+Route::controller('users', 'UsersController');

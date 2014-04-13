@@ -11,7 +11,7 @@ class CreateReasonsTable extends Migration {
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
 			$table->integer('category_id')->unsigned();
-			$table->text('reason_text')->default('null');
+			$table->text('reason_text');
 		});
 	}
 
