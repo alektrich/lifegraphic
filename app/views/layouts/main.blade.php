@@ -8,7 +8,7 @@
     {{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
     {{ HTML::style('css/main.css')}}
     {{ HTML::style('css/dashboard.css')}}
-    {{ HTML::script('packages/ChartJS/js/Chart.min.js') }}
+    {{ HTML::script('packages/ChartJS/Chart.min.js') }}
   </head>
  
   <body>
@@ -36,4 +36,5 @@
     </div>
 
   </body>
+  @yield('script')
 </html>

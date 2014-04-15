@@ -96,7 +96,7 @@
 .historygraphbox_divDash {
   background-color: #3CF;
   float: right;
-  height: 180px;
+  height: 162px;
   width: 280px;
   margin-right: 25px;
 }
@@ -106,15 +106,15 @@
   width: 435px;
   margin-left: 27px;
 }
-.rankingboxes_divDash {
+.rankingbox1_divDash {
   float: left;
   height: 123px;
   width: 123px;
   margin-left: 30px;
-  background-color: #0C9;
+  /*background-color: #0C9;*/
 }
 .rankingbox2_divDash {
-  background-color: #3FF;
+  /*background-color: #3FF;*/
   float: left;
   height: 123px;
   width: 123px;
@@ -127,14 +127,14 @@
   margin-left: 8px;
 }
 .rankingbox3_divDash {
-  background-color: #CC9;
+  /*background-color: #CC9;*/
   float: left;
   height: 123px;
   width: 123px;
   margin-left: 5px;
 }
 .rankingbox4_divDash {
-  background-color: #6F9;
+  /*background-color: #6F9;*/
   float: left;
   height: 123px;
   width: 123px;

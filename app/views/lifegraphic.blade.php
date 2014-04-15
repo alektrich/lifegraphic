@@ -66,11 +66,19 @@
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
-      <div class="rankingboxes_divDash">Content for  class "rankingboxes_div" Goes Here</div>
-      <div class="rankingbox2_divDash">Content for  class "rankingbox2_div" Goes Here</div>
+      <div class="rankingbox1_divDash">
+        <canvas id="canvas1" height="122" width="122"></canvas>
+      </div>
+      <div class="rankingbox2_divDash">
+        <canvas id="canvas2" height="122" width="122"></canvas>  
+      </div>
       <div class="LifeDial_divDash">Content for  class "LifeDial_div" Goes Here</div>
-      <div class="rankingbox3_divDash">Content for  class "rankingbox3_div" Goes Here</div>
-      <div class="rankingbox4_divDash">Content for  class "rankingbox4_div" Goes Here</div>
+      <div class="rankingbox3_divDash">
+        <canvas id="canvas3" height="122" width="122"></canvas> 
+      </div>
+      <div class="rankingbox4_divDash">
+        <canvas id="canvas4" height="122" width="122"></canvas>
+      </div>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
@@ -115,4 +123,39 @@
     <p>&nbsp;</p>
     <p>&nbsp;</p>
   </div>
+@stop
+
+@section('script')
+  <script>
+
+    var doughnutData = [
+        {
+          value: 30,
+          color:"#F7464A"
+        },
+        {
+          value : 50,
+          color : "#46BFBD"
+        },
+        {
+          value : 100,
+          color : "#FDB45C"
+        },
+        {
+          value : 40,
+          color : "#949FB1"
+        },
+        {
+          value : 120,
+          color : "#4D5360"
+        }
+      
+      ];
+
+    var myDoughnut1 = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
+    var myDoughnut2 = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
+    var myDoughnut3 = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutData);
+    var myDoughnut4 = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutData);
+
+  </script>
 @stop
