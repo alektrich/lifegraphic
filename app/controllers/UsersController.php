@@ -10,7 +10,7 @@ class UsersController extends BaseController {
 	    
 	}
 
-	protected $layout = "layouts.main";
+	// protected $layout = "layouts.main";
 	protected $email = "";
 
 	/**
@@ -21,7 +21,7 @@ class UsersController extends BaseController {
      */
 	public function getRegister() {
 
-	    $this->layout->content = View::make('users.register');
+	    return View::make('users.register');
 
 	}
 
@@ -57,7 +57,7 @@ class UsersController extends BaseController {
 
 	public function getLogin() {
 
-	    $this->layout->content = View::make('users.login');
+	    return View::make('users.login');
 
 	}
 

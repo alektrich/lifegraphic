@@ -7,6 +7,8 @@
     <title>LifeGraphic</title>
     {{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
     {{ HTML::style('css/main.css')}}
+    {{ HTML::style('css/dashboard.css')}}
+    {{ HTML::script('packages/ChartJS/js/Chart.min.js') }}
   </head>
  
   <body>
@@ -29,7 +31,7 @@
             <p class="alert">{{ Session::get('message') }}</p>
         @endif
 
-        {{ $content }}
+        @yield('content');
 
     </div>
 

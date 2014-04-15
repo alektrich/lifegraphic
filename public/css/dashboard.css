@@ -1,0 +1,156 @@
+.containerDash {
+  clear: both;
+  height: auto;
+  width: 1024px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  margin: 0 auto;
+  ;
+  /* [disabled]background-image: url(lifeographic.jpg); */
+}
+.HeaderDash {
+  float: left;
+  height: auto;
+  width: 1024px;
+}
+.LeftpanelDash {
+  background-color: #444;
+  float: left;
+  height: auto;
+  width: 150px;
+  margin-top: 5px;
+}
+.progressbarDash {
+  float: left;
+  height: auto;
+  width: 782px;
+  margin-left: 15px;
+  background-color: #3CF;
+}
+.TopsectionDash {
+  float: left;
+  height: auto;
+  width: 782px;
+  margin-left: 15px;
+}
+.graphdivDash {
+  float: left;
+  height: auto;
+  width: 782px;
+  margin-left: 15px;
+  background-color: #3F6;
+}
+.catbarDash {
+  float: left;
+  height: auto;
+  width: 782px;
+  margin-left: 15px;
+  background-color: #3FF;
+}
+.healthbar_divDash {
+  background-color: #DDD;
+  height: 40px;
+  width: 250px;
+  margin-left: 27px;
+}
+.datestamp_divDash {
+  float: right;
+  height: 20px;
+  width: 125px;
+  margin-right: 15px;
+}
+.Time_divDash {
+  float: right;
+  height: 15px;
+  width: 100px;
+  margin-right: 27px;
+}
+.subtitle_divDash {
+  background-color: #DDD;
+  float: left;
+  height: 27px;
+  width: 275px;
+  margin-left: 27px;
+  margin-top: 5px;
+}
+.rank_divDash {
+  background-color: #DDD;
+  float: left;
+  height: 55px;
+  width: 400px;
+  margin-left: 27px;
+}
+.historygraphDash {
+  background-color: #DDD;
+  float: left;
+  height: 25px;
+  width: 250px;
+  margin-left: 170px;
+}
+.historygraphbox_divDash {
+  background-color: #3CF;
+  float: right;
+  height: 180px;
+  width: 280px;
+  margin-right: 25px;
+}
+.Reason_divDash {
+  float: left;
+  height: 100px;
+  width: 435px;
+  margin-left: 27px;
+}
+.rankingboxes_divDash {
+  float: left;
+  height: 123px;
+  width: 123px;
+  margin-left: 30px;
+  background-color: #0C9;
+}
+.rankingbox2_divDash {
+  background-color: #3FF;
+  float: left;
+  height: 123px;
+  width: 123px;
+  margin-left: 5px;
+}
+.LifeDial_divDash {
+  float: left;
+  height: 123px;
+  width: 198px;
+  margin-left: 8px;
+}
+.rankingbox3_divDash {
+  background-color: #CC9;
+  float: left;
+  height: 123px;
+  width: 123px;
+  margin-left: 5px;
+}
+.rankingbox4_divDash {
+  background-color: #6F9;
+  float: left;
+  height: 123px;
+  width: 123px;
+  margin-left: 5px;
+}
+.totalgraph_divDash {
+  float: left;
+  height: 170px;
+  width: 725px;
+  margin-left: 27px;
+  background-color: #0C6;
+}
+.leftpanel_rowsDash {
+  float: left;
+  height: 25px;
+  width: 145px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
