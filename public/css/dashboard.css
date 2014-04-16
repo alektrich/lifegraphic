@@ -1,7 +1,7 @@
 .containerDash {
   clear: both;
   height: auto;
-  width: 1024px;
+  width: 1138px;
   border-top-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
@@ -10,7 +10,7 @@
   border-right-style: solid;
   border-bottom-style: solid;
   border-left-style: solid;
-  margin: 0 auto;
+  margin: 2px auto;
   ;
   /* [disabled]background-image: url(lifeographic.jpg); */
 }
