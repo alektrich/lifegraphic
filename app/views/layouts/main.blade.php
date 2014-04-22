@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
     <title>LifeGraphic</title>
-    {{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
     {{ HTML::style('css/main.css')}}
     {{ HTML::style('css/dashboard.css')}}
+    {{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
     {{ HTML::script('packages/ChartJS/Chart.min.js') }}
   </head>
  

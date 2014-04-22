@@ -67,17 +67,21 @@
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <div class="rankingbox1_divDash">
-        <canvas id="canvas1" height="122" width="122"></canvas>
+        <p class="categoryLove">Love</p> 
+        <canvas id="canvas1" height="80" width="80"></canvas>
       </div>
       <div class="rankingbox2_divDash">
-        <canvas id="canvas2" height="122" width="122"></canvas>  
+        <p class="categoryHealth">Health</p>  
+        <canvas id="canvas2" height="80" width="80"></canvas>  
       </div>
       <div class="LifeDial_divDash">Content for  class "LifeDial_div" Goes Here</div>
       <div class="rankingbox3_divDash">
-        <canvas id="canvas3" height="122" width="122"></canvas> 
+        <p class="categoryAssets">Assets</p> 
+        <canvas id="canvas3" height="80" width="80"></canvas> 
       </div>
       <div class="rankingbox4_divDash">
-        <canvas id="canvas4" height="122" width="122"></canvas>
+        <p class="categoryMood">Mood</p> 
+        <canvas id="canvas4" height="80" width="80"></canvas>
       </div>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
@@ -128,34 +132,87 @@
 @section('script')
   <script>
 
-    var doughnutData = [
+    var options = {
+      //Boolean - Whether we should show a stroke on each segment
+      segmentShowStroke : true,
+      
+      //String - The colour of each segment stroke
+      segmentStrokeColor : "#fff",
+      
+      //Number - The width of each segment stroke
+      segmentStrokeWidth : 2,
+      
+      //The percentage of the chart that we cut out of the middle.
+      percentageInnerCutout : 66,
+      
+      //Boolean - Whether we should animate the chart 
+      animation : true,
+      
+      //Number - Amount of animation steps
+      animationSteps : 100,
+      
+      //String - Animation easing effect
+      animationEasing : "easeOutQuart",
+      
+      //Boolean - Whether we animate the rotation of the Doughnut
+      animateRotate : true,
+
+      //Boolean - Whether we animate scaling the Doughnut from the centre
+      animateScale : true,
+      
+      //Function - Will fire on animation completion.
+      onAnimationComplete : null
+    }
+
+
+    var doughnutDataLove = [
         {
           value: 30,
-          color:"#F7464A"
+          color:"#FF9999"
         },
         {
-          value : 50,
-          color : "#46BFBD"
-        },
+          value : 70,
+          color : "#aaa"
+        }
+    ];
+
+    var doughnutDataHealth = [
         {
-          value : 100,
-          color : "#FDB45C"
+          value: 60,
+          color:"#00CC33"
         },
         {
           value : 40,
-          color : "#949FB1"
+          color : "#aaa"
+        }
+    ];
+
+    var doughnutDataAssets = [
+        {
+          value: 45,
+          color:"#3399CC"
         },
         {
-          value : 120,
-          color : "#4D5360"
+          value : 55,
+          color : "#aaa"
         }
-      
-      ];
+    ];
 
-    var myDoughnut1 = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
-    var myDoughnut2 = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
-    var myDoughnut3 = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutData);
-    var myDoughnut4 = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutData);
+    var doughnutDataMood = [
+        {
+          value: 30,
+          color:"#FFCC00"
+        },
+        {
+          value : 70,
+          color : "#aaa"
+        }
+    ];
+
+    var myDoughnut1 = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutDataLove, options);
+    var myDoughnut2 = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutDataHealth, options);
+    var myDoughnut3 = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutDataAssets, options);
+    var myDoughnut4 = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutDataMood, options);
 
   </script>
 @stop

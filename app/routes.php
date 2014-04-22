@@ -16,6 +16,12 @@ Route::get('/', function()
 	return View::make('users.login');
 });
 
+Route::get('/main', function()
+{
+	$data['firstname'] = 'Demo';	
+	return View::make('lifegraphic', $data);
+});
+
 Route::post('dashboard', 'UsersController@postLogin');
 
 Route::controller('users', 'UsersController');
