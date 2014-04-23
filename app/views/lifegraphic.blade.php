@@ -76,7 +76,9 @@
         <p class="categoryHealth">Health</p>  
         <canvas id="canvas2" height="80" width="80"></canvas>  
       </div>
-      <div class="LifeDial_divDash">Content for  class "LifeDial_div" Goes Here</div>
+      <div class="LifeDial_divDash">
+        <canvas id="canvasTotal" height="100" width="100"></canvas>
+      </div>
       <div class="rankingbox3_divDash">
         <p class="categoryAssets">Assets</p> 
         <canvas id="canvas3" height="80" width="80"></canvas> 

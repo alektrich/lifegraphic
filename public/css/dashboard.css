@@ -112,7 +112,7 @@
   float: left;
   height: 123px;
   width: 123px;
-  margin-left: 30px;
+  margin-left: 45px;
   /*background-color: #0C9;*/
 }
 .rankingbox2_divDash {
@@ -120,7 +120,7 @@
   float: left;
   height: 123px;
   width: 123px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .LifeDial_divDash {
   float: left;
@@ -133,14 +133,14 @@
   float: left;
   height: 123px;
   width: 123px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .rankingbox4_divDash {
   /*background-color: #6F9;*/
   float: left;
   height: 123px;
   width: 123px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .totalgraph_divDash {
   float: left;

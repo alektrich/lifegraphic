@@ -9,6 +9,7 @@
     {{ HTML::style('css/dashboard.css')}}
     {{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
     {{ HTML::script('packages/ChartJS/Chart.min.js') }}
+    {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
   </head>
  
   <body>
