@@ -59,7 +59,7 @@
       
       <div class="historygraphDash">Your Health History</div>
     <div class="historygraphbox_divDash">
-    <canvas id="historyGraphCanvas" width="280" height="162"></canvas>
+      <canvas id="historyGraphCanvas" width="280" height="150"></canvas>
     </div>
       <div class="rank_divDash">Ranking goes here</div>
       <p>&nbsp;</p>
@@ -77,7 +77,7 @@
         <canvas id="canvas2" height="80" width="80"></canvas>  
       </div>
       <div class="LifeDial_divDash">
-        <canvas id="canvasTotal" height="100" width="100"></canvas>
+        <canvas id="canvasTotal" height="100" width="175"></canvas>
       </div>
       <div class="rankingbox3_divDash">
         <p class="categoryAssets">Assets</p> 
@@ -138,14 +138,14 @@
 
 
     var dataGraph = {
-                  labels : ["1","2","3","4","5","6","7"],
+                  labels : ["|","|","|","|","|","|","|"],
                   datasets : [
                     {
                       fillColor : "rgba(159, 237, 139, 0.39)",
                       strokeColor : "rgba(220,220,220,1)",
                       pointColor : "rgba(220,220,220,1)",
                       pointStrokeColor : "#fff",
-                      data : [65,59,90,81,56,55,40]
+                      data : [65,59,48,81,56,55,40]
                     }/*,
                     {
                       fillColor : "rgba(151,187,205,0.5)",
@@ -230,7 +230,7 @@
         animation : true,
 
         //Number - Number of animation steps
-        animationSteps : 60,
+        animationSteps : 100,
         
         //String - Animation easing effect
         animationEasing : "easeOutQuart",
@@ -250,7 +250,7 @@
       segmentStrokeColor : "#fff",
       
       //Number - The width of each segment stroke
-      segmentStrokeWidth : 2,
+      segmentStrokeWidth : 0,
       
       //The percentage of the chart that we cut out of the middle.
       percentageInnerCutout : 66,
@@ -323,6 +323,44 @@
     var myDoughnut2 = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutDataHealth, optionsPie);
     var myDoughnut3 = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutDataAssets, optionsPie);
     var myDoughnut4 = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutDataMood, optionsPie);
+
+    /*$.fn.gauge = function(opts) {
+      this.each(function() {
+        var $this = $(this),
+            data = $this.data();
+
+        if (data.gauge) {
+          data.gauge.stop();
+          delete data.gauge;
+        }
+        if (opts !== false) {
+          data.gauge = new Gauge(this).setOptions(opts);
+        }
+      });
+      return this;
+    };*/
+
+    var opts = {
+      lines: 12, // The number of lines to draw
+      angle: 0.10, // The length of each line
+      lineWidth: 0.44, // The line thickness
+      pointer: {
+        length: 0.7, // The radius of the inner circle
+        strokeWidth: 0.015, // The rotation offset
+        color: '#000000' // Fill color
+      },
+      percentColors: [[0.0, "#FF0000" ], [0.50, "#FFFF00"], [1.0, "#00FF00"]],
+      limitMax: 'false',   // If true, the pointer will not go past the end of the gauge
+      colorStart: '#00CC33',   // Colors
+      colorStop: '#00CC33',    // just experiment with them
+      strokeColor: '#E0E0E0',   // to see which ones work best for you
+      generateGradient: true
+    };
+    var target = document.getElementById('canvasTotal'); // your canvas element
+    var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = 100; // set max gauge value
+    gauge.animationSpeed = 28; // set animation speed (32 is default value)
+    gauge.set(42); // set actual value    
 
   </script>
 @stop

@@ -161,7 +161,7 @@ p.categoryLove, p.categoryHealth, p.categoryAssets, p.categoryMood {
   font-size: 150%;
   margin-bottom: 0;
   cursor: pointer;
-  font-weight: bold;
+  /*font-weight: bold;*/
   font-family: Times;
 }
 
@@ -175,7 +175,7 @@ p.categoryHealth {
 }
 
 p.categoryAssets {
-  margin-left: 8px;
+  margin-left: 11px;
   color: #3399CC;
 }
 
