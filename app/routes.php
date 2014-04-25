@@ -16,10 +16,28 @@ Route::get('/', function()
 	return View::make('users.login');
 });
 
-Route::get('/main', function()
+Route::get('/', function()
 {
 	$data['firstname'] = 'Demo';	
-	return View::make('lifegraphic', $data);
+	return View::make('lifegraphic.health', $data);
+});
+
+Route::get('/love', function()
+{
+	$data['firstname'] = 'Demo';	
+	return View::make('lifegraphic.love', $data);
+});
+
+Route::get('/assets', function()
+{
+	$data['firstname'] = 'Demo';	
+	return View::make('lifegraphic.assets', $data);
+});
+
+Route::get('/mood', function()
+{
+	$data['firstname'] = 'Demo';	
+	return View::make('lifegraphic.mood', $data);
 });
 
 Route::post('dashboard', 'UsersController@postLogin');

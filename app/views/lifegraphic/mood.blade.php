@@ -52,12 +52,12 @@
     <div class="TopsectionDash">
      <div class="Time_divDash">Time: 13:00</div>
       <div class="datestamp_divDash">Date: 01/01/2014</div>
-      <div class="healthbar_divDash">Health Bar</div>
+      <div class="healthbar_divDash">Mood Bar</div>
      
       
-      <div class="subtitle_divDash">How Are you Feeling Today?</div>
+      <div class="subtitle_divDash">How's your mood today?</div>
       
-      <div class="historygraphDash">Your Health History</div>
+      <div class="historygraphDash historygraphDashMood">Your Mood History</div>
     <div class="historygraphbox_divDash">
       <canvas id="historyGraphCanvas" width="280" height="150"></canvas>
     </div>
@@ -69,22 +69,22 @@
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <div class="rankingbox1_divDash">
-        <p class="categoryLove">Love</p> 
+        <a href="{{ URL::to('/love') }}"><p class="categoryLove">Love</p></a> 
         <canvas id="canvas1" height="80" width="80"></canvas>
       </div>
       <div class="rankingbox2_divDash">
-        <p class="categoryHealth">Health</p>  
+        <a href="{{ URL::to('/') }}"><p class="categoryHealth">Health</p></a>  
         <canvas id="canvas2" height="80" width="80"></canvas>  
       </div>
       <div class="LifeDial_divDash">
         <canvas id="canvasTotal" height="100" width="175"></canvas>
       </div>
       <div class="rankingbox3_divDash">
-        <p class="categoryAssets">Assets</p> 
+        <a href="{{ URL::to('/assets') }}"><p class="categoryAssets">Assets</p></a> 
         <canvas id="canvas3" height="80" width="80"></canvas> 
       </div>
       <div class="rankingbox4_divDash">
-        <p class="categoryMood">Mood</p> 
+        <a href="{{ URL::to('/mood') }}"><p class="categoryMood">Mood</p></a> 
         <canvas id="canvas4" height="80" width="80"></canvas>
       </div>
       <p>&nbsp;</p>
@@ -141,11 +141,11 @@
                   labels : ["|","|","|","|","|","|","|"],
                   datasets : [
                     {
-                      fillColor : "rgba(159, 237, 139, 0.39)",
+                      fillColor : "rgba(255, 200, 0, 0.5)",
                       strokeColor : "rgba(220,220,220,1)",
                       pointColor : "rgba(220,220,220,1)",
                       pointStrokeColor : "#fff",
-                      data : [65,59,48,81,56,55,40]
+                      data : [65,59,48,41,56,55,40]
                     }/*,
                     {
                       fillColor : "rgba(151,187,205,0.5)",
