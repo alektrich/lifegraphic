@@ -53,12 +53,35 @@
   margin-left: 15px;
   background-color: #3FF;
 }
-.healthbar_divDash {
-  background-color: #DDD;
+.healthbar_divDash,
+.lovebar_divDash,
+.assetsbar_divDash,
+.moodbar_divDash  {
+  /*background-color: #DDD;*/
   height: 40px;
   width: 250px;
   margin-left: 27px;
+  /*font-weight: bold;*/
+  font-size: 20px;
+  font-family: Verdana;
 }
+
+.healthbar_divDash {
+  color: #00CC33;
+}
+
+.lovebar_divDash {
+  color: #FF9999;
+}
+
+.assetsbar_divDash {
+  color: #3399CC;
+}
+
+.moodbar_divDash {
+  color: #FFCC00;
+}
+
 .datestamp_divDash {
   float: right;
   height: 20px;
@@ -180,6 +203,7 @@ p.categoryLove, p.categoryHealth, p.categoryAssets, p.categoryMood {
   cursor: pointer;
   /*font-weight: bold;*/
   font-family: Times;
+  width: 50px;
 }
 
 p.categoryLove {

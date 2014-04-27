@@ -52,7 +52,7 @@
     <div class="TopsectionDash">
      <div class="Time_divDash">Time: 13:00</div>
       <div class="datestamp_divDash">Date: 01/01/2014</div>
-      <div class="healthbar_divDash">Mood Bar</div>
+      <div class="moodbar_divDash">Mood Bar</div>
      
       
       <div class="subtitle_divDash">How's your mood today?</div>
