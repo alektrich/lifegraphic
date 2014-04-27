@@ -55,7 +55,7 @@
       <div class="healthbar_divDash">Health Bar</div>
      
       
-      <div class="subtitle_divDash">How Are you Feeling Today?</div>
+      <div class="subtitle_divDash">How Do you Feel Today?</div>
       
       <div class="historygraphDash historygraphDashHealth">Your Health History</div>
     <div class="historygraphbox_divDash">
