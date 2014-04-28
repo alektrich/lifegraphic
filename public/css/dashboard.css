@@ -2,14 +2,14 @@
   clear: both;
   height: auto;
   width: 1138px;
-  border-top-width: 1px;
+ /* border-top-width: 1px;
   border-right-width: 1px;
   border-bottom-width: 1px;
   border-left-width: 1px;
   border-top-style: solid;
   border-right-style: solid;
   border-bottom-style: solid;
-  border-left-style: solid;
+  border-left-style: solid;*/
   margin: 2px auto;
   ;
   /* [disabled]background-image: url(lifeographic.jpg); */
@@ -187,7 +187,7 @@
   height: 170px;
   width: 725px;
   margin-left: 27px;
-  background-color: #0C6;
+  /*background-color: #0C6;*/
 }
 .leftpanel_rowsDash {
   float: left;
