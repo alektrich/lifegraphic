@@ -1,6 +1,6 @@
 .containerDash {
   clear: both;
-  height: auto;
+  height: 650px;
   width: 1138px;
  /* border-top-width: 1px;
   border-right-width: 1px;
@@ -11,6 +11,7 @@
   border-bottom-style: solid;
   border-left-style: solid;*/
   margin: 2px auto;
+    overflow: auto;
   ;
   /* [disabled]background-image: url(lifeographic.jpg); */
 }
@@ -39,20 +40,42 @@
   width: 782px;
   margin-left: 15px;
 }
+
 .graphdivDash {
   float: left;
-  height: auto;
+  height: 200px;
   width: 782px;
   margin-left: 15px;
   background-color: #3F6;
 }
+
 .catbarDash {
   float: left;
   height: auto;
-  width: 782px;
-  margin-left: 15px;
-  background-color: #3FF;
+  width: 680px;
+  margin-left: 50px;
+  margin-top: 30px;
+  opacity: 0.6;
+  /*background-color: #3FF;*/
 }
+
+.catbarDash.Love {
+  margin-top: 60px;
+  background-color: #FF9999;
+}
+
+.catbarDash.Health {
+  background-color: #00CC33;
+}
+
+.catbarDash.Assets {
+  background-color: #3399CC;
+}
+
+.catbarDash.Mood {
+  background-color: #FFCC00;
+}
+
 .healthbar_divDash,
 .lovebar_divDash,
 .assetsbar_divDash,
@@ -206,6 +229,14 @@ p.categoryLove, p.categoryHealth, p.categoryAssets, p.categoryMood {
   width: 50px;
 }
 
+p.paragraphBarLove, p.paragraphBarHealth, p.paragraphBarAssets, p.paragraphBarMood {
+  font-size: 150%;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-family: Times;
+  background-color: white;
+}
+
 p.categoryLove {
   margin-left: 17px;
   color: #FF9999;
@@ -222,6 +253,21 @@ p.categoryAssets {
 
 p.categoryMood {
   margin-left: 12px;
+  color: #FFCC00;
+}
+
+p.paragraphBarLove {
+  color: #FF9999;
+}
+p.paragraphBarHealth {
+  color: #00CC33;
+}
+
+p.paragraphBarAssets {
+  color: #3399CC;
+}
+
+p.paragraphBarMood {
   color: #FFCC00;
 }
 

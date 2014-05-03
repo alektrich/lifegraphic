@@ -56,6 +56,7 @@
      
       
       <div class="subtitle_divDash">How Do you Feel Today?</div>
+
       
       <div class="historygraphDash historygraphDashHealth">Your Health History</div>
     <div class="historygraphbox_divDash">
@@ -64,7 +65,35 @@
       <div class="rank_divDash">Ranking goes here</div>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
-      <div class="Reason_divDash">Content for  class "Reason_div" Goes Here</div>
+      <div class="Reason_divDash">
+      Reason?
+      {{Form::open()}}
+      {{Form::checkbox('Reason1', 'Sick')}}
+      <label style="font-size:12px;">Sick</label>
+      {{Form::checkbox('Reason2', 'Tired')}}
+      <label style="font-size:12px;">Tired</label>
+      {{Form::checkbox('Reason3', 'Headache')}}
+      <label style="font-size:12px;">Headache</label>
+      {{Form::checkbox('Reason4', 'Cool')}}
+      <label style="font-size:12px;">Cool</label>
+      {{Form::checkbox('Reason5', 'Reason New')}}
+      <label style="font-size:12px;">Reason New</label>
+      {{Form::checkbox('Reason6', 'Reason New 2')}}
+      <label style="font-size:12px;">Reason New 2</label>
+      {{Form::checkbox('Reason7', 'Reason New 3')}}
+      <label style="font-size:12px;">Reason New 3</label>
+      {{Form::checkbox('Reason8', 'New')}}
+      <label style="font-size:12px;">New</label>
+      {{Form::checkbox('Reason9', 'New9')}} 
+      <label style="font-size:12px;">lorem</label>
+      {{Form::checkbox('Reason10', 'New10')}} 
+      <label style="font-size:12px;">ipsum</label>
+      {{Form::checkbox('Reason11', 'New11')}} 
+      <label style="font-size:12px;">lorem1</label>
+      {{Form::checkbox('Reason12', 'New12')}}
+      <label style="font-size:12px;">ipsum1</label>
+      {{Form::close()}}
+      </div>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p>&nbsp;</p>
@@ -111,23 +140,28 @@
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <div class="catbarDash">
-      <p>Content for  class "catbar" Goes Here</p>
+    
+    <div class="catbarDash Love">
+    <p class="paragraphBarLove">Love</p>  
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+    </div>
+    <div class="catbarDash Health">
+    <p class="paragraphBarHealth">Health</p> 
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+    </div>
+    <div class="catbarDash Assets">
+    <p class="paragraphBarAssets">Assets</p> 
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
+    </div>
+    <div class="catbarDash Mood">
+    <p class="paragraphBarMood">Mood</p> 
       <p>&nbsp;</p>
       <p>&nbsp;</p>
     </div>
-    <div class="catbarDash">
-      <p>Content for  class "catbar" Goes Here    </p>
-      <p>&nbsp;</p>
-    </div>
-    <div class="catbarDash">
-      <p>Content for  class "catbar" Goes Here    </p>
-      <p>&nbsp;</p>
-    </div>
-    <div class="catbarDash">
-      <p>Content for  class "catbar" Goes Here </p>
-      <p>&nbsp;</p>
-    </div>
+    
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>

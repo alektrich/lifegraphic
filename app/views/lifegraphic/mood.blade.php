@@ -111,21 +111,24 @@
     <p>&nbsp;</p>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <div class="catbarDash">
-      <p>Content for  class "catbar" Goes Here</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
+    <div class="catbarDash Love">
+    <p class="paragraphBarLove">Love</p>  
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
     </div>
-    <div class="catbarDash">
-      <p>Content for  class "catbar" Goes Here    </p>
-      <p>&nbsp;</p>
+    <div class="catbarDash Health">
+    <p class="paragraphBarHealth">Health</p> 
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
     </div>
-    <div class="catbarDash">
-      <p>Content for  class "catbar" Goes Here    </p>
-      <p>&nbsp;</p>
+    <div class="catbarDash Assets">
+    <p class="paragraphBarAssets">Assets</p> 
+     <p>&nbsp;</p>
+     <p>&nbsp;</p>
     </div>
-    <div class="catbarDash">
-      <p>Content for  class "catbar" Goes Here </p>
+    <div class="catbarDash Mood">
+    <p class="paragraphBarMood">Mood</p> 
+      <p>&nbsp;</p>
       <p>&nbsp;</p>
     </div>
     <p>&nbsp;</p>
