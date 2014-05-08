@@ -32,7 +32,7 @@
   height: auto;
   width: 782px;
   margin-left: 15px;
-  background-color: #3CF;
+  /*background-color: #3CF;*/
 }
 .TopsectionDash {
   float: left;
@@ -85,7 +85,7 @@
   width: 250px;
   margin-left: 27px;
   /*font-weight: bold;*/
-  font-size: 20px;
+  font-size: 25px;
   font-family: Verdana;
 }
 
@@ -118,7 +118,7 @@
   margin-right: 27px;
 }
 .subtitle_divDash {
-  background-color: #DDD;
+  /*background-color: #DDD;*/
   float: left;
   height: 27px;
   width: 275px;
@@ -126,7 +126,7 @@
   margin-top: 5px;
 }
 .rank_divDash {
-  background-color: #DDD;
+  /*background-color: #DDD;*/
   float: left;
   height: 55px;
   width: 400px;
@@ -134,11 +134,9 @@
 }
 .historygraphDash {
   /*background-color: #DDD;*/
-  
   float: left;
   height: 25px;
   width: 250px;
-  margin-left: 200px;
   font-weight: bold;
 }
 
@@ -164,12 +162,14 @@
   height: 162px;
   width: 280px;
   margin-right: 25px;
+  margin-top: 50px;
 }
 .Reason_divDash {
-  float: left;
+  /*float: left;*/
   height: 100px;
-  width: 435px;
-  margin-left: 27px;
+  width: 400px;
+  margin-left: 30px;
+  overflow: scroll;
 }
 .rankingbox1_divDash {
   float: left;
@@ -273,4 +273,17 @@ p.paragraphBarMood {
 
 a:link, a:hover {
   text-decoration: none !important;
+}
+
+label.checkbox {
+  font-size: 10px;
+}
+
+div.reasonCheckboxes {
+  margin-left: 10px;
+}
+
+p.reasonLabel {
+  margin-left: 35px;
+  margin-top: -18px;
 }

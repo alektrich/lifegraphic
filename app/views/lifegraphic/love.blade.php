@@ -2,9 +2,6 @@
 
 @section('content')
   <div class="containerDash">
-    <div class="HeaderDash">
-      <div class='alert alert-success'><p>Welcome, {{$firstname}}!</p></div>
-    </div>
     <div class="LeftpanelDash">
   <div class="leftpanel_rowsDash">Status</div>
   <div class="leftpanel_rowsDash">My Profile</div>
@@ -57,17 +54,69 @@
       
       <div class="subtitle_divDash">How's your love life Today?</div>
       
-      <div class="historygraphDash historygraphDashLove">Your Love History</div>
     <div class="historygraphbox_divDash">
+      <div class="historygraphDash historygraphDashLove">Your Love History</div>
       <canvas id="historyGraphCanvasLove" width="280" height="150"></canvas>
     </div>
       <div class="rank_divDash">Ranking goes here</div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <div class="Reason_divDash">Content for  class "Reason_div" Goes Here</div>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p class="reasonLabel"><strong>Reason?</strong> 
+            <button class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
+            <button class="btn btn-danger btn-xs reasonButton"><i class="glyphicon glyphicon-minus"></i> Remove</button>
+          </p>
+
+          <div class="Reason_divDash">
+            
+            {{Form::open()}}
+            <div class="control-group reasonCheckboxes">
+                <div class="controls col-md-4">
+                    <label class="checkbox">
+                        <input type="checkbox" value="option1" id="inlineCheckbox1"> Headache
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" value="option2" id="inlineCheckbox2"> Pain
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Sick
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Great food
+                    </label>
+                </div>
+                <div class="controls col-md-4">
+                    <label class="checkbox">
+                        <input type="checkbox" value="option1" id="inlineCheckbox1"> Awesome training
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" value="option2" id="inlineCheckbox2"> High pressure
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Anxious
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Good sleep
+                    </label>
+                </div>
+                <div class="controls col-md-4">
+                    <label class="checkbox">
+                        <input type="checkbox" value="option1" id="inlineCheckbox1"> Bad sleep
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" value="option2" id="inlineCheckbox2"> Nervious
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" value="option3" id="inlineCheckbox3"> ReasonNew
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" value="option3" id="inlineCheckbox3"> ReasonNew1
+                    </label>
+                </div>
+            </div>
+            {{Form::close()}}
+          </div>
+          <p>&nbsp;</p>
       <div class="rankingbox1_divDash">
         <a href="{{ URL::to('/love') }}"><p class="categoryLove">Love</p></a> 
         <canvas id="canvas1" height="80" width="80"></canvas>
