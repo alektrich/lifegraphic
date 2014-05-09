@@ -8,7 +8,7 @@
     {{ HTML::style('css/main.css')}}
     {{ HTML::style('css/dashboard.css')}}
     {{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
-    {{ HTML::script('packages/ChartJS/Chart.min.js') }}
+    {{ HTML::script('packages/ChartJS/Chart.js') }}
     {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
     {{ HTML::script('js/gauge.min.js') }}
   </head>

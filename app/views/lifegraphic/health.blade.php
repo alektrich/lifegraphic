@@ -194,5 +194,3 @@
 @section('script')
   {{ HTML::script('js/graphics.js') }}
 @stop
-
-otona z

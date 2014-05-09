@@ -273,7 +273,11 @@ window.Chart = function(context){
 			animationEasing : "easeOutBounce",
 			animateRotate : true,
 			animateScale : false,
-			onAnimationComplete : null
+			onAnimationComplete : null,
+			labelFontFamily : "Arial",
+			labelFontStyle : "normal",
+			labelFontSize : 24,
+			labelFontColor : "#666"
 		};		
 
 		var config = (options)? mergeChartConfig(chart.Doughnut.defaults,options) : chart.Doughnut.defaults;
@@ -704,8 +708,10 @@ window.Chart = function(context){
 		
 		
 		animationLoop(config,null,drawPieSegments,ctx);
+
 				
 		function drawPieSegments (animationDecimal){
+
 			var cumulativeAngle = -Math.PI/2,
 			scaleAnimation = 1,
 			rotateAnimation = 1;
@@ -753,6 +759,12 @@ window.Chart = function(context){
 		
 		
 		function drawPieSegments (animationDecimal){
+				ctx.font = config.labelFontStyle + " " + config.labelFontSize+"px " + config.labelFontFamily;
+	            ctx.fillStyle = 'grey';
+	            ctx.textBaseline = 'middle';
+	            ctx.fillText(data[0].value, width/2 - 13, width/2, 200);
+			
+
 			var cumulativeAngle = -Math.PI/2,
 			scaleAnimation = 1,
 			rotateAnimation = 1;
@@ -779,7 +791,8 @@ window.Chart = function(context){
 					ctx.stroke();
 				}
 				cumulativeAngle += segmentAngle;
-			}			
+			}	
+					
 		}			
 		
 		
