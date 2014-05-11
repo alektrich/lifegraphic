@@ -52,7 +52,16 @@
       <div class="moodbar_divDash">Mood Bar</div>
      
       
-      <div class="subtitle_divDash">How's your mood today?</div>
+      <div class="subtitle_divDash">How's your mood today?
+
+         <div class="btn-group rateButtons">
+              <button type="button" class="btn btn-warning">1</button>
+              <button type="button" class="btn btn-warning">2</button>
+              <button type="button" class="btn btn-warning">3</button>
+              <button type="button" class="btn btn-warning">4</button>
+              <button type="button" class="btn btn-warning">5</button>
+          </div>
+      </div>
       
     <div class="historygraphbox_divDash">
       <div class="historygraphDash historygraphDashMood">Your Mood History</div>

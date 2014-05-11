@@ -285,5 +285,13 @@ div.reasonCheckboxes {
 
 p.reasonLabel {
   margin-left: 35px;
-  margin-top: -18px;
+  margin-top: 5px;
+}
+
+.rateButtons {
+  margin: 10px 0px 30px 0px;
+}
+
+.rateLove {
+  opacity: 0.6 !important;
 }

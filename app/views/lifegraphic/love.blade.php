@@ -52,13 +52,23 @@
       <div class="lovebar_divDash">Love Bar</div>
      
       
-      <div class="subtitle_divDash">How's your love life Today?</div>
+      <div class="subtitle_divDash">How's your love life Today?
+
+         <div class="btn-group rateButtons">
+              <button type="button" class="btn btn-danger rateLove">1</button>
+              <button type="button" class="btn btn-danger rateLove">2</button>
+              <button type="button" class="btn btn-danger rateLove">3</button>
+              <button type="button" class="btn btn-danger rateLove">4</button>
+              <button type="button" class="btn btn-danger rateLove">5</button>
+            </div>
+
+      </div>
       
     <div class="historygraphbox_divDash">
       <div class="historygraphDash historygraphDashLove">Your Love History</div>
       <canvas id="historyGraphCanvasLove" width="280" height="150"></canvas>
     </div>
-      <div class="rank_divDash">Ranking goes here</div>
+      
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>

@@ -53,7 +53,17 @@
       <div class="assetsbar_divDash">Assets Bar</div>
      
       
-      <div class="subtitle_divDash">Your Assets Today?</div>
+      <div class="subtitle_divDash">Your Assets Today?
+
+         <div class="btn-group rateButtons">
+            <button type="button" class="btn btn-info">1</button>
+            <button type="button" class="btn btn-info">2</button>
+            <button type="button" class="btn btn-info">3</button>
+            <button type="button" class="btn btn-info">4</button>
+            <button type="button" class="btn btn-info">5</button>
+          </div>
+
+      </div>
       
     <div class="historygraphbox_divDash">
       <div class="historygraphDash historygraphDashAssets">Your Assets History</div>

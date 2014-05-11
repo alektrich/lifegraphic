@@ -59,8 +59,18 @@
           <div class="historygraphDash historygraphDashHealth">Your Health History</div>
           <canvas id="historyGraphCanvasHealth" width="280" height="150"></canvas>
         </div>
-          <div class="subtitle_divDash">How Do you Feel Today?</div>
-          <div class="rank_divDash">Ranking goes here</div>
+          <div class="subtitle_divDash">How Do you Feel Today?
+
+             <div class="btn-group rateButtons">
+              <button type="button" class="btn btn-success">1</button>
+              <button type="button" class="btn btn-success">2</button>
+              <button type="button" class="btn btn-success">3</button>
+              <button type="button" class="btn btn-success">4</button>
+              <button type="button" class="btn btn-success">5</button>
+            </div>
+          </div>
+          
+         
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
