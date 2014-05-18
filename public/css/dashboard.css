@@ -1,6 +1,6 @@
 .containerDash {
   clear: both;
-  height: 650px;
+  height: 1200px;
   width: 1138px;
  /* border-top-width: 1px;
   border-right-width: 1px;
@@ -11,7 +11,7 @@
   border-bottom-style: solid;
   border-left-style: solid;*/
   margin: 2px auto;
-    overflow: auto;
+    /*overflow: auto;*/
   ;
   /* [disabled]background-image: url(lifeographic.jpg); */
 }
@@ -23,7 +23,7 @@
 .LeftpanelDash {
   background-color: #444;
   float: left;
-  height: auto;
+  height: 1180px;
   width: 150px;
   margin-top: 5px;
 }
@@ -52,7 +52,7 @@
 .catbarDash {
   float: left;
   height: auto;
-  width: 680px;
+  width: 720px;
   margin-left: 50px;
   margin-top: 30px;
   opacity: 0.6;
@@ -218,6 +218,7 @@
   width: 145px;
   margin-left: 5px;
   margin-top: 10px;
+  color: #FFFFFF;
 }
 
 p.categoryLove, p.categoryHealth, p.categoryAssets, p.categoryMood {
@@ -292,6 +293,18 @@ p.reasonLabel {
   margin: 10px 0px 30px 0px;
 }
 
-.rateLove {
+button.rateLove {
   opacity: 0.6 !important;
+}
+
+button.rateMood {
+  opacity: 0.7 !important;
+}
+
+button.rateHealth {
+  opacity: 0.85 !important;
+}
+
+button.rateHealth, button.rateLove, button.rateMood, button.rateAssets {
+  width: 50px;
 }

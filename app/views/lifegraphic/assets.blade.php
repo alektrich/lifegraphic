@@ -53,14 +53,14 @@
       <div class="assetsbar_divDash">Assets Bar</div>
      
       
-      <div class="subtitle_divDash">Your Assets Today?
+      <div class="subtitle_divDash"><strong>Your Assets Today?</strong>
 
          <div class="btn-group rateButtons">
-            <button type="button" class="btn btn-info">1</button>
-            <button type="button" class="btn btn-info">2</button>
-            <button type="button" class="btn btn-info">3</button>
-            <button type="button" class="btn btn-info">4</button>
-            <button type="button" class="btn btn-info">5</button>
+            <button type="button" class="btn btn-info rateAssets">1</button>
+            <button type="button" class="btn btn-info rateAssets">2</button>
+            <button type="button" class="btn btn-info rateAssets">3</button>
+            <button type="button" class="btn btn-info rateAssets">4</button>
+            <button type="button" class="btn btn-info rateAssets">5</button>
           </div>
 
       </div>
@@ -80,7 +80,7 @@
 
           <div class="Reason_divDash">
             
-            {{Form::open()}}
+           {{Form::open()}}
             <div class="control-group reasonCheckboxes">
                 <div class="controls col-md-4">
                     <label class="checkbox">
@@ -92,9 +92,7 @@
                     <label class="checkbox">
                         <input type="checkbox" value="option3" id="inlineCheckbox3"> Sick
                     </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Great food
-                    </label>
+
                 </div>
                 <div class="controls col-md-4">
                     <label class="checkbox">
@@ -103,9 +101,7 @@
                     <label class="checkbox">
                         <input type="checkbox" value="option2" id="inlineCheckbox2"> High pressure
                     </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Anxious
-                    </label>
+
                     <label class="checkbox">
                         <input type="checkbox" value="option3" id="inlineCheckbox3"> Good sleep
                     </label>
@@ -118,10 +114,7 @@
                         <input type="checkbox" value="option2" id="inlineCheckbox2"> Nervious
                     </label>
                     <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> ReasonNew
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> ReasonNew1
+                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Great food
                     </label>
                 </div>
             </div>

@@ -52,7 +52,7 @@
       <div class="lovebar_divDash">Love Bar</div>
      
       
-      <div class="subtitle_divDash">How's your love life Today?
+      <div class="subtitle_divDash"><strong>How's your love life Today?</strong>
 
          <div class="btn-group rateButtons">
               <button type="button" class="btn btn-danger rateLove">1</button>
@@ -91,9 +91,7 @@
                     <label class="checkbox">
                         <input type="checkbox" value="option3" id="inlineCheckbox3"> Sick
                     </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Great food
-                    </label>
+
                 </div>
                 <div class="controls col-md-4">
                     <label class="checkbox">
@@ -102,9 +100,7 @@
                     <label class="checkbox">
                         <input type="checkbox" value="option2" id="inlineCheckbox2"> High pressure
                     </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Anxious
-                    </label>
+
                     <label class="checkbox">
                         <input type="checkbox" value="option3" id="inlineCheckbox3"> Good sleep
                     </label>
@@ -117,10 +113,7 @@
                         <input type="checkbox" value="option2" id="inlineCheckbox2"> Nervious
                     </label>
                     <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> ReasonNew
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> ReasonNew1
+                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Great food
                     </label>
                 </div>
             </div>

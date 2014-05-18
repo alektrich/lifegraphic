@@ -59,14 +59,14 @@
           <div class="historygraphDash historygraphDashHealth">Your Health History</div>
           <canvas id="historyGraphCanvasHealth" width="280" height="150"></canvas>
         </div>
-          <div class="subtitle_divDash">How Do you Feel Today?
+          <div class="subtitle_divDash"><strong>How Do you Feel Today?</strong>
 
              <div class="btn-group rateButtons">
-              <button type="button" class="btn btn-success">1</button>
-              <button type="button" class="btn btn-success">2</button>
-              <button type="button" class="btn btn-success">3</button>
-              <button type="button" class="btn btn-success">4</button>
-              <button type="button" class="btn btn-success">5</button>
+              <button type="button" class="btn btn-success rateHealth">1</button>
+              <button type="button" class="btn btn-success rateHealth">2</button>
+              <button type="button" class="btn btn-success rateHealth">3</button>
+              <button type="button" class="btn btn-success rateHealth">4</button>
+              <button type="button" class="btn btn-success rateHealth">5</button>
             </div>
           </div>
           
@@ -93,9 +93,7 @@
                     <label class="checkbox">
                         <input type="checkbox" value="option3" id="inlineCheckbox3"> Sick
                     </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Great food
-                    </label>
+
                 </div>
                 <div class="controls col-md-4">
                     <label class="checkbox">
@@ -104,9 +102,7 @@
                     <label class="checkbox">
                         <input type="checkbox" value="option2" id="inlineCheckbox2"> High pressure
                     </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Anxious
-                    </label>
+
                     <label class="checkbox">
                         <input type="checkbox" value="option3" id="inlineCheckbox3"> Good sleep
                     </label>
@@ -119,10 +115,7 @@
                         <input type="checkbox" value="option2" id="inlineCheckbox2"> Nervious
                     </label>
                     <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> ReasonNew
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> ReasonNew1
+                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Great food
                     </label>
                 </div>
             </div>
