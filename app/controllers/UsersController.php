@@ -74,7 +74,7 @@ class UsersController extends BaseController {
 
 			// dd($this->email);
 
-		    return View::make('lifegraphic', $data);
+		    return View::make('lifegraphic.health', $data);
 
 		} else {
 
