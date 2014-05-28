@@ -10,19 +10,17 @@
     {{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
     {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
     {{ HTML::script('packages/bootstrap/js/bootstrap.min.js') }}
-    {{ HTML::script('packages/ChartJS/Chart.js') }}
-    {{ HTML::script('js/gauge.min.js') }}
   </head>
- 
+
   <body>
- 	
-  	<div class="navbar navbar-fixed-top">
+    
+    <div class="navbar navbar-top">
         <div class="navbar-inner">
             <div class="container">
                 <ul class="nav nav-tabs"> 
                     <li>{{ HTML::link('users/register', 'Register') }}</li>  
-                    <li>{{ HTML::link('users/login', 'Login') }}</li>  
-                    <li>{{ HTML::link('aboutus', 'About Us') }}</li>  
+                    <li>{{ HTML::link('/', 'Login') }}</li>  
+                    <li>{{ HTML::link('aboutUs', 'About Us') }}</li>  
                 </ul> 
             </div>
         </div>
@@ -33,11 +31,8 @@
         @if(Session::has('message'))
             <p class="alert">{{ Session::get('message') }}</p>
         @endif
-
-        @yield('content');
-
     </div>
-
+    @yield('content')
   </body>
   @yield('script')
-</html>
+</html>        

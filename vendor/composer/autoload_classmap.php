@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddRememberTokenToUserTable' => $baseDir . '/app/database/migrations/2014_05_28_095803_add_remember_token_to_user_table.php',
     'Assetic\\AssetManager' => $vendorDir . '/kriswallsmith/assetic/src/Assetic/AssetManager.php',
     'Assetic\\AssetWriter' => $vendorDir . '/kriswallsmith/assetic/src/Assetic/AssetWriter.php',
     'Assetic\\Asset\\AssetCache' => $vendorDir . '/kriswallsmith/assetic/src/Assetic/Asset/AssetCache.php',

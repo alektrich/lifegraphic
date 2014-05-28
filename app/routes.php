@@ -13,33 +13,26 @@
 
 Route::get('/', function()
 {
-	return View::make('users.login');
+	if(Auth::check()) {
+		return Redirect::to('health');
+	} else {
+		return View::make('users.login');
+	}
 });
 
-Route::get('/', function()
-{
-	$data['firstname'] = 'Demo';	
-	return View::make('lifegraphic.health', $data);
+Route::get('aboutUs', function() {
+	return View::make('about');
 });
-
-Route::get('/love', function()
-{
-	$data['firstname'] = 'Demo';	
-	return View::make('lifegraphic.love', $data);
-});
-
-Route::get('/assets', function()
-{
-	$data['firstname'] = 'Demo';	
-	return View::make('lifegraphic.assets', $data);
-});
-
-Route::get('/mood', function()
-{
-	$data['firstname'] = 'Demo';	
-	return View::make('lifegraphic.mood', $data);
-});
-
-Route::post('dashboard', 'UsersController@postLogin');
 
 Route::controller('users', 'UsersController');
+
+Route::get('/logout', 'UsersController@getLogout');
+
+Route::get('/love', 'UsersController@getLove');
+
+Route::get('/assets', 'UsersController@getAssets');
+
+Route::get('/mood', 'UsersController@getMood');
+
+Route::get('/health', 'UsersController@getHealth');
+

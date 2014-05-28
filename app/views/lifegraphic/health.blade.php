@@ -1,52 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.mainDash')
 
 @section('content')
-  <div class="containerDash">
-    <div class="LeftpanelDash">
-      <div class="leftpanel_rowsDash">Status</div>
-      <div class="leftpanel_rowsDash">My Profile</div>
-      <div class="leftpanel_rowsDash">Calendar</div>
-      <div class="leftpanel_rowsDash">Question</div>
-      <div class="leftpanel_rowsDash">Forum</div>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>Goes Here</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-  </div>
-        <p>&nbsp;</p>
-        <div class="progressbarDash">
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-        </div>
+ 
         <div class="TopsectionDash">
          <div class="Time_divDash">Time: 13:00</div>
           <div class="datestamp_divDash">Date: 01/01/2014</div>
@@ -122,109 +77,39 @@
             </div>
             {{Form::close()}}
           </div>
-          <p>&nbsp;</p>
-          <div class="rankingbox1_divDash">
-            <a href="{{ URL::to('/love') }}"><p class="categoryLove">Love</p></a> 
-            <canvas id="canvas1" height="80" width="80"></canvas>
-          </div>
-          <div class="rankingbox2_divDash">
-            <a href="{{ URL::to('/') }}"><p class="categoryHealth">Health</p></a>  
-            <canvas id="canvas2" height="80" width="80"></canvas>  
-          </div>
-          <div class="LifeDial_divDash">
-            <canvas id="canvasTotal" height="100" width="175"></canvas>
-          </div>
-          <div class="rankingbox3_divDash">
-            <a href="{{ URL::to('/assets') }}"><p class="categoryAssets">Assets</p></a> 
-            <canvas id="canvas3" height="80" width="80"></canvas> 
-          </div>
-          <div class="rankingbox4_divDash">
-            <a href="{{ URL::to('/mood') }}"><p class="categoryMood">Mood</p></a> 
-            <canvas id="canvas4" height="80" width="80"></canvas>
-          </div>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <div class="totalgraph_divDash">
-            <canvas id="totalCanvasGraph" height="170" width="725"></canvas>
-          </div>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-        </div>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        
-        <div class="catbarDash Love">
-        <p class="paragraphBarLove">Love</p>  
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-        </div>
-        <div class="catbarDash Health">
-        <p class="paragraphBarHealth">Health</p> 
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-        </div>
-        <div class="catbarDash Assets">
-        <p class="paragraphBarAssets">Assets</p> 
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-        </div>
-        <div class="catbarDash Mood">
-        <p class="paragraphBarMood">Mood</p> 
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-        </div>
-        
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-  </div>
+         
 
-  <div class="modal fade" id="addHealthReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
-        </div>
-        <div class="modal-body">
-          {{Form::open()}}
-          {{Form::label('Reason names')}}<br/>
-          <div class="input-group input-group-sm">
-            <span class="input-group-addon">1</span>
-            {{Form::text('healthReason1', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
-          </div>
-          <div class="input-group input-group-sm">
-            <span class="input-group-addon">2</span>  
-            {{Form::text('healthReason2', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
-          </div>
-          <div class="input-group input-group-sm">
-            <span class="input-group-addon">3</span>  
-            {{Form::text('healthReason3', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
-          </div>  
-        </div>
-        <div class="modal-footer">
-          {{Form::submit('Add Reason', array('class' => 'btn btn-small btn-success'))}}
-          {{Form::close()}}
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+          <div class="modal fade" id="addHealthReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
+                </div>
+                <div class="modal-body">
+                  {{Form::open()}}
+                  {{Form::label('Reason names')}}<br/>
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon">1</span>
+                    {{Form::text('healthReason1', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
+                  </div>
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon">2</span>  
+                    {{Form::text('healthReason2', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
+                  </div>
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon">3</span>  
+                    {{Form::text('healthReason3', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
+                  </div>  
+                </div>
+                <div class="modal-footer">
+                  {{Form::submit('Add Reason', array('class' => 'btn btn-small btn-success'))}}
+                  {{Form::close()}}
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
 @stop
 
 @section('script')

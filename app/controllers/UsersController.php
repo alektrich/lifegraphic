@@ -70,11 +70,12 @@ class UsersController extends BaseController {
 
 		if (Auth::attempt(array('email'=>$email, 'password'=>$password))) {
 
-			$data['firstname'] = User::where('email', $email)->pluck('first_name');
+			/*$data['firstname'] = User::where('email', $email)->pluck('first_name');
+			$data['lastname'] = User::where('email', $email)->pluck('last_name');*/
 
 			// dd($this->email);
 
-		    return View::make('lifegraphic.health', $data);
+		    return Redirect::to('health');
 
 		} else {
 
@@ -84,6 +85,43 @@ class UsersController extends BaseController {
 
 		}
 
+	}
+
+	public function getLogout() {
+		Auth::logout();
+		return Redirect::to('/');
+	}
+
+	public function getLove() {
+
+		$email = Auth::user()->email;
+		$data['firstname'] = User::where('email', $email)->pluck('first_name');
+		$data['lastname'] = User::where('email', $email)->pluck('last_name');
+		return View::make('lifegraphic.love', $data);
+	}
+
+	public function getHealth() {
+
+		$email = Auth::user()->email;
+		$data['firstname'] = User::where('email', $email)->pluck('first_name');
+		$data['lastname'] = User::where('email', $email)->pluck('last_name');
+		return View::make('lifegraphic.health', $data);
+	}
+
+	public function getAssets() {
+
+		$email = Auth::user()->email;
+		$data['firstname'] = User::where('email', $email)->pluck('first_name');
+		$data['lastname'] = User::where('email', $email)->pluck('last_name');
+		return View::make('lifegraphic.assets', $data);
+	}
+
+	public function getMood() {
+
+		$email = Auth::user()->email;
+		$data['firstname'] = User::where('email', $email)->pluck('first_name');
+		$data['lastname'] = User::where('email', $email)->pluck('last_name');
+		return View::make('lifegraphic.mood', $data);
 	}
 
 }
