@@ -4,7 +4,7 @@
   
       <div class="assetsbar_divDash">Assets Bar</div>
      
-      
+      <button type="submit" class="submitButton">Submit values</button>
       <div class="subtitle_divDash"><strong>Your Assets Today?</strong>
 
          <div class="btn-group rateButtons">

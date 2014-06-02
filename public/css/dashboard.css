@@ -289,7 +289,7 @@ div.reasonCheckboxes {
 
 p.reasonLabel {
   margin-left: 35px;
-  margin-top: 25px;
+  /*margin-top: 5px;*/
 }
 
 .rateButtons {
@@ -320,4 +320,12 @@ div.subtitle_divDash p {
 
 div.subtitle_divDash button span{
   font-size: 11px;
+}
+
+button.submitButton {
+  border-radius: 35px;
+  height: 70px;
+  margin-left: 82px;
+  margin-top: -35px;
+  width: 70px;
 }
