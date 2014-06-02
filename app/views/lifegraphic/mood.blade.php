@@ -2,20 +2,18 @@
 
 @section('content')
   
-    <div class="TopsectionDash">
-     <div class="Time_divDash">Time: 13:00</div>
-      <div class="datestamp_divDash">Date: 01/01/2014</div>
+
       <div class="moodbar_divDash">Mood Bar</div>
      
       
       <div class="subtitle_divDash"><strong>How's your mood today?</strong>
 
          <div class="btn-group rateButtons">
-              <button type="button" class="btn btn-warning rateMood">1</button>
-              <button type="button" class="btn btn-warning rateMood">2</button>
-              <button type="button" class="btn btn-warning rateMood">3</button>
-              <button type="button" class="btn btn-warning rateMood">4</button>
-              <button type="button" class="btn btn-warning rateMood">5</button>
+              <button type="button" class="btn btn-warning rateMood"><span class="rate1">Very Bad</span></button>
+              <button type="button" class="btn btn-warning rateMood"><span class="rate2">Bad</span></button>
+              <button type="button" class="btn btn-warning rateMood"><span class="rate3">OK</span></button>
+              <button type="button" class="btn btn-warning rateMood"><span class="rate4">Good</span></button>
+              <button type="button" class="btn btn-warning rateMood"><span class="rate5">Very Good</span></button>
           </div>
       </div>
       

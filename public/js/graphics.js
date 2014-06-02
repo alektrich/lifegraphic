@@ -313,20 +313,41 @@ var totalDataGraph = {
   var totalCatgraph = document.getElementById("totalCanvasGraph").getContext("2d");
   var TotalGraph = new Chart(totalCatgraph).Line(totalDataGraph, optionsGraph);
 
+  jQuery.fn.darken = function() {
+      $(this).each(function() {
+        var darkenPercent = 15; // darken color by 15 percent
+        var rgb = $(this).css('background-color');
+        rgb = rgb.replace('rgb(', '').replace(')', '').split(',');
+        var red = $.trim(rgb[0]);
+        var green = $.trim(rgb[1]);
+        var blue = $.trim(rgb[2]);
+        // darken
+        red = parseInt(red * (100 - darkenPercent) / 100);
+        green = parseInt(green * (100 - darkenPercent) / 100);
+        blue = parseInt(blue * (100 - darkenPercent) / 100);
+        // lighten
+        /* red = parseInt(red * (100 - darkenPercent) / 100);
+        green = parseInt(green * (100 - darkenPercent) / 100);
+        blue = parseInt(blue * (100 - darkenPercent) / 100); */
+        rgb = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+        $(this).css('background-color', rgb);
+      });
+ }     
+
   $(document).ready(function() {
 
     var rateButton = $('div.rateButtons button');
+    var originalRGB = rateButton.css('background-color');
     rateButton.on('click', function() {
       rateButton.css({
         'font-weight': 'normal',
         'border' : 'none none',
+        'background-color' : originalRGB
       });
       $(this).css({
         'font-weight': 'bold',
-        'border' : '1px solid white',
-        'border-top' : 'none',
-        'border-bottom-style' : 'outset'
       });
+      $(this).darken();
     });
 
   });

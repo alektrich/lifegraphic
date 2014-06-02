@@ -2,15 +2,9 @@
 
 @section('content')
  
-        <div class="TopsectionDash">
-         <div class="Time_divDash">Time: 13:00</div>
-          <div class="datestamp_divDash">Date: 01/01/2014</div>
-          <div class="healthbar_divDash">Health Bar</div>
+       
+        <div class="healthbar_divDash">Health Bar</div>
          
-          
-
-          
-          
         <div class="historygraphbox_divDash">
           <div class="historygraphDash historygraphDashHealth">Your Health History</div>
           <canvas id="historyGraphCanvasHealth" width="280" height="150"></canvas>
@@ -18,11 +12,11 @@
           <div class="subtitle_divDash"><strong>How Do you Feel Today?</strong>
 
              <div class="btn-group rateButtons">
-              <button type="button" class="btn btn-success rateHealth">1</button>
-              <button type="button" class="btn btn-success rateHealth">2</button>
-              <button type="button" class="btn btn-success rateHealth">3</button>
-              <button type="button" class="btn btn-success rateHealth">4</button>
-              <button type="button" class="btn btn-success rateHealth">5</button>
+              <button type="button" class="btn btn-success rateHealth"><span class="rate1">Very Bad</span></button>
+              <button type="button" class="btn btn-success rateHealth"><span class="rate2">Bad</span></button>
+              <button type="button" class="btn btn-success rateHealth"><span class="rate3">OK</span></button>
+              <button type="button" class="btn btn-success rateHealth"><span class="rate4">Good</span></button>
+              <button type="button" class="btn btn-success rateHealth"><span class="rate5">Very Good</span></button>
             </div>
           </div>
           

@@ -2,29 +2,24 @@
 
 @section('content')
   
-    <div class="TopsectionDash">
-     <div class="Time_divDash">Time: 13:00</div>
-      <div class="datestamp_divDash">Date: 01/01/2014</div>
       <div class="assetsbar_divDash">Assets Bar</div>
      
       
       <div class="subtitle_divDash"><strong>Your Assets Today?</strong>
 
          <div class="btn-group rateButtons">
-            <button type="button" class="btn btn-info rateAssets">1</button>
-            <button type="button" class="btn btn-info rateAssets">2</button>
-            <button type="button" class="btn btn-info rateAssets">3</button>
-            <button type="button" class="btn btn-info rateAssets">4</button>
-            <button type="button" class="btn btn-info rateAssets">5</button>
+            <button type="button" class="btn btn-info rateAssets"><span class="rate1">Very Bad</span></button>
+            <button type="button" class="btn btn-info rateAssets"><span class="rate2">Bad</span></button>
+            <button type="button" class="btn btn-info rateAssets"><span class="rate3">OK</span></button>
+            <button type="button" class="btn btn-info rateAssets"><span class="rate4">Good</span></button>
+            <button type="button" class="btn btn-info rateAssets"><span class="rate5">Very Good</span></button>
           </div>
-
       </div>
       
     <div class="historygraphbox_divDash">
       <div class="historygraphDash historygraphDashAssets">Your Assets History</div>
       <canvas id="historyGraphCanvasAssets" width="280" height="150"></canvas>
     </div>
-      <div class="rank_divDash">Ranking goes here</div>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>

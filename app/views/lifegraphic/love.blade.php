@@ -2,24 +2,21 @@
 
 @section('content')
   
-    <div class="TopsectionDash">
-     <div class="Time_divDash">Time: 13:00</div>
-      <div class="datestamp_divDash">Date: 01/01/2014</div>
+
       <div class="lovebar_divDash">Love Bar</div>
      
       
       <div class="subtitle_divDash"><strong>How's your love life Today?</strong>
 
          <div class="btn-group rateButtons">
-              <button type="button" class="btn btn-danger rateLove">1</button>
-              <button type="button" class="btn btn-danger rateLove">2</button>
-              <button type="button" class="btn btn-danger rateLove">3</button>
-              <button type="button" class="btn btn-danger rateLove">4</button>
-              <button type="button" class="btn btn-danger rateLove">5</button>
+              <button type="button" class="btn btn-danger rateLove"><span class="rate1">Very Bad</span></button>
+              <button type="button" class="btn btn-danger rateLove"><span class="rate2">Bad</span></button>
+              <button type="button" class="btn btn-danger rateLove"><span class="rate3">OK</span></button>
+              <button type="button" class="btn btn-danger rateLove"><span class="rate4">Good</span></button>
+              <button type="button" class="btn btn-danger rateLove"><span class="rate5">Very Good</span></button>
             </div>
-
       </div>
-      
+
     <div class="historygraphbox_divDash">
       <div class="historygraphDash historygraphDashLove">Your Love History</div>
       <canvas id="historyGraphCanvasLove" width="280" height="150"></canvas>

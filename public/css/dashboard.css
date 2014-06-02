@@ -123,7 +123,7 @@
 .subtitle_divDash {
   /*background-color: #DDD;*/
   float: left;
-  height: 27px;
+  height: 45px;
   width: 275px;
   margin-left: 27px;
   margin-top: 5px;
@@ -289,11 +289,13 @@ div.reasonCheckboxes {
 
 p.reasonLabel {
   margin-left: 35px;
-  margin-top: 5px;
+  margin-top: 25px;
 }
 
 .rateButtons {
   margin: 10px 0px 30px 0px;
+  width: 500px;
+  height: 6px;
 }
 
 button.rateLove {
@@ -309,5 +311,13 @@ button.rateHealth {
 }
 
 button.rateHealth, button.rateLove, button.rateMood, button.rateAssets {
-  width: 50px;
+  width: 70px;
+}
+
+div.subtitle_divDash p {
+  width: 500px;
+}
+
+div.subtitle_divDash button span{
+  font-size: 11px;
 }

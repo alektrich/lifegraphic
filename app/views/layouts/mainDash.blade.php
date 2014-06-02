@@ -81,6 +81,9 @@
               <p>&nbsp;</p>
               <p>&nbsp;</p>
             </div>
+            <div class="TopsectionDash">
+               <div class="Time_divDash">Time: <strong>{{date('h:i',time())}}</strong></div>
+               <div class="datestamp_divDash">Date: <strong>{{date('d/m/Y', time())}}</strong></div>
             @yield('content');
               <p>&nbsp;</p>
               <div class="rankingbox1_divDash">
