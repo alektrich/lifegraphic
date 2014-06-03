@@ -329,3 +329,9 @@ button.submitButton {
   margin-top: -35px;
   width: 70px;
 }
+
+div.navbar-top {
+  height: 50px;
+  margin-bottom: -20px;
+}
+

@@ -33,6 +33,7 @@
           <div class="Reason_divDash">
             
             {{Form::open()}}
+            {{Form::hidden('loveValue')}}
             <div class="control-group reasonCheckboxes">
                 <div class="controls col-md-4">
                     <label class="checkbox">
