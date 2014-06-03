@@ -32,7 +32,7 @@
 
           <div class="Reason_divDash">
             
-            {{Form::open()}}
+            {{Form::open(array('url' => 'love', 'method' => 'POST', 'class' => 'categoryForm'))}}
             {{Form::hidden('loveValue', null, array('class' => 'catValue'))}}
             <div class="control-group reasonCheckboxes">
                 <div class="controls col-md-4">

@@ -26,13 +26,25 @@ Route::get('aboutUs', function() {
 
 Route::controller('users', 'UsersController');
 
-Route::get('/logout', 'UsersController@getLogout');
+//Get
 
-Route::get('/love', 'UsersController@getLove');
+Route::get('logout', 'UsersController@getLogout');
 
-Route::get('/assets', 'UsersController@getAssets');
+Route::get('love', 'UsersController@getLove');
 
-Route::get('/mood', 'UsersController@getMood');
+Route::get('assets', 'UsersController@getAssets');
 
-Route::get('/health', 'UsersController@getHealth');
+Route::get('mood', 'UsersController@getMood');
+
+Route::get('health', 'UsersController@getHealth');
+
+//Post
+
+Route::post('love', 'UsersController@postLove');
+
+Route::post('assets', 'UsersController@postAssets');
+
+Route::post('mood', 'UsersController@postMood');
+
+Route::post('health', 'UsersController@postHealth');
 

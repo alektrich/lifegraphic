@@ -32,7 +32,8 @@ class UsersController extends BaseController {
      * @param none
      * @return Save user into DB
      */
-	public function postCreate() {
+	public function postCreate() 
+	{
 
 		$validator = Validator::make(Input::all(), User::$rules);
  
@@ -55,13 +56,15 @@ class UsersController extends BaseController {
 
 	}
 
-	public function getLogin() {
+	public function getLogin() 
+	{
 
 	    return View::make('users.login');
 
 	}
 
-	public function postLogin() {
+	public function postLogin() 
+	{
 
 		$email 	  = Input::get('email');
 		$password = Input::get('password');
@@ -87,12 +90,14 @@ class UsersController extends BaseController {
 
 	}
 
-	public function getLogout() {
+	public function getLogout() 
+	{
 		Auth::logout();
 		return Redirect::to('/');
 	}
 
-	public function getLove() {
+	public function getLove() 
+	{
 
 		$email = Auth::user()->email;
 		$data['firstname'] = User::where('email', $email)->pluck('first_name');
@@ -100,7 +105,15 @@ class UsersController extends BaseController {
 		return View::make('lifegraphic.love', $data);
 	}
 
-	public function getHealth() {
+	public function postLove() 
+	{
+		$inputs = Input::get();
+
+		dd($inputs);
+	}
+
+	public function getHealth() 
+	{
 
 		$email = Auth::user()->email;
 		$data['firstname'] = User::where('email', $email)->pluck('first_name');
@@ -108,7 +121,15 @@ class UsersController extends BaseController {
 		return View::make('lifegraphic.health', $data);
 	}
 
-	public function getAssets() {
+	public function postHealth()
+	{
+		$inputs = Input::get();
+
+		dd($inputs);
+	}
+
+	public function getAssets() 
+	{
 
 		$email = Auth::user()->email;
 		$data['firstname'] = User::where('email', $email)->pluck('first_name');
@@ -116,12 +137,27 @@ class UsersController extends BaseController {
 		return View::make('lifegraphic.assets', $data);
 	}
 
-	public function getMood() {
+	public function postAssets()
+	{
+		$inputs = Input::get();
+
+		dd($inputs);
+	}
+
+	public function getMood() 
+	{
 
 		$email = Auth::user()->email;
 		$data['firstname'] = User::where('email', $email)->pluck('first_name');
 		$data['lastname'] = User::where('email', $email)->pluck('last_name');
 		return View::make('lifegraphic.mood', $data);
+	}
+
+	public function postMood() 
+	{
+		$inputs = Input::get();
+
+		dd($inputs);
 	}
 
 }

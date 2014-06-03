@@ -361,6 +361,11 @@ var totalDataGraph = {
       }
     });
 
+    $('button.submitButton').on('click', function() {
+      console.log('clicked');
+      $('form.categoryForm').submit();
+    });
+
 
 
   });
