@@ -225,7 +225,7 @@ var totalDataGraph = {
 
   var doughnutDataLove = [
       {
-        value: 30,
+        value: loveValue,
         color:"#FF9999"
       },
       {

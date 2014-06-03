@@ -102,6 +102,27 @@ class UsersController extends BaseController {
 		$email = Auth::user()->email;
 		$data['firstname'] = User::where('email', $email)->pluck('first_name');
 		$data['lastname'] = User::where('email', $email)->pluck('last_name');
+
+		$loveValues = DB::table('category_values')
+			->where('user_id', '=', Auth::user()->id)
+			->where('category_id', '=', 1)
+			->get(array('category_value'));
+	
+
+		if($loveValues) {
+
+			$loveArray = array();
+			foreach($loveValues as $value) {
+				$loveArray[] = $value->category_value;
+			} 
+
+			$finalValue = array_sum($loveArray)/count($loveArray);
+
+			$data['loveValue'] = $finalValue;
+		} else {
+			$data['loveValue'] = 0;
+		}	
+
 		return View::make('lifegraphic.love', $data);
 	}
 
@@ -109,7 +130,16 @@ class UsersController extends BaseController {
 	{
 		$inputs = Input::get();
 
-		dd($inputs);
+		DB::table('category_values')
+			->insert(array(
+				'user_id' => Auth::user()->id,
+				'category_id' => 1,
+				'category_value' => $inputs['loveValue'],
+				'created_at' => date('m/d/Y h:i:s', time()),
+				'updated_at' => date('m/d/Y h:i:s', time())
+			));
+
+		return Redirect::to('love');
 	}
 
 	public function getHealth() 
@@ -125,7 +155,16 @@ class UsersController extends BaseController {
 	{
 		$inputs = Input::get();
 
-		dd($inputs);
+		DB::table('category_values')
+			->insert(array(
+				'user_id' => Auth::user()->id,
+				'category_id' => 2,
+				'category_value' => $inputs['healthValue'],
+				'created_at' => date('m/d/Y h:i:s', time()),
+				'updated_at' => date('m/d/Y h:i:s', time())
+			));
+
+		return Redirect::to('health');
 	}
 
 	public function getAssets() 
@@ -141,7 +180,16 @@ class UsersController extends BaseController {
 	{
 		$inputs = Input::get();
 
-		dd($inputs);
+		DB::table('category_values')
+			->insert(array(
+				'user_id' => Auth::user()->id,
+				'category_id' => 3,
+				'category_value' => $inputs['assetsValue'],
+				'created_at' => date('m/d/Y h:i:s', time()),
+				'updated_at' => date('m/d/Y h:i:s', time())
+			));
+
+		return Redirect::to('assets');
 	}
 
 	public function getMood() 
@@ -157,7 +205,16 @@ class UsersController extends BaseController {
 	{
 		$inputs = Input::get();
 
-		dd($inputs);
+		DB::table('category_values')
+			->insert(array(
+				'user_id' => Auth::user()->id,
+				'category_id' => 4,
+				'category_value' => $inputs['moodValue'],
+				'created_at' => date('m/d/Y h:i:s', time()),
+				'updated_at' => date('m/d/Y h:i:s', time())
+			));
+
+		return Redirect::to('mood');
 	}
 
 }

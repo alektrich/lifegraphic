@@ -107,5 +107,10 @@
         @stop
 
 @section('script')
+
+  <script type="text/javascript">
+    var assetsValue = {{$assetsValue}};
+  </script>
+  
   {{ HTML::script('js/graphics.js') }}
 @stop

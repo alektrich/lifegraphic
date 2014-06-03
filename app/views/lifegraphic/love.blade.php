@@ -112,6 +112,12 @@
 
 @section('script')
 
+<script type="text/javascript">
+  
+  var loveValue = {{$loveValue}};
+
+</script>
+
   {{ HTML::script('js/graphics.js') }}
 
 @stop
