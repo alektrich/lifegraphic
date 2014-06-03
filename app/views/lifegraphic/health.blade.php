@@ -12,11 +12,11 @@
           <div class="subtitle_divDash"><strong>How Do you Feel Today?</strong>
 
              <div class="btn-group rateButtons">
-              <button type="button" class="btn btn-success rateHealth"><span class="rate1">Very Bad</span></button>
-              <button type="button" class="btn btn-success rateHealth"><span class="rate2">Bad</span></button>
-              <button type="button" class="btn btn-success rateHealth"><span class="rate3">OK</span></button>
-              <button type="button" class="btn btn-success rateHealth"><span class="rate4">Good</span></button>
-              <button type="button" class="btn btn-success rateHealth"><span class="rate5">Very Good</span></button>
+              <button type="button" class="btn btn-success rateHealth rateValue1"><span class="rate1">Very Bad</span></button>
+              <button type="button" class="btn btn-success rateHealth rateValue2"><span class="rate2">Bad</span></button>
+              <button type="button" class="btn btn-success rateHealth rateValue3"><span class="rate3">OK</span></button>
+              <button type="button" class="btn btn-success rateHealth rateValue4"><span class="rate4">Good</span></button>
+              <button type="button" class="btn btn-success rateHealth rateValue5"><span class="rate5">Very Good</span></button>
             </div>
           </div>
           
@@ -32,7 +32,7 @@
           <div class="Reason_divDash">
             
             {{Form::open()}}
-            {{Form::hidden('healthValue')}}
+            {{Form::hidden('healthValue', null, array('class' => 'catValue'))}}
             <div class="control-group reasonCheckboxes">
                 <div class="controls col-md-4">
                     <label class="checkbox">

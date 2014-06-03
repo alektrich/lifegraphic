@@ -348,7 +348,20 @@ var totalDataGraph = {
         'font-weight': 'bold',
       });
       $(this).darken();
+      if($(this).hasClass('rateValue1')) {
+        $('input.catValue').val(20);
+      } else if($(this).hasClass('rateValue2')) {
+        $('input.catValue').val(40);
+      } else if($(this).hasClass('rateValue3')) {
+        $('input.catValue').val(60);
+      } else if($(this).hasClass('rateValue4')) {
+        $('input.catValue').val(80);
+      } else {
+        $('input.catValue').val(100);
+      }
     });
+
+
 
   });
   
