@@ -1,3 +1,4 @@
+
 var totalDataGraph = {
                   labels : ["|","|","|","|","|","|","|"],
                   datasets : [
@@ -229,7 +230,7 @@ var totalDataGraph = {
         color:"#FF9999"
       },
       {
-        value : 70,
+        value : 100-loveValue,
         color : "#aaa"
       }
   ];
@@ -240,7 +241,7 @@ var totalDataGraph = {
         color:"#00CC33"
       },
       {
-        value : 40,
+        value : 100-healthValue,
         color : "#aaa"
       }
   ];
@@ -251,7 +252,7 @@ var totalDataGraph = {
         color:"#3399CC"
       },
       {
-        value : 55,
+        value : 100-assetsValue,
         color : "#aaa"
       }
   ];
@@ -262,7 +263,7 @@ var totalDataGraph = {
         color:"#FFCC00"
       },
       {
-        value : 70,
+        value : 100-moodValue,
         color : "#aaa"
       }
   ];
@@ -272,29 +273,14 @@ var totalDataGraph = {
   var myDoughnut3 = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutDataAssets, optionsPie);
   var myDoughnut4 = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutDataMood, optionsPie);
 
-  /*$.fn.gauge = function(opts) {
-    this.each(function() {
-      var $this = $(this),
-          data = $this.data();
-
-      if (data.gauge) {
-        data.gauge.stop();
-        delete data.gauge;
-      }
-      if (opts !== false) {
-        data.gauge = new Gauge(this).setOptions(opts);
-      }
-    });
-    return this;
-  };*/
 
   var opts = {
     lines: 12, // The number of lines to draw
-    angle: 0.10, // The length of each line
-    lineWidth: 0.44, // The line thickness
+    angle: 0.11, // The length of each line
+    lineWidth: 0.42, // The line thickness
     pointer: {
-      length: 0.7, // The radius of the inner circle
-      strokeWidth: 0.015, // The rotation offset
+      length: 0.74, // The radius of the inner circle
+      strokeWidth: 0.044, // The rotation offset
       color: '#000000' // Fill color
     },
     percentColors: [[0.0, "#FF0000" ], [0.50, "#FFFF00"], [1.0, "#00FF00"]],
@@ -305,10 +291,17 @@ var totalDataGraph = {
     generateGradient: true
   };
   var target = document.getElementById('canvasTotal'); // your canvas element
+  var gaugeValue = (loveValue+healthValue+assetsValue+moodValue)/4;
+  if(gaugeValue == 0) {
+    opts.angle = 0.15;
+    opts.pointer.length = 0.74;
+    opts.pointer.strokeWidth = 0.044;
+    opts.lineWidth = 0.42;
+  }
   var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
   gauge.maxValue = 100; // set max gauge value
   gauge.animationSpeed = 28; // set animation speed (32 is default value)
-  gauge.set(42); // set actual value    
+  gauge.set(gaugeValue); // set actual value    
 
   var totalCatgraph = document.getElementById("totalCanvasGraph").getContext("2d");
   var TotalGraph = new Chart(totalCatgraph).Line(totalDataGraph, optionsGraph);

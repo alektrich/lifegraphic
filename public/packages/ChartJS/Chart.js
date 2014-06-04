@@ -762,7 +762,13 @@ window.Chart = function(context){
 				ctx.font = config.labelFontStyle + " " + config.labelFontSize+"px " + config.labelFontFamily;
 	            ctx.fillStyle = 'grey';
 	            ctx.textBaseline = 'middle';
-	            ctx.fillText(data[0].value, width/2 - 13, width/2, 200);
+	            if(data[0].value == 0) {
+	            	ctx.fillText(data[0].value, width/2 - 6.5, width/2, 200);
+	            } else if (data[0].value == 100) {
+	            	ctx.fillText(data[0].value, width/2 - 22, width/2, 200);
+	            } else {
+		            ctx.fillText(Math.floor(data[0].value), width/2 - 13, width/2, 200);
+	            }
 			
 
 			var cumulativeAngle = -Math.PI/2,

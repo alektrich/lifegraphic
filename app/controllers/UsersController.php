@@ -98,32 +98,8 @@ class UsersController extends BaseController {
 
 	public function getLove() 
 	{
-
-		$email = Auth::user()->email;
-		$data['firstname'] = User::where('email', $email)->pluck('first_name');
-		$data['lastname'] = User::where('email', $email)->pluck('last_name');
-
-		$loveValues = DB::table('category_values')
-			->where('user_id', '=', Auth::user()->id)
-			->where('category_id', '=', 1)
-			->get(array('category_value'));
-	
-
-		if($loveValues) {
-
-			$loveArray = array();
-			foreach($loveValues as $value) {
-				$loveArray[] = $value->category_value;
-			} 
-
-			$finalValue = array_sum($loveArray)/count($loveArray);
-
-			$data['loveValue'] = $finalValue;
-		} else {
-			$data['loveValue'] = 0;
-		}	
-
-		return View::make('lifegraphic.love', $data);
+		$values = static::getValues();
+		return View::make('lifegraphic.love', $values);
 	}
 
 	public function postLove() 
@@ -135,8 +111,8 @@ class UsersController extends BaseController {
 				'user_id' => Auth::user()->id,
 				'category_id' => 1,
 				'category_value' => $inputs['loveValue'],
-				'created_at' => date('m/d/Y h:i:s', time()),
-				'updated_at' => date('m/d/Y h:i:s', time())
+				'created_at' => date('Y-m-d H:i:s', time()),
+				'updated_at' => date('Y-m-d H:i:s', time())
 			));
 
 		return Redirect::to('love');
@@ -144,32 +120,8 @@ class UsersController extends BaseController {
 
 	public function getHealth() 
 	{
-
-		$email = Auth::user()->email;
-		$data['firstname'] = User::where('email', $email)->pluck('first_name');
-		$data['lastname'] = User::where('email', $email)->pluck('last_name');
-
-		$healthValues = DB::table('category_values')
-			->where('user_id', '=', Auth::user()->id)
-			->where('category_id', '=', 2)
-			->get(array('category_value'));
-	
-
-		if($healthValues) {
-
-			$healthArray = array();
-			foreach($healthValues as $value) {
-				$healthArray[] = $value->category_value;
-			} 
-
-			$finalValue = array_sum($healthArray)/count($healthArray);
-
-			$data['healthValue'] = $finalValue;
-		} else {
-			$data['healthValue'] = 0;
-		}	
-
-		return View::make('lifegraphic.health', $data);
+		$values = static::getValues();
+		return View::make('lifegraphic.health', $values);
 	}
 
 	public function postHealth()
@@ -181,8 +133,8 @@ class UsersController extends BaseController {
 				'user_id' => Auth::user()->id,
 				'category_id' => 2,
 				'category_value' => $inputs['healthValue'],
-				'created_at' => date('m/d/Y h:i:s', time()),
-				'updated_at' => date('m/d/Y h:i:s', time())
+				'created_at' => date('Y-m-d H:i:s', time()),
+				'updated_at' => date('Y-m-d H:i:s', time())
 			));
 
 		return Redirect::to('health');
@@ -190,32 +142,8 @@ class UsersController extends BaseController {
 
 	public function getAssets() 
 	{
-
-		$email = Auth::user()->email;
-		$data['firstname'] = User::where('email', $email)->pluck('first_name');
-		$data['lastname'] = User::where('email', $email)->pluck('last_name');
-
-		$assetsValues = DB::table('category_values')
-			->where('user_id', '=', Auth::user()->id)
-			->where('category_id', '=', 2)
-			->get(array('category_value'));
-	
-
-		if($assetsValues) {
-
-			$assetsArray = array();
-			foreach($assetsValues as $value) {
-				$assetsArray[] = $value->category_value;
-			} 
-
-			$finalValue = array_sum($assetsArray)/count($assetsArray);
-
-			$data['assetsValue'] = $finalValue;
-		} else {
-			$data['assetsValue'] = 0;
-		}
-
-		return View::make('lifegraphic.assets', $data);
+		$values = static::getValues();
+		return View::make('lifegraphic.assets', $values);
 	}
 
 	public function postAssets()
@@ -227,8 +155,8 @@ class UsersController extends BaseController {
 				'user_id' => Auth::user()->id,
 				'category_id' => 3,
 				'category_value' => $inputs['assetsValue'],
-				'created_at' => date('m/d/Y h:i:s', time()),
-				'updated_at' => date('m/d/Y h:i:s', time())
+				'created_at' => date('Y-m-d H:i:s', time()),
+				'updated_at' => date('Y-m-d H:i:s', time())
 			));
 
 		return Redirect::to('assets');
@@ -236,32 +164,8 @@ class UsersController extends BaseController {
 
 	public function getMood() 
 	{
-
-		$email = Auth::user()->email;
-		$data['firstname'] = User::where('email', $email)->pluck('first_name');
-		$data['lastname'] = User::where('email', $email)->pluck('last_name');
-
-		$moodValues = DB::table('category_values')
-			->where('user_id', '=', Auth::user()->id)
-			->where('category_id', '=', 2)
-			->get(array('category_value'));
-	
-
-		if($moodValues) {
-
-			$moodArray = array();
-			foreach($moodValues as $value) {
-				$moodArray[] = $value->category_value;
-			} 
-
-			$finalValue = array_sum($moodArray)/count($moodArray);
-
-			$data['moodValue'] = $finalValue;
-		} else {
-			$data['moodValue'] = 0;
-		}
-
-		return View::make('lifegraphic.mood', $data);
+		$values = static::getValues();
+		return View::make('lifegraphic.mood', $values);
 	}
 
 	public function postMood() 
@@ -273,11 +177,34 @@ class UsersController extends BaseController {
 				'user_id' => Auth::user()->id,
 				'category_id' => 4,
 				'category_value' => $inputs['moodValue'],
-				'created_at' => date('m/d/Y h:i:s', time()),
-				'updated_at' => date('m/d/Y h:i:s', time())
+				'created_at' => date('Y-m-d H:i:s', time()),
+				'updated_at' => date('Y-m-d H:i:s', time())
 			));
 
 		return Redirect::to('mood');
+	}
+
+	private static function getValues() {
+		$userId = Auth::user()->id;
+
+		$loveValue = CategoryValue::getLoveValue($userId);
+		$healthValue = CategoryValue::getHealthValue($userId);
+		$assetsValue = CategoryValue::getAssetsValue($userId);
+		$moodValue = CategoryValue::getMoodValue($userId);
+
+		$email = Auth::user()->email;
+
+		$data = array(
+			'loveValue' => $loveValue,
+			'healthValue' => $healthValue,
+			'assetsValue' => $assetsValue,
+			'moodValue' => $moodValue
+		);
+
+		$data['firstname'] = User::where('email', $email)->pluck('first_name');
+		$data['lastname'] = User::where('email', $email)->pluck('last_name');
+
+		return $data;
 	}
 
 }
