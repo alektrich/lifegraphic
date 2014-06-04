@@ -106,11 +106,3 @@
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
 @stop
-
-@section('script')
-
-<script type="text/javascript">
-  var healthValue = {{$healthValue}};
-</script>
-  {{ HTML::script('js/graphics.js') }}
-@stop

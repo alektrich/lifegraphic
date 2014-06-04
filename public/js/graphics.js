@@ -236,7 +236,7 @@ var totalDataGraph = {
 
   var doughnutDataHealth = [
       {
-        value: 60,
+        value: healthValue,
         color:"#00CC33"
       },
       {
@@ -247,7 +247,7 @@ var totalDataGraph = {
 
   var doughnutDataAssets = [
       {
-        value: 45,
+        value: assetsValue,
         color:"#3399CC"
       },
       {
@@ -258,7 +258,7 @@ var totalDataGraph = {
 
   var doughnutDataMood = [
       {
-        value: 30,
+        value: moodValue,
         color:"#FFCC00"
       },
       {

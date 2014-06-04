@@ -148,6 +148,27 @@ class UsersController extends BaseController {
 		$email = Auth::user()->email;
 		$data['firstname'] = User::where('email', $email)->pluck('first_name');
 		$data['lastname'] = User::where('email', $email)->pluck('last_name');
+
+		$healthValues = DB::table('category_values')
+			->where('user_id', '=', Auth::user()->id)
+			->where('category_id', '=', 2)
+			->get(array('category_value'));
+	
+
+		if($healthValues) {
+
+			$healthArray = array();
+			foreach($healthValues as $value) {
+				$healthArray[] = $value->category_value;
+			} 
+
+			$finalValue = array_sum($healthArray)/count($healthArray);
+
+			$data['healthValue'] = $finalValue;
+		} else {
+			$data['healthValue'] = 0;
+		}	
+
 		return View::make('lifegraphic.health', $data);
 	}
 
@@ -173,6 +194,27 @@ class UsersController extends BaseController {
 		$email = Auth::user()->email;
 		$data['firstname'] = User::where('email', $email)->pluck('first_name');
 		$data['lastname'] = User::where('email', $email)->pluck('last_name');
+
+		$assetsValues = DB::table('category_values')
+			->where('user_id', '=', Auth::user()->id)
+			->where('category_id', '=', 2)
+			->get(array('category_value'));
+	
+
+		if($assetsValues) {
+
+			$assetsArray = array();
+			foreach($assetsValues as $value) {
+				$assetsArray[] = $value->category_value;
+			} 
+
+			$finalValue = array_sum($assetsArray)/count($assetsArray);
+
+			$data['assetsValue'] = $finalValue;
+		} else {
+			$data['assetsValue'] = 0;
+		}
+
 		return View::make('lifegraphic.assets', $data);
 	}
 
@@ -198,6 +240,27 @@ class UsersController extends BaseController {
 		$email = Auth::user()->email;
 		$data['firstname'] = User::where('email', $email)->pluck('first_name');
 		$data['lastname'] = User::where('email', $email)->pluck('last_name');
+
+		$moodValues = DB::table('category_values')
+			->where('user_id', '=', Auth::user()->id)
+			->where('category_id', '=', 2)
+			->get(array('category_value'));
+	
+
+		if($moodValues) {
+
+			$moodArray = array();
+			foreach($moodValues as $value) {
+				$moodArray[] = $value->category_value;
+			} 
+
+			$finalValue = array_sum($moodArray)/count($moodArray);
+
+			$data['moodValue'] = $finalValue;
+		} else {
+			$data['moodValue'] = 0;
+		}
+
 		return View::make('lifegraphic.mood', $data);
 	}
 

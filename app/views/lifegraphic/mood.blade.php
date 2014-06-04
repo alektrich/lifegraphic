@@ -105,11 +105,3 @@
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
 @stop
-
-@section('script')
-<script type="text/javascript">
-  var moodValue = {{$moodValue}};
-
-</script>
-  {{ HTML::script('js/graphics.js') }}
-@stop

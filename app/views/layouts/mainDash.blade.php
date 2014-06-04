@@ -157,4 +157,14 @@
 
   </body>
   @yield('script')
+  <script type="text/javascript">
+  
+    var loveValue = {{$loveValue}};
+    var healthValue = {{$healthValue}};
+    var assetsValue = {{$assetsValue}};
+    var moodValue = {{$moodValue}};
+
+  </script>
+
+  {{ HTML::script('js/graphics.js') }}
 </html>
