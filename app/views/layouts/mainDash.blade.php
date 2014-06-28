@@ -82,6 +82,12 @@
               <p>&nbsp;</p>
             </div>
             <div class="TopsectionDash">
+                @foreach($errors->all() as $error)
+                <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                      {{ $error }}
+                </div>
+                @endforeach
                <div class="Time_divDash">Time: <strong>{{date('h:i',time())}}</strong></div>
                <div class="datestamp_divDash">Date: <strong>{{date('d/m/Y', time())}}</strong></div>
             @yield('content');

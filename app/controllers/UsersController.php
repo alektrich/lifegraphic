@@ -106,13 +106,22 @@ class UsersController extends BaseController {
 	{
 		$inputs = Input::get();
 
+		$rules = array(
+			'loveValue' => 'required',
+			'reasons' => 'array|required'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if($validator->fails()) {
+			return Redirect::to('love')->withErrors($validator);
+		}
+
 		DB::table('category_values')
 			->insert(array(
 				'user_id' => Auth::user()->id,
 				'category_id' => 1,
-				'category_value' => $inputs['loveValue'],
-				'created_at' => date('Y-m-d H:i:s', time()),
-				'updated_at' => date('Y-m-d H:i:s', time())
+				'category_value' => $inputs['loveValue']
 			));
 
 		return Redirect::to('love');
@@ -128,13 +137,22 @@ class UsersController extends BaseController {
 	{
 		$inputs = Input::get();
 
+		$rules = array(
+			'healthValue' => 'required',
+			'reasons' => 'array|required'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if($validator->fails()) {
+			return Redirect::to('health')->withErrors($validator);
+		}
+
 		DB::table('category_values')
 			->insert(array(
 				'user_id' => Auth::user()->id,
 				'category_id' => 2,
-				'category_value' => $inputs['healthValue'],
-				'created_at' => date('Y-m-d H:i:s', time()),
-				'updated_at' => date('Y-m-d H:i:s', time())
+				'category_value' => $inputs['healthValue']
 			));
 
 		return Redirect::to('health');
@@ -150,13 +168,22 @@ class UsersController extends BaseController {
 	{
 		$inputs = Input::get();
 
+		$rules = array(
+			'assetsValue' => 'required',
+			'reasons' => 'array|required'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if($validator->fails()) {
+			return Redirect::to('assets')->withErrors($validator);
+		}
+
 		DB::table('category_values')
 			->insert(array(
 				'user_id' => Auth::user()->id,
 				'category_id' => 3,
-				'category_value' => $inputs['assetsValue'],
-				'created_at' => date('Y-m-d H:i:s', time()),
-				'updated_at' => date('Y-m-d H:i:s', time())
+				'category_value' => $inputs['assetsValue']
 			));
 
 		return Redirect::to('assets');
@@ -172,13 +199,22 @@ class UsersController extends BaseController {
 	{
 		$inputs = Input::get();
 
+		$rules = array(
+			'moodValue' => 'required',
+			'reasons' => 'array|required'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if($validator->fails()) {
+			return Redirect::to('mood')->withErrors($validator);
+		}
+
 		DB::table('category_values')
 			->insert(array(
 				'user_id' => Auth::user()->id,
 				'category_id' => 4,
-				'category_value' => $inputs['moodValue'],
-				'created_at' => date('Y-m-d H:i:s', time()),
-				'updated_at' => date('Y-m-d H:i:s', time())
+				'category_value' => $inputs['moodValue']
 			));
 
 		return Redirect::to('mood');

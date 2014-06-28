@@ -37,37 +37,37 @@
             <div class="control-group reasonCheckboxes">
                 <div class="controls col-md-4">
                     <label class="checkbox">
-                        <input type="checkbox" value="option1" id="inlineCheckbox1"> Headache
+                        {{Form::checkbox('reasons[]', 'headache')}} Headache
                     </label>
                     <label class="checkbox">
-                        <input type="checkbox" value="option2" id="inlineCheckbox2"> Pain
+                        {{Form::checkbox('reasons[]', 'pain')}} Pain
                     </label>
                     <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Sick
+                        {{Form::checkbox('reasons[]', 'sick')}} Sick
                     </label>
 
                 </div>
                 <div class="controls col-md-4">
                     <label class="checkbox">
-                        <input type="checkbox" value="option1" id="inlineCheckbox1"> Awesome training
+                        {{Form::checkbox('reasons[]', 'training')}} Training
                     </label>
                     <label class="checkbox">
-                        <input type="checkbox" value="option2" id="inlineCheckbox2"> High pressure
+                        {{Form::checkbox('reasons[]', 'high-pressure')}} High pressure
                     </label>
 
                     <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Good sleep
+                        {{Form::checkbox('reasons[]', 'good-sleep')}} Good sleep
                     </label>
                 </div>
                 <div class="controls col-md-4">
                     <label class="checkbox">
-                        <input type="checkbox" value="option1" id="inlineCheckbox1"> Bad sleep
+                        {{Form::checkbox('reasons[]', 'bad-sleep')}} Bad sleep
                     </label>
                     <label class="checkbox">
-                        <input type="checkbox" value="option2" id="inlineCheckbox2"> Nervious
+                        {{Form::checkbox('reasons[]', 'nervious')}} Nervious
                     </label>
                     <label class="checkbox">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3"> Great food
+                        {{Form::checkbox('reasons[]', 'great-food')}} Great food
                     </label>
                 </div>
             </div>
