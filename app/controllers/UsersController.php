@@ -98,8 +98,9 @@ class UsersController extends BaseController {
 
 	public function getLove() 
 	{
-		$values = static::getValues();
-		return View::make('lifegraphic.love', $values);
+		$data = static::getValues();
+		$data['reasons'] = CategoryValue::getReasons(1);
+		return View::make('lifegraphic.love', $data);
 	}
 
 	public function postLove() 
@@ -121,7 +122,10 @@ class UsersController extends BaseController {
 			->insert(array(
 				'user_id' => Auth::user()->id,
 				'category_id' => 1,
-				'category_value' => $inputs['loveValue']
+				'category_value' => $inputs['loveValue'],
+				'reasons' => serialize($inputs['reasons']),
+				'created_at' => date('Y-m-d h:i:s', strtotime('now')), 
+				'updated_at' => date('Y-m-d h:i:s', strtotime('now'))
 			));
 
 		return Redirect::to('love');
@@ -129,8 +133,9 @@ class UsersController extends BaseController {
 
 	public function getHealth() 
 	{
-		$values = static::getValues();
-		return View::make('lifegraphic.health', $values);
+		$data = static::getValues();
+		$data['reasons'] = CategoryValue::getReasons(2);
+		return View::make('lifegraphic.health', $data);
 	}
 
 	public function postHealth()
@@ -152,7 +157,10 @@ class UsersController extends BaseController {
 			->insert(array(
 				'user_id' => Auth::user()->id,
 				'category_id' => 2,
-				'category_value' => $inputs['healthValue']
+				'category_value' => $inputs['healthValue'],
+				'reasons' => serialize($inputs['reasons']),
+				'created_at' => date('Y-m-d h:i:s', strtotime('now')), 
+				'updated_at' => date('Y-m-d h:i:s', strtotime('now'))
 			));
 
 		return Redirect::to('health');
@@ -160,8 +168,9 @@ class UsersController extends BaseController {
 
 	public function getAssets() 
 	{
-		$values = static::getValues();
-		return View::make('lifegraphic.assets', $values);
+		$data = static::getValues();
+		$data['reasons'] = CategoryValue::getReasons(3);
+		return View::make('lifegraphic.assets', $data);
 	}
 
 	public function postAssets()
@@ -183,7 +192,10 @@ class UsersController extends BaseController {
 			->insert(array(
 				'user_id' => Auth::user()->id,
 				'category_id' => 3,
-				'category_value' => $inputs['assetsValue']
+				'category_value' => $inputs['assetsValue'],
+				'reasons' => serialize($inputs['reasons']),
+				'created_at' => date('Y-m-d h:i:s', strtotime('now')), 
+				'updated_at' => date('Y-m-d h:i:s', strtotime('now'))
 			));
 
 		return Redirect::to('assets');
@@ -191,8 +203,9 @@ class UsersController extends BaseController {
 
 	public function getMood() 
 	{
-		$values = static::getValues();
-		return View::make('lifegraphic.mood', $values);
+		$data = static::getValues();
+		$data['reasons'] = CategoryValue::getReasons(4);
+		return View::make('lifegraphic.mood', $data);
 	}
 
 	public function postMood() 
@@ -214,7 +227,10 @@ class UsersController extends BaseController {
 			->insert(array(
 				'user_id' => Auth::user()->id,
 				'category_id' => 4,
-				'category_value' => $inputs['moodValue']
+				'category_value' => $inputs['moodValue'],
+				'reasons' => serialize($inputs['reasons']),
+				'created_at' => date('Y-m-d h:i:s', strtotime('now')), 
+				'updated_at' => date('Y-m-d h:i:s', strtotime('now'))
 			));
 
 		return Redirect::to('mood');

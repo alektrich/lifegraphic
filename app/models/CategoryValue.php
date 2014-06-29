@@ -101,4 +101,19 @@ class CategoryValue extends Eloquent {
 		return $moodValue;		
 	}
 
+	public static function getReasons($categoryId) {
+		$reasonsSerialized = static::where('user_id', '=', Auth::user()->id)
+					->where('category_id', '=', $categoryId)
+					->pluck('reasons');
+	
+		if($reasonsSerialized) 
+		{
+			$reasons = unserialize($reasonsSerialized);
+		} else {
+			$reasons = array();
+		}			
+
+		return $reasons;			
+	} 
+
 }

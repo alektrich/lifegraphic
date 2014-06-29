@@ -24,8 +24,8 @@
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p class="reasonLabel"><strong>Reason?</strong> 
-            <button data-target="#addAssetsReason" data-toggle="modal" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
-            <!-- <button class="btn btn-danger btn-xs reasonButton"><i class="glyphicon glyphicon-minus"></i> Remove</button> -->
+            <button data-target="#addAssetsReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
+            <button data-target="#viewAssetsReasons" data-toggle="modal" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye"></i> View Reasons</button>
           </p>
 
           <div class="Reason_divDash">
@@ -104,5 +104,31 @@
                 </div><!-- /.modal-content -->
               </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
+
+            <div class="modal fade" id="viewAssetsReasons" tabindex="-1" role="dialog" aria-labelledby="viewReasonsLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="viewReasonsLabel">Your Assets Reasons:</h4>
+                </div>
+                <div class="modal-body">
+                  @if(empty($reasons))
+                  <p>No reasons chosen ...</p>
+                  @else
+                  <ul>
+                    @foreach($reasons as $reason)
+                      <li>{{$reason}}</li>
+                    @endforeach
+                  </ul> 
+                  @endif
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+          
         @stop
 
