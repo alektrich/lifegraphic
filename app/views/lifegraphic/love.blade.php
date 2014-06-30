@@ -5,7 +5,7 @@
 
       <div class="lovebar_divDash">Love Bar</div>
      
-      <button type="submit" class="submitButton">Submit values</button>
+      <button type="submit" class="submitButton"></button>
       <div class="subtitle_divDash"><strong>How's your love life Today?</strong>
 
          <div class="btn-group rateButtons">

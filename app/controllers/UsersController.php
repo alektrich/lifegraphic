@@ -97,10 +97,14 @@ class UsersController extends BaseController {
 	}
 
 	public function getLove() 
-	{
-		$data = static::getValues();
-		$data['reasons'] = CategoryValue::getReasons(1);
-		return View::make('lifegraphic.love', $data);
+	{	
+		if(Auth::check()) {
+			$data = static::getValues();
+			$data['reasons'] = CategoryValue::getReasons(1);
+			return View::make('lifegraphic.love', $data);
+		} else {
+			return Redirect::to('/');
+		}
 	}
 
 	public function postLove() 
@@ -132,10 +136,14 @@ class UsersController extends BaseController {
 	}
 
 	public function getHealth() 
-	{
-		$data = static::getValues();
-		$data['reasons'] = CategoryValue::getReasons(2);
-		return View::make('lifegraphic.health', $data);
+	{	
+		if(Auth::check()) {
+			$data = static::getValues();
+			$data['reasons'] = CategoryValue::getReasons(2);
+			return View::make('lifegraphic.health', $data);
+		} else {
+			return Redirect::to('/');
+		}
 	}
 
 	public function postHealth()
@@ -167,10 +175,14 @@ class UsersController extends BaseController {
 	}
 
 	public function getAssets() 
-	{
-		$data = static::getValues();
-		$data['reasons'] = CategoryValue::getReasons(3);
-		return View::make('lifegraphic.assets', $data);
+	{	
+		if(Auth::check()) {
+			$data = static::getValues();
+			$data['reasons'] = CategoryValue::getReasons(3);
+			return View::make('lifegraphic.assets', $data);
+		} else {
+			return Redirect::to('/');
+		}
 	}
 
 	public function postAssets()
@@ -202,10 +214,14 @@ class UsersController extends BaseController {
 	}
 
 	public function getMood() 
-	{
-		$data = static::getValues();
-		$data['reasons'] = CategoryValue::getReasons(4);
-		return View::make('lifegraphic.mood', $data);
+	{	
+		if(Auth::check()) {
+			$data = static::getValues();
+			$data['reasons'] = CategoryValue::getReasons(4);
+			return View::make('lifegraphic.mood', $data);
+		} else {
+			return Redirect::to('/');
+		}
 	}
 
 	public function postMood() 

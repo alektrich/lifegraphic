@@ -4,7 +4,7 @@
  
        
         <div class="healthbar_divDash">Health Bar</div>
-        <button type="submit" class="submitButton">Submit values</button>
+        <button type="submit" class="submitButton"></button>
         <div class="historygraphbox_divDash">
           <div class="historygraphDash historygraphDashHealth">Your Health History</div>
           <canvas id="historyGraphCanvasHealth" width="280" height="150"></canvas>

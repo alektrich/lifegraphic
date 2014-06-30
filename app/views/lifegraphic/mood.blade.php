@@ -5,7 +5,7 @@
 
       <div class="moodbar_divDash">Mood Bar</div>
      
-      <button type="submit" class="submitButton">Submit values</button>
+      <button type="submit" class="submitButton"></button>
       <div class="subtitle_divDash"><strong>How's your mood today?</strong>
 
          <div class="btn-group rateButtons">
