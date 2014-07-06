@@ -279,4 +279,14 @@ class UsersController extends BaseController {
 		return $data;
 	}
 
+	public function postAddReason($cat) {
+
+		$inputs = Input::get();
+		$reason = new Reason;
+		$reason->category = $cat;
+		$reason->name = $inputs[$cat.'ReasonNew'];
+
+		$reason->save();
+	}
+
 }
