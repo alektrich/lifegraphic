@@ -101,7 +101,8 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['reasons'] = CategoryValue::getReasons(1);
-			return View::make('lifegraphic.love', $data);
+			$modal['addReason'] = 'love';
+			return View::make('lifegraphic.love', $data)->nest('addReasonModal', 'lifegraphic.addReason', $modal);
 		} else {
 			return Redirect::to('/');
 		}
@@ -140,7 +141,8 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['reasons'] = CategoryValue::getReasons(2);
-			return View::make('lifegraphic.health', $data);
+			$modal['addReason'] = 'health';
+			return View::make('lifegraphic.health', $data)->nest('addReasonModal', 'lifegraphic.addReason', $modal);
 		} else {
 			return Redirect::to('/');
 		}
@@ -179,7 +181,8 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['reasons'] = CategoryValue::getReasons(3);
-			return View::make('lifegraphic.assets', $data);
+			$modal['addReason'] = 'assets';
+			return View::make('lifegraphic.assets', $data)->nest('addReasonModal', 'lifegraphic.addReason', $modal);
 		} else {
 			return Redirect::to('/');
 		}
@@ -218,7 +221,8 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['reasons'] = CategoryValue::getReasons(4);
-			return View::make('lifegraphic.mood', $data);
+			$modal['addReason'] = 'mood';
+			return View::make('lifegraphic.mood', $data)->nest('addReasonModal', 'lifegraphic.addReason', $modal);
 		} else {
 			return Redirect::to('/');
 		}

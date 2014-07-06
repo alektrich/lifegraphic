@@ -25,7 +25,7 @@
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p class="reasonLabel"><strong>Reason?</strong> 
-            <button data-target="#addMoodReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
+            <button data-target="#addmoodReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
             <button data-target="#viewMoodReasons" data-toggle="modal" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye"></i> View Reasons</button>
           </p>
 
@@ -73,37 +73,7 @@
             {{Form::close()}}
           </div>
          
-          <div class="modal fade" id="addMoodReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
-                </div>
-                <div class="modal-body">
-                  {{Form::open()}}
-                  {{Form::label('Reason names')}}<br/>
-                  <div class="input-group input-group-sm">
-                    <span class="input-group-addon">1</span>
-                    {{Form::text('moodReason1', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
-                  </div>
-                  <div class="input-group input-group-sm">
-                    <span class="input-group-addon">2</span>  
-                    {{Form::text('moodReason2', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
-                  </div>
-                  <div class="input-group input-group-sm">
-                    <span class="input-group-addon">3</span>  
-                    {{Form::text('moodReason3', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
-                  </div>  
-                </div>
-                <div class="modal-footer">
-                  {{Form::submit('Add Reason', array('class' => 'btn btn-small btn-success'))}}
-                  {{Form::close()}}
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
+          {{$addReasonModal}}
 
           <div class="modal fade" id="viewMoodReasons" tabindex="-1" role="dialog" aria-labelledby="viewReasonsLabel" aria-hidden="true">
             <div class="modal-dialog">

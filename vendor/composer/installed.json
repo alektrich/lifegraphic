@@ -89,103 +89,6 @@
         ]
     },
     {
-        "name": "phpseclib/phpseclib",
-        "version": "0.3.6",
-        "version_normalized": "0.3.6.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/phpseclib/phpseclib.git",
-            "reference": "0ea31d9b65d49a8661e93bec19f44e989bd34c69"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/0ea31d9b65d49a8661e93bec19f44e989bd34c69",
-            "reference": "0ea31d9b65d49a8661e93bec19f44e989bd34c69",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.0.0"
-        },
-        "require-dev": {
-            "squizlabs/php_codesniffer": "1.*"
-        },
-        "suggest": {
-            "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
-            "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
-            "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP < 4.3.3."
-        },
-        "time": "2014-02-28 16:05:05",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "0.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Crypt": "phpseclib/",
-                "File": "phpseclib/",
-                "Math": "phpseclib/",
-                "Net": "phpseclib/",
-                "System": "phpseclib/"
-            },
-            "files": [
-                "phpseclib/Crypt/Random.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "include-path": [
-            "phpseclib/"
-        ],
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jim Wigginton",
-                "email": "terrafrost@php.net",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Patrick Monnerat",
-                "email": "pm@datasphere.ch",
-                "role": "Developer"
-            },
-            {
-                "name": "Andreas Fischer",
-                "email": "bantu@phpbb.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Hans-Jürgen Petrich",
-                "email": "petrich@tronic-media.com",
-                "role": "Developer"
-            }
-        ],
-        "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
-        "homepage": "http://phpseclib.sourceforge.net",
-        "keywords": [
-            "BigInteger",
-            "aes",
-            "asn.1",
-            "asn1",
-            "blowfish",
-            "crypto",
-            "cryptography",
-            "encryption",
-            "rsa",
-            "security",
-            "sftp",
-            "signature",
-            "signing",
-            "ssh",
-            "twofish",
-            "x.509",
-            "x509"
-        ]
-    },
-    {
         "name": "nikic/php-parser",
         "version": "v0.9.4",
         "version_normalized": "0.9.4.0",
@@ -622,53 +525,6 @@
             }
         ],
         "description": "Allows installation of Components via Composer."
-    },
-    {
-        "name": "components/jquery",
-        "version": "1.11.x-dev",
-        "version_normalized": "1.11.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/components/jquery.git",
-            "reference": "c20fd94f83db26dfdce5f37ce5d6cbe0e907a05b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/components/jquery/zipball/c20fd94f83db26dfdce5f37ce5d6cbe0e907a05b",
-            "reference": "c20fd94f83db26dfdce5f37ce5d6cbe0e907a05b",
-            "shasum": ""
-        },
-        "require": {
-            "robloach/component-installer": "*"
-        },
-        "time": "2014-01-24 21:17:36",
-        "type": "component",
-        "extra": {
-            "component": {
-                "scripts": [
-                    "jquery.js"
-                ],
-                "files": [
-                    "jquery.min.js",
-                    "jquery-migrate.js",
-                    "jquery-migrate.min.js"
-                ]
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "John Resig",
-                "email": "jeresig@gmail.com",
-                "homepage": "http://ejohn.org/"
-            }
-        ],
-        "description": "jQuery JavaScript Library",
-        "homepage": "http://jquery.com"
     },
     {
         "name": "stack/builder",
@@ -1895,5 +1751,151 @@
             "mail",
             "mailer"
         ]
+    },
+    {
+        "name": "phpseclib/phpseclib",
+        "version": "0.3.7",
+        "version_normalized": "0.3.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpseclib/phpseclib.git",
+            "reference": "8b8c62f278e363b75ddcacaf5803710232fbd3e4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8b8c62f278e363b75ddcacaf5803710232fbd3e4",
+            "reference": "8b8c62f278e363b75ddcacaf5803710232fbd3e4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.0"
+        },
+        "require-dev": {
+            "phing/phing": "2.7.*",
+            "phpunit/phpunit": "4.0.*",
+            "squizlabs/php_codesniffer": "1.*"
+        },
+        "suggest": {
+            "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
+            "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
+            "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP < 4.3.3."
+        },
+        "time": "2014-07-05 16:36:21",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Crypt": "phpseclib/",
+                "File": "phpseclib/",
+                "Math": "phpseclib/",
+                "Net": "phpseclib/",
+                "System": "phpseclib/"
+            },
+            "files": [
+                "phpseclib/Crypt/Random.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            "phpseclib/"
+        ],
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jim Wigginton",
+                "email": "terrafrost@php.net",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Patrick Monnerat",
+                "email": "pm@datasphere.ch",
+                "role": "Developer"
+            },
+            {
+                "name": "Andreas Fischer",
+                "email": "bantu@phpbb.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Hans-Jürgen Petrich",
+                "email": "petrich@tronic-media.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
+        "homepage": "http://phpseclib.sourceforge.net",
+        "keywords": [
+            "BigInteger",
+            "aes",
+            "asn.1",
+            "asn1",
+            "blowfish",
+            "crypto",
+            "cryptography",
+            "encryption",
+            "rsa",
+            "security",
+            "sftp",
+            "signature",
+            "signing",
+            "ssh",
+            "twofish",
+            "x.509",
+            "x509"
+        ]
+    },
+    {
+        "name": "components/jquery",
+        "version": "1.11.x-dev",
+        "version_normalized": "1.11.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/components/jquery.git",
+            "reference": "950ba6f21f2b5fab0195a11728cc83c5b147c594"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/components/jquery/zipball/950ba6f21f2b5fab0195a11728cc83c5b147c594",
+            "reference": "950ba6f21f2b5fab0195a11728cc83c5b147c594",
+            "shasum": ""
+        },
+        "require": {
+            "robloach/component-installer": "*"
+        },
+        "time": "2014-07-02 11:53:01",
+        "type": "component",
+        "extra": {
+            "component": {
+                "scripts": [
+                    "jquery.js"
+                ],
+                "files": [
+                    "jquery.min.js",
+                    "jquery-migrate.js",
+                    "jquery-migrate.min.js"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "John Resig",
+                "email": "jeresig@gmail.com",
+                "homepage": "http://ejohn.org/"
+            }
+        ],
+        "description": "jQuery JavaScript Library",
+        "homepage": "http://jquery.com"
     }
 ]
