@@ -101,8 +101,7 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['reasons'] = CategoryValue::getReasons(1);
-			$modal['addReason'] = 'love';
-			return View::make('lifegraphic.love', $data)->nest('addReasonModal', 'lifegraphic.addReason', $modal);
+			return View::make('lifegraphic.love', $data);
 		} else {
 			return Redirect::to('/');
 		}
@@ -141,8 +140,7 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['reasons'] = CategoryValue::getReasons(2);
-			$modal['addReason'] = 'health';
-			return View::make('lifegraphic.health', $data)->nest('addReasonModal', 'lifegraphic.addReason', $modal);
+			return View::make('lifegraphic.health', $data);
 		} else {
 			return Redirect::to('/');
 		}
@@ -181,8 +179,7 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['reasons'] = CategoryValue::getReasons(3);
-			$modal['addReason'] = 'assets';
-			return View::make('lifegraphic.assets', $data)->nest('addReasonModal', 'lifegraphic.addReason', $modal);
+			return View::make('lifegraphic.assets', $data);
 		} else {
 			return Redirect::to('/');
 		}
@@ -221,8 +218,7 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['reasons'] = CategoryValue::getReasons(4);
-			$modal['addReason'] = 'mood';
-			return View::make('lifegraphic.mood', $data)->nest('addReasonModal', 'lifegraphic.addReason', $modal);
+			return View::make('lifegraphic.mood', $data);
 		} else {
 			return Redirect::to('/');
 		}
@@ -279,14 +275,33 @@ class UsersController extends BaseController {
 		return $data;
 	}
 
-	public function postAddReason($cat) {
-
+	//Note: Leave the code like this for now, but reorganize later for MVC Laravel structure
+	public function postReason() {
 		$inputs = Input::get();
-		$reason = new Reason;
-		$reason->category = $cat;
-		$reason->name = $inputs[$cat.'ReasonNew'];
 
-		$reason->save();
+		$newReason = $inputs['reason'];
+		$category = $inputs['category'];
+
+		$rules = array(
+			'reason' => 'required|max:15',
+			'category' => 'reqired'
+		);
+
+		$categoryId = (int)Category::where('name', '=', $category)->pluck('id');
+
+		$validator = Validator::make($inputs, $rules);
+
+		if($validator->fails()) {
+			return Redirect::to($category)->withErrors($validator);
+		}
+
+		$newReason = new Reason;
+
+		$newReason->user_id = Auth::user()->id;
+		$newReason->category_id = $categoryId;
+		$newReason->reason_text = $reason;
+
+		$newReson->save(); 
 	}
 
 }
