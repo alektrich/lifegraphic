@@ -72,8 +72,6 @@
             {{Form::close()}}
           </div>
 
-          {{$addReasonModal}}
-
           <div class="modal fade" id="addAssetsReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">

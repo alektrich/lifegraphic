@@ -73,7 +73,7 @@
             {{Form::close()}}
           </div>
          
-          <div class="modal fade" id="addHealthReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
+          <div class="modal fade" id="addMoodReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
