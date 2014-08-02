@@ -86,7 +86,7 @@
                   {{Form::label('Reason names')}}<br/>
                   <div class="input-group input-group-sm">
                     <span class="input-group-addon">New</span>
-                    {{Form::text('reason', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
+                    {{Form::text('reason', null, array('class' => 'form-control', 'placeholder' => 'Enter Reason\'s name'))}}
                     {{Form::hidden('category', 'health')}}
                   </div>
                 </div>

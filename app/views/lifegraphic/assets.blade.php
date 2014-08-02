@@ -24,7 +24,7 @@
           <p>&nbsp;</p>
           <p>&nbsp;</p>
           <p class="reasonLabel"><strong>Reason?</strong> 
-            <button data-target="#addassetsReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
+            <button data-target="#addAssetsReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
             <button data-target="#viewAssetsReasons" data-toggle="modal" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye"></i> View Reasons</button>
           </p>
 
@@ -74,7 +74,32 @@
 
           {{$addReasonModal}}
 
-          <div class="modal fade" id="viewAssetsReasons" tabindex="-1" role="dialog" aria-labelledby="viewReasonsLabel" aria-hidden="true">
+          <div class="modal fade" id="addAssetsReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
+                </div>
+                <div class="modal-body">
+                  {{Form::open(array('url' => 'reason/assets/new'))}}
+                  {{Form::label('Reason names')}}<br/>
+                  <div class="input-group input-group-sm">
+                    <span class="input-group-addon">New</span>
+                    {{Form::text('reason', null, array('class' => 'form-control', 'placeholder' => 'Enter Reason\'s name'))}}
+                    {{Form::hidden('category', 'assets')}}
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  {{Form::submit('Add Reason', array('class' => 'btn btn-small btn-success'))}}
+                  {{Form::close()}}
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+            <div class="modal fade" id="viewAssetsReasons" tabindex="-1" role="dialog" aria-labelledby="viewReasonsLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">

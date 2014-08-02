@@ -83,11 +83,12 @@
                   <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
                 </div>
                 <div class="modal-body">
-                  {{Form::open()}}
+                  {{Form::open(array('url' => 'reason/love/new'))}}
                   {{Form::label('Reason names')}}<br/>
                   <div class="input-group input-group-sm">
-                    <span class="input-group-addon">1</span>
-                    {{Form::text('reason', null, array('class' => 'form-control', 'placeholder' => 'Enter New Reason\'s name'))}}
+                    <span class="input-group-addon">New</span>
+                    {{Form::text('reason', null, array('class' => 'form-control', 'placeholder' => 'Enter Reason\'s name'))}}
+                    {{Form::hidden('category', 'love')}}
                   </div>
                 </div>
                 <div class="modal-footer">
