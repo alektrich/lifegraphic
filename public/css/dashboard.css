@@ -172,7 +172,7 @@
   height: 100px;
   width: 400px;
   margin-left: 30px;
-  overflow: scroll;
+  overflow: auto;
 }
 .rankingbox1_divDash {
   float: left;

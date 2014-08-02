@@ -36,37 +36,28 @@
             <div class="control-group reasonCheckboxes">
                 <div class="controls col-md-4">
                     <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'headache')}} Headache
+                        {{Form::checkbox('reasons[]', 'fitness')}} Fitness
                     </label>
                     <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'pain')}} Pain
+                        {{Form::checkbox('reasons[]', 'badsleep')}} Bad Sleep
+                    </label>
+                  
+                </div>
+                <div class="controls col-md-4">
+                    <label class="checkbox">
+                        {{Form::checkbox('reasons[]', 'diet')}} Diet
+                    </label>
+                    <label class="checkbox">
+                        {{Form::checkbox('reasons[]', 'weightloss')}} Weight Loss
+                    </label>
+
+                </div>
+                <div class="controls col-md-4">
+                    <label class="checkbox">
+                        {{Form::checkbox('reasons[]', 'overweight')}} Overweight
                     </label>
                     <label class="checkbox">
                         {{Form::checkbox('reasons[]', 'sick')}} Sick
-                    </label>
-
-                </div>
-                <div class="controls col-md-4">
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'training')}} Training
-                    </label>
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'high-pressure')}} High pressure
-                    </label>
-
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'good-sleep')}} Good sleep
-                    </label>
-                </div>
-                <div class="controls col-md-4">
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'bad-sleep')}} Bad sleep
-                    </label>
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'nervious')}} Nervious
-                    </label>
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'great-food')}} Great food
                     </label>
                 </div>
             </div>

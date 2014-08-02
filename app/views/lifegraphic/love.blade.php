@@ -37,43 +37,33 @@
             <div class="control-group reasonCheckboxes">
                 <div class="controls col-md-4">
                     <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'headache')}} Headache
+                        {{Form::checkbox('reasons[]', 'argument')}} Argument
                     </label>
                     <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'pain')}} Pain
+                        {{Form::checkbox('reasons[]', 'intimacy')}} Intimacy
+                    </label>
+                  
+                </div>
+                <div class="controls col-md-4">
+                    <label class="checkbox">
+                        {{Form::checkbox('reasons[]', 'kissing')}} Kissing
                     </label>
                     <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'sick')}} Sick
+                        {{Form::checkbox('reasons[]', 'sex')}} Sex
                     </label>
 
                 </div>
                 <div class="controls col-md-4">
                     <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'training')}} Training
+                        {{Form::checkbox('reasons[]', 'friendship')}} Friendship
                     </label>
                     <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'high-pressure')}} High pressure
-                    </label>
-
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'good-sleep')}} Good sleep
-                    </label>
-                </div>
-                <div class="controls col-md-4">
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'bad-sleep')}} Bad sleep
-                    </label>
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'nervious')}} Nervious
-                    </label>
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'great-food')}} Great food
+                        {{Form::checkbox('reasons[]', 'loneliness')}} Loneliness
                     </label>
                 </div>
             </div>
             {{Form::close()}}
           </div>
-
 
           <div class="modal fade" id="addLoveReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
             <div class="modal-dialog">
