@@ -101,7 +101,7 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 1);
-			$data['reasonNames'] = $this->generateReasonNames($data['userReasons']);
+			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 1);
 			return View::make('lifegraphic.love', $data);
 		} else {
 			return Redirect::to('/');
@@ -141,7 +141,7 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 2);
-			$data['reasonNames'] = $this->generateReasonNames($data['userReasons']);
+			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 2);
 			return View::make('lifegraphic.health', $data);
 		} else {
 			return Redirect::to('/');
@@ -181,7 +181,7 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 3);
-			$data['reasonNames'] = $this->generateReasonNames($data['userReasons']);
+			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 3);
 			return View::make('lifegraphic.assets', $data);
 		} else {
 			return Redirect::to('/');
@@ -221,7 +221,7 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 4);
-			$data['reasonNames'] = $this->generateReasonNames($data['userReasons']);
+			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 4);
 			return View::make('lifegraphic.mood', $data);
 		} else {
 			return Redirect::to('/');
@@ -333,28 +333,4 @@ class UsersController extends BaseController {
 
 		return Redirect::back();
 	}
-
-	private function generateReasonNames($reasons = array()) {
-		$reasonNames = array();
-		if(!empty($reasons)) {
-			foreach ($reasons as $reason) {
-				$reasonName = '';
-				$reasonWords = explode('-', $reason);
-				for($i=0; $i < count($reasonWords); $i++) {
-					if($i === 0) {
-						$reasonName .= $reasonWords[$i];
-					} else {
-						$reasonName .= ' ' . $reasonWords[$i];
-					}
-				}
-
-				$reasonNames[] = $reasonName; 
-			}
-
-			return $reasonNames;
-		}
-
-		return array();
-	}
-
 }
