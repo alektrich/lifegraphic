@@ -100,7 +100,8 @@ class UsersController extends BaseController {
 	{	
 		if(Auth::check()) {
 			$data = static::getValues();
-			$data['reasons'] = CategoryValue::getReasons(1);
+			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 1);
+			$data['reasonNames'] = $this->generateReasonNames($data['userReasons']);
 			return View::make('lifegraphic.love', $data);
 		} else {
 			return Redirect::to('/');
@@ -139,7 +140,8 @@ class UsersController extends BaseController {
 	{	
 		if(Auth::check()) {
 			$data = static::getValues();
-			$data['reasons'] = CategoryValue::getReasons(2);
+			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 2);
+			$data['reasonNames'] = $this->generateReasonNames($data['userReasons']);
 			return View::make('lifegraphic.health', $data);
 		} else {
 			return Redirect::to('/');
@@ -178,7 +180,8 @@ class UsersController extends BaseController {
 	{	
 		if(Auth::check()) {
 			$data = static::getValues();
-			$data['reasons'] = CategoryValue::getReasons(3);
+			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 3);
+			$data['reasonNames'] = $this->generateReasonNames($data['userReasons']);
 			return View::make('lifegraphic.assets', $data);
 		} else {
 			return Redirect::to('/');
@@ -217,7 +220,8 @@ class UsersController extends BaseController {
 	{	
 		if(Auth::check()) {
 			$data = static::getValues();
-			$data['reasons'] = CategoryValue::getReasons(4);
+			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 4);
+			$data['reasonNames'] = $this->generateReasonNames($data['userReasons']);
 			return View::make('lifegraphic.mood', $data);
 		} else {
 			return Redirect::to('/');
@@ -316,17 +320,41 @@ class UsersController extends BaseController {
 		$checkReason = Reason::where('user_id', '=', $userId)->where('category_id', '=', $categoryId)->lists('reason_text');
 
 		if(in_array($reasonText, $checkReason)) {
-			Session::flash('alert', '<p class="alert alert-warning">Reason already exists.</p>');
-			return Redirect::back();
+			// Session::flash('alert', '<p class="alert alert-warning">Reason already exists.</p>');
+			return Redirect::back()->with('warning', 'Reason already exists.');
 		}
 
 		$newReason->user_id = $userId;
 		$newReason->category_id = $categoryId;
-		$newReason->reason_text = $reasonText;
+		$newReason->reason = $reasonText;
+		$newReason->reason_text = $inputs['reason'];
 
 		$newReason->save(); 
 
 		return Redirect::back();
+	}
+
+	private function generateReasonNames($reasons = array()) {
+		$reasonNames = array();
+		if(!empty($reasons)) {
+			foreach ($reasons as $reason) {
+				$reasonName = '';
+				$reasonWords = explode('-', $reason);
+				for($i=0; $i < count($reasonWords); $i++) {
+					if($i === 0) {
+						$reasonName .= $reasonWords[$i];
+					} else {
+						$reasonName .= ' ' . $reasonWords[$i];
+					}
+				}
+
+				$reasonNames[] = $reasonName; 
+			}
+
+			return $reasonNames;
+		}
+
+		return array();
 	}
 
 }

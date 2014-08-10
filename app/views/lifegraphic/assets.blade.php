@@ -40,7 +40,15 @@
                     <label class="checkbox">
                         {{Form::checkbox('reasons[]', 'debt')}} Debt
                     </label>
-                  
+                    @if(count($userReasons) > 0)
+                      @for($i=0; $i < count($userReasons); $i++)
+                        @if($i % 3 === 0)
+                        <label class="checkbox">
+                          {{Form::checkbox('reasons[]', $userReasons[$i])}} {{$reasonNames[$i]}}
+                        </label>
+                        @endif
+                      @endfor  
+                    @endif
                 </div>
                 <div class="controls col-md-4">
                     <label class="checkbox">
