@@ -58,7 +58,15 @@
                     <label class="checkbox">
                         {{Form::checkbox('reasons[]', 'depressed')}} Depressed
                     </label>
-
+                    @if(count($userReasons) > 0)
+                      @for($i=0; $i < count($userReasons); $i++)
+                        @if($i % 3 === 1)
+                        <label class="checkbox">
+                          {{Form::checkbox('reasons[]', $userReasons[$i])}} {{$reasonNames[$i]}}
+                        </label>
+                        @endif
+                      @endfor  
+                    @endif
                 </div>
                 <div class="controls col-md-4">
                     <label class="checkbox">
@@ -67,6 +75,15 @@
                     <label class="checkbox">
                         {{Form::checkbox('reasons[]', 'relaxed')}} Relaxed
                     </label>
+                    @if(count($userReasons) > 0)
+                      @for($i=0; $i < count($userReasons); $i++)
+                        @if($i % 3 === 2)
+                        <label class="checkbox">
+                          {{Form::checkbox('reasons[]', $userReasons[$i])}} {{$reasonNames[$i]}}
+                        </label>
+                        @endif
+                      @endfor  
+                    @endif
                 </div>
             </div>
             {{Form::close()}}

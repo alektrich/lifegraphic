@@ -317,11 +317,15 @@ class UsersController extends BaseController {
 
 		$newReason = new Reason;
 
-		$checkReason = Reason::where('user_id', '=', $userId)->where('category_id', '=', $categoryId)->lists('reason_text');
+		$checkReasons = Reason::where('user_id', '=', $userId)->where('category_id', '=', $categoryId)->lists('reason_text');
 
-		if(in_array($reasonText, $checkReason)) {
+		if(in_array($reasonText, $checkReasons)) {
 			// Session::flash('alert', '<p class="alert alert-warning">Reason already exists.</p>');
 			return Redirect::back()->with('warning', 'Reason already exists.');
+		}
+
+		if(count($checkReasons) === 9) {
+			return Redirect::back()->with('warning', 'You cannot add more reasons.');
 		}
 
 		$newReason->user_id = $userId;
