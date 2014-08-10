@@ -275,19 +275,20 @@ class UsersController extends BaseController {
 		return $data;
 	}
 
-	//Note: Leave the code like this for now, but reorganize later for MVC Laravel structure
+	//Note: Leave the code like this for now, but reorganize later for better MVC Laravel structure
 	public function postReason() {
 		$inputs = Input::get();
 
-		$newReason = $inputs['reason'];
+		$reason   = strtolower($inputs['reason']);
 		$category = $inputs['category'];
 
 		$rules = array(
-			'reason' => 'required|max:15',
-			'category' => 'reqired'
+			'reason' => 'required|max:19',
+			'category' => 'required'
 		);
 
 		$categoryId = (int)Category::where('name', '=', $category)->pluck('id');
+		$userId = Auth::user()->id;
 
 		$validator = Validator::make($inputs, $rules);
 
@@ -295,13 +296,37 @@ class UsersController extends BaseController {
 			return Redirect::to($category)->withErrors($validator);
 		}
 
+		$reasonWords = explode(' ', $reason);
+		// dd($reasonWords);
+		$reasonText = '';
+		if(count($reasonWords) > 1) {
+			for($i = 0; $i < count($reasonWords); $i++) {
+				if($i === 0) {
+					$reasonText .= $reasonWords[$i];
+				} else {
+					$reasonText .= '-' . $reasonWords[$i];
+				}
+			}
+		} else {
+			$reasonText = $reasonWords[0];
+		}
+
 		$newReason = new Reason;
 
-		$newReason->user_id = Auth::user()->id;
-		$newReason->category_id = $categoryId;
-		$newReason->reason_text = $reason;
+		$checkReason = Reason::where('user_id', '=', $userId)->where('category_id', '=', $categoryId)->lists('reason_text');
 
-		$newReson->save(); 
+		if(in_array($reasonText, $checkReason)) {
+			Session::flash('alert', '<p class="alert alert-warning">Reason already exists.</p>');
+			return Redirect::back();
+		}
+
+		$newReason->user_id = $userId;
+		$newReason->category_id = $categoryId;
+		$newReason->reason_text = $reasonText;
+
+		$newReason->save(); 
+
+		return Redirect::back();
 	}
 
 }

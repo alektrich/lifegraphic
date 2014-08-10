@@ -48,3 +48,5 @@ Route::post('mood', 'UsersController@postMood');
 
 Route::post('health', 'UsersController@postHealth');
 
+Route::post('reason/new', 'UsersController@postReason');
+

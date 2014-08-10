@@ -39,7 +39,7 @@
                         {{Form::checkbox('reasons[]', 'fitness')}} Fitness
                     </label>
                     <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'badsleep')}} Bad Sleep
+                        {{Form::checkbox('reasons[]', 'bad-sleep')}} Bad Sleep
                     </label>
                   
                 </div>
@@ -48,7 +48,7 @@
                         {{Form::checkbox('reasons[]', 'diet')}} Diet
                     </label>
                     <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'weightloss')}} Weight Loss
+                        {{Form::checkbox('reasons[]', 'weight-loss')}} Weight Loss
                     </label>
 
                 </div>
@@ -73,7 +73,7 @@
                   <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
                 </div>
                 <div class="modal-body">
-                  {{Form::open(array('url' => 'reason/health/new'))}}
+                  {{Form::open(array('url' => 'reason/new'))}}
                   {{Form::label('Reason names')}}<br/>
                   <div class="input-group input-group-sm">
                     <span class="input-group-addon">New</span>

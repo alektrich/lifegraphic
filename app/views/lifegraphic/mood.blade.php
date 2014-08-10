@@ -71,7 +71,7 @@
                   <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
                 </div>
                 <div class="modal-body">
-                  {{Form::open(array('url' => 'reason/mood/new'))}}
+                  {{Form::open(array('url' => 'reason/new'))}}
                   {{Form::label('Reason names')}}<br/>
                   <div class="input-group input-group-sm">
                     <span class="input-group-addon">New</span>
