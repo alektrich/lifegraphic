@@ -362,4 +362,13 @@ var totalDataGraph = {
 
 
   });
+
+  $(window).load(function(){
+    $("ol.progtrckr").hide();
+    $("ol.progtrckr").each(function(){
+        $(this).attr("data-progtrckr-steps", 
+                     $(this).children("li").length);
+    });
+    $("ol.progtrckr").show();
+  });
   

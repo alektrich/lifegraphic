@@ -29,7 +29,7 @@
 }
 .progressbarDash {
   float: left;
-  height: auto;
+  height: 60px;
   width: 782px;
   margin-left: 50px;
   /*margin-bottom: 20px;*/
@@ -340,5 +340,62 @@ button.submitButton:hover {
 div.navbar-top {
   height: 50px;
   margin-bottom: -20px;
+}
+
+ol.progtrckr {
+  margin: 0;
+  padding: 0;
+  list-style-type none;
+  width: 88%;
+  text-align: center;
+  margin: -9px 0 45px -60px;
+}
+
+ol.progtrckr li {
+  display: inline-block;
+  text-align: center;
+  line-height: 3em;
+}
+
+ol.progtrckr[data-progtrckr-steps="7"] li { width: 10%; }
+ol.progtrckr[data-progtrckr-steps="8"] li { width: 9%; }
+ol.progtrckr[data-progtrckr-steps="9"] li { width: 8%; }
+
+ol.progtrckr li.progtrckr-done {
+    color: black;
+    border-bottom: 4px solid yellowgreen;
+}
+ol.progtrckr li.progtrckr-todo {
+    color: silver; 
+    border-bottom: 4px solid silver;
+}
+
+ol.progtrckr li:after {
+    content: "\00a0\00a0";
+}
+ol.progtrckr li:before {
+    position: relative;
+    bottom: -2.5em;
+    float: left;
+    left: 47%;
+    line-height: 1em;
+}
+ol.progtrckr li.progtrckr-done:before {
+    content: "\2713";
+    color: white;
+    background-color: yellowgreen;
+    height: 1.2em;
+    width: 1.2em;
+    line-height: 1.2em;
+    border: none;
+    border-radius: 1.2em;
+}
+ol.progtrckr li.progtrckr-todo:before {
+    content: "\039F";
+    color: silver;
+    background-color: white;
+    font-size: 1.5em;
+    bottom: -1.6em;
+    /*width: 1.2em;*/
 }
 

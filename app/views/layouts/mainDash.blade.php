@@ -76,11 +76,15 @@
                   <p>&nbsp;</p>
             </div>
             <p>&nbsp;</p>
-            <div class="progressbarDash">
-              <p>&nbsp;</p>
-              <p>&nbsp;</p>
-              <p>&nbsp;</p>
-            </div>
+            <ol class="progtrckr" data-progtrckr-steps="5">
+              <li class="progtrckr-todo">1</li><!--
+           --><li class="progtrckr-todo">2</li><!--
+           --><li class="progtrckr-todo">3</li><!--
+           --><li class="progtrckr-todo">4</li><!--
+           --><li class="progtrckr-todo">5</li><!--
+           --><li class="progtrckr-todo">6</li><!--
+           --><li class="progtrckr-todo">7</li>
+            </ol>
             <div class="TopsectionDash">
                 @foreach($errors->all() as $error)
                 <div class="alert alert-danger">

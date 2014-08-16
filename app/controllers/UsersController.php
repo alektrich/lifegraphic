@@ -98,10 +98,15 @@ class UsersController extends BaseController {
 
 	public function getLove() 
 	{	
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 1);
 			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 1);
+			$data['numberOfSubmissions'] = CategoryValue::where('user_id', '=', Auth::user()->id)
+									->where('category_id', '=', 1)
+									->where('created_at', '>', $last24Hours)
+									->count();
 			return View::make('lifegraphic.love', $data);
 		} else {
 			return Redirect::to('/');
@@ -123,14 +128,27 @@ class UsersController extends BaseController {
 			return Redirect::to('love')->withErrors($validator);
 		}
 
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
+		$now = date('Y-m-d h:i:s', strtotime('now'));
+
+		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
+									->where('category_id', '=', 1)
+									->where('created_at', '>', $last24Hours)
+									->count();
+
+		if($numberOfSubmissions > 7) {
+			return Redirect::back()->with('warning', 'You cannot submit more than 7 times per category per day.');
+		}							
+		// $catValue = new CategoryValue;
+
 		DB::table('category_values')
 			->insert(array(
 				'user_id' => Auth::user()->id,
 				'category_id' => 1,
 				'category_value' => $inputs['loveValue'],
 				'reasons' => serialize($inputs['reasons']),
-				'created_at' => date('Y-m-d h:i:s', strtotime('now')), 
-				'updated_at' => date('Y-m-d h:i:s', strtotime('now'))
+				'created_at' => $now, 
+				'updated_at' => $now
 			));
 
 		return Redirect::to('love');
@@ -138,10 +156,15 @@ class UsersController extends BaseController {
 
 	public function getHealth() 
 	{	
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 2);
 			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 2);
+			$data['numberOfSubmissions'] = CategoryValue::where('user_id', '=', Auth::user()->id)
+									->where('category_id', '=', 2)
+									->where('created_at', '>', $last24Hours)
+									->count();
 			return View::make('lifegraphic.health', $data);
 		} else {
 			return Redirect::to('/');
@@ -163,6 +186,18 @@ class UsersController extends BaseController {
 			return Redirect::to('health')->withErrors($validator);
 		}
 
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
+		$now = date('Y-m-d h:i:s', strtotime('now'));
+
+		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
+									->where('category_id', '=', 2)
+									->where('created_at', '>', $last24Hours)
+									->count();
+
+		if($numberOfSubmissions > 7) {
+			return Redirect::back()->with('warning', 'You cannot submit more than 7 times per category per day.');
+		}
+
 		DB::table('category_values')
 			->insert(array(
 				'user_id' => Auth::user()->id,
@@ -178,10 +213,15 @@ class UsersController extends BaseController {
 
 	public function getAssets() 
 	{	
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 3);
 			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 3);
+			$data['numberOfSubmissions'] = CategoryValue::where('user_id', '=', Auth::user()->id)
+									->where('category_id', '=', 3)
+									->where('created_at', '>', $last24Hours)
+									->count();
 			return View::make('lifegraphic.assets', $data);
 		} else {
 			return Redirect::to('/');
@@ -203,6 +243,18 @@ class UsersController extends BaseController {
 			return Redirect::to('assets')->withErrors($validator);
 		}
 
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
+		$now = date('Y-m-d h:i:s', strtotime('now'));
+
+		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
+									->where('category_id', '=', 3)
+									->where('created_at', '>', $last24Hours)
+									->count();
+
+		if($numberOfSubmissions > 7) {
+			return Redirect::back()->with('warning', 'You cannot submit more than 7 times per category per day.');
+		}
+
 		DB::table('category_values')
 			->insert(array(
 				'user_id' => Auth::user()->id,
@@ -218,10 +270,15 @@ class UsersController extends BaseController {
 
 	public function getMood() 
 	{	
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 4);
 			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 4);
+			$data['numberOfSubmissions'] = CategoryValue::where('user_id', '=', Auth::user()->id)
+									->where('category_id', '=', 4)
+									->where('created_at', '>', $last24Hours)
+									->count();
 			return View::make('lifegraphic.mood', $data);
 		} else {
 			return Redirect::to('/');
@@ -241,6 +298,18 @@ class UsersController extends BaseController {
 
 		if($validator->fails()) {
 			return Redirect::to('mood')->withErrors($validator);
+		}
+
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
+		$now = date('Y-m-d h:i:s', strtotime('now'));
+
+		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
+									->where('category_id', '=', 4)
+									->where('created_at', '>', $last24Hours)
+									->count();
+
+		if($numberOfSubmissions > 7) {
+			return Redirect::back()->with('warning', 'You cannot submit more than 7 times per category per day.');
 		}
 
 		DB::table('category_values')
