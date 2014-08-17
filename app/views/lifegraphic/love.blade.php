@@ -5,7 +5,8 @@
 
       <div class="lovebar_divDash">Love Bar</div>
      
-      <button type="submit" class="submitButton"></button>
+      <!-- <button type="submit" class="submitButton"></button> -->
+      <button class="submit_button submit_button-circle submit_button-caution">Submit</button>
       <div class="subtitle_divDash"><strong>How's your love life Today?</strong>
 
          <div class="btn-group rateButtons">
@@ -22,123 +23,96 @@
       <canvas id="historyGraphCanvasLove" width="280" height="150"></canvas>
     </div>
       
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p class="reasonLabel"><strong>Reason?</strong> 
-            <button data-target="#addLoveReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
-            <button data-target="#viewLoveReasons" data-toggle="modal" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye"></i> View Reasons</button>
-          </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p class="reasonLabel"><strong>Reason?</strong> 
+      <button data-target="#addLoveReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
+      <button data-target="#viewLoveReasons" data-toggle="modal" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye-open"></i> View Submissions</button>
+    </p>
 
-          <div class="Reason_divDash">
-            
-            {{Form::open(array('url' => 'love', 'method' => 'POST', 'class' => 'categoryForm'))}}
-            {{Form::hidden('loveValue', null, array('class' => 'catValue'))}}
-            <div class="control-group reasonCheckboxes">
-                <div class="controls col-md-4">
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'argument')}} Argument
-                    </label>
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'intimacy')}} Intimacy
-                    </label>
-                    @if(count($userReasons) > 0)
-                      @for($i=0; $i < count($userReasons); $i++)
-                        @if($i % 3 === 0)
-                        <label class="checkbox">
-                          {{Form::checkbox('reasons[]', $userReasons[$i])}} {{$reasonNames[$i]}}
-                        </label>
-                        @endif
-                      @endfor  
-                    @endif
-                </div>
-                <div class="controls col-md-4">
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'kissing')}} Kissing
-                    </label>
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'sex')}} Sex
-                    </label>
-                    @if(count($userReasons) > 0)
-                      @for($i=0; $i < count($userReasons); $i++)
-                        @if($i % 3 === 1)
-                        <label class="checkbox">
-                          {{Form::checkbox('reasons[]', $userReasons[$i])}} {{$reasonNames[$i]}}
-                        </label>
-                        @endif
-                      @endfor  
-                    @endif
-                </div>
-                <div class="controls col-md-4">
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'friendship')}} Friendship
-                    </label>
-                    <label class="checkbox">
-                        {{Form::checkbox('reasons[]', 'loneliness')}} Loneliness
-                    </label>
-                    @if(count($userReasons) > 0)
-                      @for($i=0; $i < count($userReasons); $i++)
-                        @if($i % 3 === 2)
-                        <label class="checkbox">
-                          {{Form::checkbox('reasons[]', $userReasons[$i])}} {{$reasonNames[$i]}}
-                        </label>
-                        @endif
-                      @endfor  
-                    @endif
-                </div>
-            </div>
-            {{Form::close()}}
-          </div>
-
-          <div class="modal fade" id="addLoveReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
-                </div>
-                <div class="modal-body">
-                  {{Form::open(array('url' => 'reason/new'))}}
-                  {{Form::label('Reason names')}}<br/>
-                  <div class="input-group input-group-sm">
-                    <span class="input-group-addon">New</span>
-                    {{Form::text('reason', null, array('class' => 'form-control', 'placeholder' => 'Enter Reason\'s name'))}}
-                    {{Form::hidden('category', 'love')}}
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  {{Form::submit('Add Reason', array('class' => 'btn btn-small btn-success'))}}
-                  {{Form::close()}}
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
-
-          <div class="modal fade" id="viewLoveReasons" tabindex="-1" role="dialog" aria-labelledby="viewReasonsLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id="viewReasonsLabel">Your Love Reasons:</h4>
-                </div>
-                <div class="modal-body">
-                  @if(empty($reasons))
-                  <p>No reasons chosen ...</p>
-                  @else
-                  <ul>
-                    @foreach($reasons as $reason)
-                      <li>{{$reason}}</li>
-                    @endforeach
-                  </ul> 
+    <div class="Reason_divDash">
+      
+      {{Form::open(array('url' => 'love', 'method' => 'POST', 'class' => 'categoryForm'))}}
+      {{Form::hidden('loveValue', null, array('class' => 'catValue'))}}
+      <div class="control-group reasonCheckboxes">
+          <div class="controls col-md-4">
+              <label class="checkbox">
+                  {{Form::checkbox('reasons[]', 'argument')}} Argument
+              </label>
+              <label class="checkbox">
+                  {{Form::checkbox('reasons[]', 'intimacy')}} Intimacy
+              </label>
+              @if(count($userReasons) > 0)
+                @for($i=0; $i < count($userReasons); $i++)
+                  @if($i % 3 === 0)
+                  <label class="checkbox">
+                    {{Form::checkbox('reasons[]', $userReasons[$i])}} {{$reasonNames[$i]}}
+                  </label>
                   @endif
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
+                @endfor  
+              @endif
+          </div>
+          <div class="controls col-md-4">
+              <label class="checkbox">
+                  {{Form::checkbox('reasons[]', 'kissing')}} Kissing
+              </label>
+              <label class="checkbox">
+                  {{Form::checkbox('reasons[]', 'sex')}} Sex
+              </label>
+              @if(count($userReasons) > 0)
+                @for($i=0; $i < count($userReasons); $i++)
+                  @if($i % 3 === 1)
+                  <label class="checkbox">
+                    {{Form::checkbox('reasons[]', $userReasons[$i])}} {{$reasonNames[$i]}}
+                  </label>
+                  @endif
+                @endfor  
+              @endif
+          </div>
+          <div class="controls col-md-4">
+              <label class="checkbox">
+                  {{Form::checkbox('reasons[]', 'friendship')}} Friendship
+              </label>
+              <label class="checkbox">
+                  {{Form::checkbox('reasons[]', 'loneliness')}} Loneliness
+              </label>
+              @if(count($userReasons) > 0)
+                @for($i=0; $i < count($userReasons); $i++)
+                  @if($i % 3 === 2)
+                  <label class="checkbox">
+                    {{Form::checkbox('reasons[]', $userReasons[$i])}} {{$reasonNames[$i]}}
+                  </label>
+                  @endif
+                @endfor  
+              @endif
+          </div>
+      </div>
+      {{Form::close()}}
+    </div>
 
-
+    <div class="modal fade" id="addLoveReason" tabindex="-1" role="dialog" aria-labelledby="addReasonLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
+          </div>
+          <div class="modal-body">
+            {{Form::open(array('url' => 'reason/new'))}}
+            {{Form::label('Reason names')}}<br/>
+            <div class="input-group input-group-sm">
+              <span class="input-group-addon">New</span>
+              {{Form::text('reason', null, array('class' => 'form-control', 'placeholder' => 'Enter Reason\'s name'))}}
+              {{Form::hidden('category', 'love')}}
+            </div>
+          </div>
+          <div class="modal-footer">
+            {{Form::submit('Add Reason', array('class' => 'btn btn-small btn-success'))}}
+            {{Form::close()}}
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 @stop

@@ -4,7 +4,8 @@
   
       <div class="assetsbar_divDash">Assets Bar</div>
      
-      <button type="submit" class="submitButton"></button>
+      <!-- <button type="submit" class="submitButton"></button> -->
+      <button class="submit_button submit_button-circle submit_button-primary">Submit</button>
       <div class="subtitle_divDash"><strong>Your Assets Today?</strong>
 
          <div class="btn-group rateButtons">
@@ -25,7 +26,7 @@
           <p>&nbsp;</p>
           <p class="reasonLabel"><strong>Reason?</strong> 
             <button data-target="#addAssetsReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
-            <button data-target="#viewAssetsReasons" data-toggle="modal" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye"></i> View Reasons</button>
+            <button data-target="#viewAssetsReasons" data-toggle="modal" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye-open"></i> View Submissions</button>
           </p>
 
           <div class="Reason_divDash">
@@ -107,31 +108,6 @@
                 <div class="modal-footer">
                   {{Form::submit('Add Reason', array('class' => 'btn btn-small btn-success'))}}
                   {{Form::close()}}
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
-
-            <div class="modal fade" id="viewAssetsReasons" tabindex="-1" role="dialog" aria-labelledby="viewReasonsLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id="viewReasonsLabel">Your Assets Reasons:</h4>
-                </div>
-                <div class="modal-body">
-                  @if(empty($reasons))
-                  <p>No reasons chosen ...</p>
-                  @else
-                  <ul>
-                    @foreach($reasons as $reason)
-                      <li>{{$reason}}</li>
-                    @endforeach
-                  </ul> 
-                  @endif
-                </div>
-                <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div><!-- /.modal-content -->

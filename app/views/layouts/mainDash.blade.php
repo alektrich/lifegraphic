@@ -8,6 +8,7 @@
     {{ HTML::style('css/main.css')}}
     {{ HTML::style('css/dashboard.css')}}
     {{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
+    {{ HTML::style('css/submit_buttons.css') }}
     {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
     {{ HTML::script('packages/bootstrap/js/bootstrap.min.js') }}
     {{ HTML::script('packages/ChartJS/Chart.js') }}
