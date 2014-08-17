@@ -408,4 +408,31 @@ class UsersController extends BaseController {
 
 		return Redirect::back();
 	}
+
+	public function viewSubmissions($category_id) {
+		$submissionData = CategoryValue::where('user_id', '=', Auth::user()->id)
+							->where('category_id', '=', $category_id)->get();
+
+		// dd($submissionData);					
+		if(!$submissionData->isEmpty()) {
+			$values = array();
+			foreach ($submissionData as $data) {
+				$values[] = array(
+					'category_id' => (int)$data->category_id,
+					'date' => $data->created_at->toDateString(),
+					'reasons' => unserialize($data->reasons),
+					'value' => $data->category_value 
+				); 
+			}
+		} else {
+			$values = array();
+		}
+		if(Auth::check()) {
+			$data = static::getValues();
+			$data['submissionValues'] = $values;
+			return View::make('lifegraphic.submissions', $data);
+		} else {
+			return Redirect::to('/');
+		}
+	}
 }

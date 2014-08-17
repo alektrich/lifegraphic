@@ -5,7 +5,7 @@
        
         <div class="healthbar_divDash">Health Bar</div>
         <!-- <button type="submit" class="submitButton"></button> -->
-        <button class="submit_button submit_button-circle submit_button-action">Submit</button>
+        <button type="submit" class="submit_button submit_button-circle submit_button-action">Submit</button>
         <div class="historygraphbox_divDash">
           <div class="historygraphDash historygraphDashHealth">Your Health History</div>
           <canvas id="historyGraphCanvasHealth" width="280" height="150"></canvas>
@@ -27,7 +27,7 @@
         <p>&nbsp;</p>
         <p class="reasonLabel"><strong>Reason?</strong> 
           <button data-target="#addHealthReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
-          <button data-target="#viewHealthReasons" data-toggle="modal" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye-open"></i> View Submissions</button>
+          <a href="{{URL::to('viewSubmissions/2')}}" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye-open"></i> View Submissions</a>
         </p>
 
         <div class="Reason_divDash">

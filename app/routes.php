@@ -38,6 +38,8 @@ Route::get('mood', 'UsersController@getMood');
 
 Route::get('health', 'UsersController@getHealth');
 
+Route::get('viewSubmissions/{category_id}', 'UsersController@viewSubmissions');
+
 //Post
 
 Route::post('love', 'UsersController@postLove');
