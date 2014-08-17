@@ -179,6 +179,7 @@
     var healthValue = {{$healthValue}};
     var assetsValue = {{$assetsValue}};
     var moodValue = {{$moodValue}};
+    var numberOfSubmissions = {{$numberOfSubmissions}};
 
   </script>
 

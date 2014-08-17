@@ -327,6 +327,14 @@ var totalDataGraph = {
       });
  }     
 
+  $(window).load(function(){
+    $("ol.progtrckr").each(function(){
+        $(this).attr("data-progtrckr-steps", 
+                     $(this).children("li").length);
+    });
+    $("ol.progtrckr").show();
+  });
+
   $(document).ready(function() {
 
     var rateButton = $('div.rateButtons button');
@@ -359,16 +367,16 @@ var totalDataGraph = {
       $('form.categoryForm').submit();
     });
 
-
+      (function(){
+        if(numberOfSubmissions > 0) {
+          for(var i = 0; i < numberOfSubmissions; i++) {
+            var basicSelector = 'ol.progtrckr li';
+            var selector = basicSelector.concat(':nth-child(', i+1, ')');
+            $(selector).removeClass('progtrckr-todo').addClass('progtrckr-done');
+          }
+        }
+      })() 
 
   });
 
-  $(window).load(function(){
-    $("ol.progtrckr").hide();
-    $("ol.progtrckr").each(function(){
-        $(this).attr("data-progtrckr-steps", 
-                     $(this).children("li").length);
-    });
-    $("ol.progtrckr").show();
-  });
   

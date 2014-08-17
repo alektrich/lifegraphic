@@ -136,7 +136,7 @@ class UsersController extends BaseController {
 									->where('created_at', '>', $last24Hours)
 									->count();
 
-		if($numberOfSubmissions > 7) {
+		if($numberOfSubmissions >= 7) {
 			return Redirect::back()->with('warning', 'You cannot submit more than 7 times per category per day.');
 		}							
 		// $catValue = new CategoryValue;
@@ -165,6 +165,7 @@ class UsersController extends BaseController {
 									->where('category_id', '=', 2)
 									->where('created_at', '>', $last24Hours)
 									->count();
+			// dd($data['numberOfSubmissions']);						
 			return View::make('lifegraphic.health', $data);
 		} else {
 			return Redirect::to('/');
@@ -193,8 +194,9 @@ class UsersController extends BaseController {
 									->where('category_id', '=', 2)
 									->where('created_at', '>', $last24Hours)
 									->count();
+		// dd($numberOfSubmissions);							
 
-		if($numberOfSubmissions > 7) {
+		if($numberOfSubmissions >= 7) {
 			return Redirect::back()->with('warning', 'You cannot submit more than 7 times per category per day.');
 		}
 
@@ -251,7 +253,7 @@ class UsersController extends BaseController {
 									->where('created_at', '>', $last24Hours)
 									->count();
 
-		if($numberOfSubmissions > 7) {
+		if($numberOfSubmissions >= 7) {
 			return Redirect::back()->with('warning', 'You cannot submit more than 7 times per category per day.');
 		}
 
@@ -308,7 +310,7 @@ class UsersController extends BaseController {
 									->where('created_at', '>', $last24Hours)
 									->count();
 
-		if($numberOfSubmissions > 7) {
+		if($numberOfSubmissions >= 7) {
 			return Redirect::back()->with('warning', 'You cannot submit more than 7 times per category per day.');
 		}
 
