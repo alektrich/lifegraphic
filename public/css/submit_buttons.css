@@ -26,6 +26,7 @@
   margin: 0;
   text-decoration: none;
   text-align: center;
+  opacity: 0.8;
 }
 
 .submit_button:hover {

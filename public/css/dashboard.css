@@ -322,7 +322,7 @@ div.subtitle_divDash button span{
   font-size: 11px;
 }
 
-button.submitButton {
+/*button.submitButton {
   border-radius: 35px;
   height: 70px;
   margin-left: 82px;
@@ -335,7 +335,7 @@ button.submitButton {
 
 button.submitButton:hover {
   opacity: 1;
-}
+}*/
 
 div.navbar-top {
   height: 50px;
