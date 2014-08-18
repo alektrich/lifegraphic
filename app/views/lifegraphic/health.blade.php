@@ -27,7 +27,7 @@
         <p>&nbsp;</p>
         <p class="reasonLabel"><strong>Reason?</strong> 
           <button data-target="#addHealthReason" data-toggle="modal" class="btn btn-info btn-xs reasonButton"><i class="glyphicon glyphicon-plus"></i> Add New</button>
-          <a href="{{URL::to('viewSubmissions/2')}}" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye-open"></i> View Submissions</a>
+          <a href="{{URL::to('viewSubmissions')}}" class="btn btn-success btn-xs reasonButton"><i class="glyphicon glyphicon-eye-open"></i> View Submissions</a>
         </p>
 
         <div class="Reason_divDash">

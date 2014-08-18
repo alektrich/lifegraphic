@@ -38,7 +38,7 @@ Route::get('mood', 'UsersController@getMood');
 
 Route::get('health', 'UsersController@getHealth');
 
-Route::get('viewSubmissions/{category_id}', 'UsersController@viewSubmissions');
+Route::get('viewSubmissions', 'UsersController@viewSubmissions');
 
 //Post
 

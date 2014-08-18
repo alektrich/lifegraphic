@@ -409,14 +409,14 @@ class UsersController extends BaseController {
 		return Redirect::back();
 	}
 
-	public function viewSubmissions($category_id) {
+	public function viewSubmissions() {
 		$submissionData = CategoryValue::where('user_id', '=', Auth::user()->id)
 							// ->where('category_id', '=', $category_id)
 							->get();
 
 		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));					
 		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
-									->where('category_id', '=', $category_id)
+									// ->where('category_id', '=', $category_id)
 									->where('created_at', '>', $last24Hours)
 									->count();					
 
