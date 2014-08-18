@@ -400,3 +400,12 @@ ol.progtrckr li.progtrckr-todo:before {
     /*width: 1.2em;*/
 }
 
+table.submissions {
+  width: 728px; 
+  margin-top: 50px;
+}
+
+table.submissions tr th, table.submissions tr td {
+  padding: 7px;
+}
+

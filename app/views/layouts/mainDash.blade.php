@@ -77,7 +77,7 @@
                   <p>&nbsp;</p>
             </div>
             <p>&nbsp;</p>
-            <ol class="progtrckr" data-progtrckr-steps="5">
+            <ol class="progtrckr" data-progtrckr-steps="7">
               <li class="progtrckr-todo">1</li><!--
            --><li class="progtrckr-todo">2</li><!--
            --><li class="progtrckr-todo">3</li><!--
@@ -101,7 +101,8 @@
                 @endif
                <div class="Time_divDash">Time: <strong>{{date('h:i',time())}}</strong></div>
                <div class="datestamp_divDash">Date: <strong>{{date('d/m/Y', time())}}</strong></div>
-            @yield('content');
+            @yield('content')
+            @if(isset($submissionPreview) === false)
               <p>&nbsp;</p>
               <div class="rankingbox1_divDash">
                 <a href="{{ URL::to('/love') }}"><p class="categoryLove">Love</p></a> 
@@ -170,6 +171,7 @@
             <p>&nbsp;</p>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
+            @endif
       </div>
 
   </body>

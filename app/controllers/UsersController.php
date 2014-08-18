@@ -411,7 +411,14 @@ class UsersController extends BaseController {
 
 	public function viewSubmissions($category_id) {
 		$submissionData = CategoryValue::where('user_id', '=', Auth::user()->id)
-							->where('category_id', '=', $category_id)->get();
+							// ->where('category_id', '=', $category_id)
+							->get();
+
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));					
+		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
+									->where('category_id', '=', $category_id)
+									->where('created_at', '>', $last24Hours)
+									->count();					
 
 		// dd($submissionData);					
 		if(!$submissionData->isEmpty()) {
@@ -430,6 +437,8 @@ class UsersController extends BaseController {
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['submissionValues'] = $values;
+			$data['numberOfSubmissions'] = $numberOfSubmissions;
+			$data['submissionPreview'] = true;
 			return View::make('lifegraphic.submissions', $data);
 		} else {
 			return Redirect::to('/');
