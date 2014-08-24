@@ -6,7 +6,7 @@
 	<table  class="submissions" border="1">
 		<tr>
 		  <th>Category</th>
-		  <th>Date</th>
+		  <th>Date and Time</th>
 		  <th style="padding-left: 25px;">Reasons</th>
 		  <th>Value</th>
 		</tr>
@@ -29,7 +29,7 @@
 	</table>
 	<h2><a href="{{URL::to('/')}}">Go back</a></h2>
 @else 
-	<h2>No data submitted for this category. <a href="{{URL::to('/')}}">Go back</a></h2>
+	<h3 style="margin-top: 60px;">No data submitted for any category. <a href="{{URL::previous()}}">Go back</a></h3>
 @endif			
 
 @stop

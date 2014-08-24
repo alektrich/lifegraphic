@@ -412,6 +412,7 @@ class UsersController extends BaseController {
 	public function viewSubmissions() {
 		$submissionData = CategoryValue::where('user_id', '=', Auth::user()->id)
 							// ->where('category_id', '=', $category_id)
+							->orderBy('id', 'desc')
 							->get();
 
 		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));					
@@ -426,7 +427,7 @@ class UsersController extends BaseController {
 			foreach ($submissionData as $data) {
 				$values[] = array(
 					'category_id' => (int)$data->category_id,
-					'date' => $data->created_at->toDateString(),
+					'date' => $data->created_at->toDateTimeString(),
 					'reasons' => unserialize($data->reasons),
 					'value' => $data->category_value 
 				); 
