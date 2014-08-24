@@ -27,9 +27,8 @@
 			@endforeach
 		</tbody>
 	</table>
-	<h2><a href="{{URL::to('/')}}">Go back</a></h2>
 @else 
-	<h3 style="margin-top: 60px;">No data submitted for any category. <a href="{{URL::previous()}}">Go back</a></h3>
+	<h3 style="margin-top: 60px;">No data submitted for any category.</h3>
 @endif			
-
+	<h2><a href="{{URL::previous()}}">Go back</a></h2>
 @stop

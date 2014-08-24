@@ -428,7 +428,7 @@ class UsersController extends BaseController {
 				$values[] = array(
 					'category_id' => (int)$data->category_id,
 					'date' => $data->created_at->toDateTimeString(),
-					'reasons' => unserialize($data->reasons),
+					'reasons' => $this->toWords(unserialize($data->reasons)),
 					'value' => $data->category_value 
 				); 
 			}
@@ -445,4 +445,44 @@ class UsersController extends BaseController {
 			return Redirect::to('/');
 		}
 	}
+
+
+	// Reason slugs to words
+
+	private function toWords($array) {
+
+		if( ! empty( $array ) ) {
+
+			$newArray = array();
+
+			foreach ($array as $value) {
+				
+				if( strpos( $value, '-' ) ) {
+
+					$words = explode( '-', $value );
+
+					$words[0] = ucfirst( $words[0] );
+
+					$value = implode( ' ', $words );
+
+				} else {
+
+					$value = ucfirst( $value );
+
+				}
+
+				$newArray[] = $value;
+
+			}
+
+			return $newArray;
+			
+		} else {
+
+			return array();
+
+		}
+
+	}
+
 }
