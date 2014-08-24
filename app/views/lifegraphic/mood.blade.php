@@ -95,11 +95,12 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="addReasonLabel">Add New reasons</h4>
+          <h4 class="modal-title" id="addReasonLabel">Add New Reason</h4>
+          <h5><span class="label label-danger">Note</span> You can add up to 9 reasons for every category.</h5>
         </div>
         <div class="modal-body">
           {{Form::open(array('url' => 'reason/new'))}}
-          {{Form::label('Reason names')}}<br/>
+          {{Form::label('Reason Name')}}<br/>
           <div class="input-group input-group-sm">
             <span class="input-group-addon">New</span>
             {{Form::text('reason', null, array('class' => 'form-control', 'placeholder' => 'Enter Reason\'s name'))}}
