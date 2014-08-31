@@ -117,6 +117,12 @@ class CategoryValue extends Eloquent {
 		return $reasons;			
 	} 
 
+
+	/**
+     * Count submissions for the user
+     * @param int
+     * @return int
+     */
 	public static function countSubmissions( $categoryId ) 
 	{
 
@@ -128,5 +134,22 @@ class CategoryValue extends Eloquent {
 											->count();
 
 	}
+
+	/**
+     * Save category value
+     * @param int
+     * @return int
+     */
+    public static function saveValue( $bindings ) 
+    {
+
+    	$this->user_id     	  = $bindings['user_id'];
+    	$this->category_id    = $bindings['category_id'];
+    	$this->category_value = $bindings['category_value'];
+    	$this->reasons 		  = $bindings['reasons'];
+
+    	$this->save();	
+
+    }
 
 }

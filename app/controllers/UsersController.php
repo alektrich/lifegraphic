@@ -56,6 +56,11 @@ class UsersController extends BaseController {
 
 	}
 
+	/**
+     * Login page
+     *
+     * @return view
+     */
 	public function getLogin() 
 	{
 
@@ -63,6 +68,11 @@ class UsersController extends BaseController {
 
 	}
 
+	/**
+     * Login user
+     * @param  credentials
+     * @return response
+     */
 	public function postLogin() 
 	{
 
@@ -90,50 +100,34 @@ class UsersController extends BaseController {
 
 	}
 
+	/**
+     * Logout user
+     * @return response
+     */
 	public function getLogout() 
 	{
 		Auth::logout();
 		return Redirect::to('/');
 	}
 
-
-	public function getCategory() 
+	/**
+     * Get category data and display on the page
+     * @return response
+     */
+	public function getCategory( $category ) 
 	{
 
-		$category = Request::segment( 1 );
-
-		switch ( $category ) 
-		{
-
-		 	case 'love':
-		 		$categoryId = 1;
-		 		break;
-
-		 	case 'health':
-		 		$categoryId = 2;
-		 		break;
-
-		 	case 'assets':
-		 		$categoryId = 3;	
-		 		break;
-
-		 	case 'mood':
-		 		$categoryId = 4;
-		 		break;
-
-		} 
-
-		
+		$categoryId = Category::switchCategory( $category );
 
 		if( Auth::check() ) 
 		{
 
 			$data 						 = static::getValues();
-			$data['userReasons'] 		 = Reason::getReasons( Auth::user()->id, 1 );
-			$data['reasonNames'] 		 = Reason::getReasonsText( Auth::user()->id, 1 );
+			$data['userReasons'] 		 = Reason::getReasons( Auth::user()->id, $categoryId );
+			$data['reasonNames'] 		 = Reason::getReasonsText( Auth::user()->id, $categoryId );
 			$data['numberOfSubmissions'] = CategoryValue::countSubmissions( $categoryId );
 
-			return View::make("lifegraphic.$category", $data);
+			return View::make( "lifegraphic.$category", $data );
 
 		} else {
 
@@ -143,24 +137,53 @@ class UsersController extends BaseController {
 
 	}
 
-	/*public function getLove() 
-	{	
 
-		echo Request::segment(1); 
-		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
-		if(Auth::check()) {
-			$data = static::getValues();
-			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 1);
-			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 1);
-			$data['numberOfSubmissions'] = CategoryValue::where('user_id', '=', Auth::user()->id)
-									->where('category_id', '=', 1)
-									->where('created_at', '>', $last24Hours)
-									->count();
-			return View::make('lifegraphic.love', $data);
-		} else {
-			return Redirect::to('/');
+
+	public function postCategory( $category )  
+	{
+
+		$inputs = Input::get();
+
+		$categoryValue = $category . 'Value';
+
+		$rules = array(
+			$categoryValue => 'required',
+			'reasons' => 'array|required'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if($validator->fails()) {
+
+			return Redirect::back()->withErrors($validator);
+
 		}
-	}*/
+
+		$categoryId          = Category::switchCategory( $category );
+
+		$numberOfSubmissions = CategoryValue::countSubmissions( $categoryId );
+
+		if( $numberOfSubmissions >= 7 ) 
+		{
+
+			return Redirect::back()->with( 'warning', 'You cannot submit more than 7 times per category per day.' );
+
+		}							
+
+		$bindings = [
+
+			'user_id' => Auth::user()->id,
+			'category_id' => $categoryId,
+			'category_value' => $inputs[$categoryValue],
+			'reasons' => serialize( $inputs['reasons'] )
+			
+		];
+
+		CategoryValue::saveValue( $bindings );
+
+		return Redirect::to( $category );
+
+	}
 
 	public function postLove() 
 	{
@@ -203,25 +226,6 @@ class UsersController extends BaseController {
 		return Redirect::to('love');
 	}
 
-	/*public function getHealth() 
-	{	
-
-		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
-		if(Auth::check()) {
-			$data = static::getValues();
-			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 2);
-			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 2);
-			$data['numberOfSubmissions'] = CategoryValue::where('user_id', '=', Auth::user()->id)
-									->where('category_id', '=', 2)
-									->where('created_at', '>', $last24Hours)
-									->count();
-			// dd($data['numberOfSubmissions']);						
-			return View::make('lifegraphic.health', $data);
-		} else {
-			return Redirect::to('/');
-		}
-	}*/
-
 	public function postHealth()
 	{
 		$inputs = Input::get();
@@ -263,23 +267,6 @@ class UsersController extends BaseController {
 		return Redirect::to('health');
 	}
 
-	/*public function getAssets() 
-	{	
-		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
-		if(Auth::check()) {
-			$data = static::getValues();
-			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 3);
-			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 3);
-			$data['numberOfSubmissions'] = CategoryValue::where('user_id', '=', Auth::user()->id)
-									->where('category_id', '=', 3)
-									->where('created_at', '>', $last24Hours)
-									->count();
-			return View::make('lifegraphic.assets', $data);
-		} else {
-			return Redirect::to('/');
-		}
-	}*/
-
 	public function postAssets()
 	{
 		$inputs = Input::get();
@@ -319,23 +306,6 @@ class UsersController extends BaseController {
 
 		return Redirect::to('assets');
 	}
-
-	/*public function getMood() 
-	{	
-		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
-		if(Auth::check()) {
-			$data = static::getValues();
-			$data['userReasons'] = Reason::getReasons(Auth::user()->id, 4);
-			$data['reasonNames'] = Reason::getReasonsText(Auth::user()->id, 4);
-			$data['numberOfSubmissions'] = CategoryValue::where('user_id', '=', Auth::user()->id)
-									->where('category_id', '=', 4)
-									->where('created_at', '>', $last24Hours)
-									->count();
-			return View::make('lifegraphic.mood', $data);
-		} else {
-			return Redirect::to('/');
-		}
-	}*/
 
 	public function postMood() 
 	{
