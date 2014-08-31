@@ -143,12 +143,13 @@ class CategoryValue extends Eloquent {
     public static function saveValue( $bindings ) 
     {
 
-    	$this->user_id     	  = $bindings['user_id'];
-    	$this->category_id    = $bindings['category_id'];
-    	$this->category_value = $bindings['category_value'];
-    	$this->reasons 		  = $bindings['reasons'];
+    	$value = new CategoryValue;
+    	$value->user_id     	  = $bindings['user_id'];
+    	$value->category_id       = $bindings['category_id'];
+    	$value->category_value    = $bindings['category_value'];
+    	$value->reasons 		  = $bindings['reasons'];
 
-    	$this->save();	
+    	$value->save();	
 
     }
 

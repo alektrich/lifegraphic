@@ -30,19 +30,14 @@ Route::controller('users', 'UsersController');
 
 Route::get('logout', 'UsersController@getLogout');
 
+Route::get('viewSubmissions', 'UsersController@viewSubmissions');
+
 Route::get('{category}', 'UsersController@getCategory');
 
-Route::get('viewSubmissions', 'UsersController@viewSubmissions');
 
 //Post
 
-Route::post('love', 'UsersController@postLove');
-
-Route::post('assets', 'UsersController@postAssets');
-
-Route::post('mood', 'UsersController@postMood');
-
-Route::post('health', 'UsersController@postHealth');
+Route::post('{category}', 'UsersController@postCategory');
 
 Route::post('reason/new', 'UsersController@postReason');
 

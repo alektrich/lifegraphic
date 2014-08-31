@@ -137,8 +137,10 @@ class UsersController extends BaseController {
 
 	}
 
-
-
+	/**
+     * Post category value and reasons
+     * @return response
+     */
 	public function postCategory( $category )  
 	{
 
@@ -176,7 +178,7 @@ class UsersController extends BaseController {
 			'category_id' => $categoryId,
 			'category_value' => $inputs[$categoryValue],
 			'reasons' => serialize( $inputs['reasons'] )
-			
+
 		];
 
 		CategoryValue::saveValue( $bindings );
