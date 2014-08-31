@@ -30,13 +30,7 @@ Route::controller('users', 'UsersController');
 
 Route::get('logout', 'UsersController@getLogout');
 
-Route::get('love', 'UsersController@getLove');
-
-Route::get('assets', 'UsersController@getAssets');
-
-Route::get('mood', 'UsersController@getMood');
-
-Route::get('health', 'UsersController@getHealth');
+Route::get('{category}', 'UsersController@getCategory');
 
 Route::get('viewSubmissions', 'UsersController@viewSubmissions');
 

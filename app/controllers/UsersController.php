@@ -96,8 +96,57 @@ class UsersController extends BaseController {
 		return Redirect::to('/');
 	}
 
-	public function getLove() 
+
+	public function getCategory() 
+	{
+
+		$category = Request::segment( 1 );
+
+		switch ( $category ) 
+		{
+
+		 	case 'love':
+		 		$categoryId = 1;
+		 		break;
+
+		 	case 'health':
+		 		$categoryId = 2;
+		 		break;
+
+		 	case 'assets':
+		 		$categoryId = 3;	
+		 		break;
+
+		 	case 'mood':
+		 		$categoryId = 4;
+		 		break;
+
+		} 
+
+		
+
+		if( Auth::check() ) 
+		{
+
+			$data 						 = static::getValues();
+			$data['userReasons'] 		 = Reason::getReasons( Auth::user()->id, 1 );
+			$data['reasonNames'] 		 = Reason::getReasonsText( Auth::user()->id, 1 );
+			$data['numberOfSubmissions'] = CategoryValue::countSubmissions( $categoryId );
+
+			return View::make("lifegraphic.$category", $data);
+
+		} else {
+
+			return Redirect::to( '/' );
+
+		}	
+
+	}
+
+	/*public function getLove() 
 	{	
+
+		echo Request::segment(1); 
 		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
 		if(Auth::check()) {
 			$data = static::getValues();
@@ -111,7 +160,7 @@ class UsersController extends BaseController {
 		} else {
 			return Redirect::to('/');
 		}
-	}
+	}*/
 
 	public function postLove() 
 	{
@@ -154,8 +203,9 @@ class UsersController extends BaseController {
 		return Redirect::to('love');
 	}
 
-	public function getHealth() 
+	/*public function getHealth() 
 	{	
+
 		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
 		if(Auth::check()) {
 			$data = static::getValues();
@@ -170,7 +220,7 @@ class UsersController extends BaseController {
 		} else {
 			return Redirect::to('/');
 		}
-	}
+	}*/
 
 	public function postHealth()
 	{
@@ -213,7 +263,7 @@ class UsersController extends BaseController {
 		return Redirect::to('health');
 	}
 
-	public function getAssets() 
+	/*public function getAssets() 
 	{	
 		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
 		if(Auth::check()) {
@@ -228,7 +278,7 @@ class UsersController extends BaseController {
 		} else {
 			return Redirect::to('/');
 		}
-	}
+	}*/
 
 	public function postAssets()
 	{
@@ -270,7 +320,7 @@ class UsersController extends BaseController {
 		return Redirect::to('assets');
 	}
 
-	public function getMood() 
+	/*public function getMood() 
 	{	
 		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));
 		if(Auth::check()) {
@@ -285,7 +335,7 @@ class UsersController extends BaseController {
 		} else {
 			return Redirect::to('/');
 		}
-	}
+	}*/
 
 	public function postMood() 
 	{

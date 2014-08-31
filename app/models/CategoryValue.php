@@ -117,4 +117,16 @@ class CategoryValue extends Eloquent {
 		return $reasons;			
 	} 
 
+	public static function countSubmissions( $categoryId ) 
+	{
+
+		$last24Hours = date( 'Y-m-d h:i:s', strtotime( 'now - 24 hours' ) );
+
+		return CategoryValue::where( 'user_id', '=', Auth::user()->id )
+											->where( 'category_id', '=', $categoryId )
+											->where( 'created_at', '>', $last24Hours )
+											->count();
+
+	}
+
 }
