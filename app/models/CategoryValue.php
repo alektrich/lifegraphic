@@ -12,26 +12,46 @@ class CategoryValue extends Eloquent {
 	 */
 	protected $table = 'category_values';
 
-	public static function getLoveValue($userId) {
+	/**
+	 * Return calculated value for a single category
+	 * @param int
+	 * @return double
+	 */
+	public static function getValue( $userId, $category_id ) 
+	{
+
 		$values = static::where('user_id', '=', $userId)
-				->where('category_id', '=', 1)
-				->get(array('category_value'));		
+					->where('category_id', '=', $category_id)
+					->get(array('category_value'));		
 
 		if(count($values)) {
 
-			$loveArray = array();
+			$categoryArray = array();
 			foreach($values as $value) {
-				$loveArray[] = $value->category_value;
+				$categoryArray[] = $value->category_value;
 			} 
 
-			$finalValue = array_sum($loveArray)/count($loveArray);
+			$categoryValue = array_sum( $categoryArray ) / count( $categoryArray );
 
-			$loveValue = $finalValue;
 		} else {
-			$loveValue = 0;
+
+			$categoryValue = 0;
+
 		}	
 
-		return $loveValue;		
+		return $categoryValue;	
+
+	}
+
+	/**
+	 * Return array of categories values
+	 * @return double
+	 */
+	public static function getValues() 
+	{
+
+		//
+
 	}
 
 	public static function getHealthValue($userId) {
