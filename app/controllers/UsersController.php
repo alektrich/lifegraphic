@@ -110,7 +110,7 @@ class UsersController extends BaseController {
      * @return response
      */
 	public function getCategory( $category ) 
-	{
+	{	
 
 		$categoryId = Category::switchCategory( $category );
 
@@ -169,10 +169,10 @@ class UsersController extends BaseController {
 
 		$bindings = [
 
-			'user_id' => Auth::user()->id,
-			'category_id' => $categoryId,
+			'user_id' 	     => Auth::user()->id,
+			'category_id'    => $categoryId,
 			'category_value' => $inputs[$categoryValue],
-			'reasons' => serialize( $inputs['reasons'] )
+			'reasons'        => serialize( $inputs['reasons'] )
 
 		];
 
@@ -183,21 +183,10 @@ class UsersController extends BaseController {
 	}
 
 	private static function getValues() {
-		$userId = Auth::user()->id;
-
-		$loveValue = CategoryValue::getLoveValue($userId);
-		$healthValue = CategoryValue::getHealthValue($userId);
-		$assetsValue = CategoryValue::getAssetsValue($userId);
-		$moodValue = CategoryValue::getMoodValue($userId);
+		
+		$data = CategoryValue::getValues();
 
 		$email = Auth::user()->email;
-
-		$data = array(
-			'loveValue' => $loveValue,
-			'healthValue' => $healthValue,
-			'assetsValue' => $assetsValue,
-			'moodValue' => $moodValue
-		);
 
 		$data['firstname'] = User::where('email', $email)->pluck('first_name');
 		$data['lastname'] = User::where('email', $email)->pluck('last_name');

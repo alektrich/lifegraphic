@@ -17,7 +17,7 @@ class CategoryValue extends Eloquent {
 	 * @param int
 	 * @return double
 	 */
-	public static function getValue( $userId, $category_id ) 
+	private static function getValue( $userId, $category_id ) 
 	{
 
 		$values = static::where('user_id', '=', $userId)
@@ -50,75 +50,21 @@ class CategoryValue extends Eloquent {
 	public static function getValues() 
 	{
 
-		//
+		$categories = Category::all();
 
-	}
+		$categoryValues = [];
 
-	public static function getHealthValue($userId) {
-		$values = static::where('user_id', '=', $userId)
-				->where('category_id', '=', 2)
-				->get(array('category_value'));
+		foreach ($categories as $category) 
+		{
+			
+			$categoryValue = static::getValue( Auth::user()->id, $category->id );
 
-		if(count($values)) {
+			$categoryValues[strtolower( $category->name ) . 'Value'] = $categoryValue;
 
-			$healthArray = array();
-			foreach($values as $value) {
-				$healthArray[] = $value->category_value;
-			} 
+		}
 
-			$finalValue = array_sum($healthArray)/count($healthArray);
+		return $categoryValues;
 
-			$healthValue = $finalValue;
-		} else {
-			$healthValue = 0;
-		}	
-
-		return $healthValue;		
-	}
-
-
-	public static function getAssetsValue($userId) {
-		$values = static::where('user_id', '=', $userId)
-				->where('category_id', '=', 3)
-				->get(array('category_value'));
-
-		if(count($values)) {
-
-			$assetsArray = array();
-			foreach($values as $value) {
-				$assetsArray[] = $value->category_value;
-			} 
-
-			$finalValue = array_sum($assetsArray)/count($assetsArray);
-
-			$assetsValue = $finalValue;
-		} else {
-			$assetsValue = 0;
-		}	
-
-		return $assetsValue;		
-	}
-
-	public static function getMoodValue($userId) {
-		$values = static::where('user_id', '=', $userId)
-				->where('category_id', '=', 4)
-				->get(array('category_value'));
-
-		if(count($values)) {
-
-			$moodArray = array();
-			foreach($values as $value) {
-				$moodArray[] = $value->category_value;
-			} 
-
-			$finalValue = array_sum($moodArray)/count($moodArray);
-
-			$moodValue = $finalValue;
-		} else {
-			$moodValue = 0;
-		}	
-
-		return $moodValue;		
 	}
 
 	//Just for testing
