@@ -7,6 +7,7 @@ class UsersController extends BaseController {
 	public function __construct() {
 
 	    $this->beforeFilter('csrf', array('on'=>'post'));
+	    $this->beforeFilter('auth.basic');
 	    
 	}
 
@@ -182,6 +183,10 @@ class UsersController extends BaseController {
 
 	}
 
+	/**
+     * Pull categories values from database for a client
+     * @return array
+     */
 	private static function getValues() {
 		
 		$data = CategoryValue::getValues();
@@ -194,7 +199,9 @@ class UsersController extends BaseController {
 		return $data;
 	}
 
-	//Note: Leave the code like this for now, but reorganize later for better MVC Laravel structure
+	// Note: Leave the code like this for now, 
+	// but reorganize later
+	
 	public function postReason() {
 		$inputs = Input::get();
 
