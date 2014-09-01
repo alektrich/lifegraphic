@@ -36,5 +36,5 @@
 @else 
 	<h3 style="margin-top: 60px;">No data submitted for any category.</h3>
 @endif			
-	<h2><a href="{{URL::previous()}}">Go back</a></h2>
+	<h2 class="submissions"><a href="{{URL::previous()}}">Go back</a></h2>
 @stop

@@ -410,3 +410,7 @@ table.submissions tr th, table.submissions tr td {
   padding: 7px;
 }
 
+h2.submissions {
+  margin-left: 15px;
+}
+
