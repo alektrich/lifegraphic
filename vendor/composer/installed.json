@@ -875,54 +875,6 @@
         "homepage": "http://jquery.com"
     },
     {
-        "name": "nesbot/carbon",
-        "version": "1.10.0",
-        "version_normalized": "1.10.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/briannesbitt/Carbon.git",
-            "reference": "9b42a1aec56011c2ac4d75c0ddad0794762344fc"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/9b42a1aec56011c2ac4d75c0ddad0794762344fc",
-            "reference": "9b42a1aec56011c2ac4d75c0ddad0794762344fc",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2014-07-18 03:44:47",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Carbon": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Brian Nesbitt",
-                "email": "brian@nesbot.com",
-                "homepage": "http://nesbot.com"
-            }
-        ],
-        "description": "A simple API extension for DateTime.",
-        "homepage": "https://github.com/briannesbitt/Carbon",
-        "keywords": [
-            "date",
-            "datetime",
-            "time"
-        ]
-    },
-    {
         "name": "patchwork/utf8",
         "version": "v1.1.25",
         "version_normalized": "1.1.25.0",
@@ -1900,5 +1852,148 @@
         ],
         "description": "Symfony Filesystem Component",
         "homepage": "http://symfony.com"
+    },
+    {
+        "name": "nesbot/carbon",
+        "version": "1.11.0",
+        "version_normalized": "1.11.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/briannesbitt/Carbon.git",
+            "reference": "2b60366be6dcb9f9cd3e244ab25eb98eaea99551"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2b60366be6dcb9f9cd3e244ab25eb98eaea99551",
+            "reference": "2b60366be6dcb9f9cd3e244ab25eb98eaea99551",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2014-08-26 03:18:44",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Carbon": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Brian Nesbitt",
+                "email": "brian@nesbot.com",
+                "homepage": "http://nesbot.com"
+            }
+        ],
+        "description": "A simple API extension for DateTime.",
+        "homepage": "https://github.com/briannesbitt/Carbon",
+        "keywords": [
+            "date",
+            "datetime",
+            "time"
+        ]
+    },
+    {
+        "name": "components/bootstrap",
+        "version": "3.2.0",
+        "version_normalized": "3.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/components/bootstrap.git",
+            "reference": "9c6cfef04cb74587cd610f7dca8c4352d77bfc32"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/components/bootstrap/zipball/9c6cfef04cb74587cd610f7dca8c4352d77bfc32",
+            "reference": "9c6cfef04cb74587cd610f7dca8c4352d77bfc32",
+            "shasum": ""
+        },
+        "require": {
+            "components/jquery": ">=1.9"
+        },
+        "suggest": {
+            "components/bootstrap-default": "Provide a theme for Bootstrap as components/bootstrap only provides the CSS as file assets"
+        },
+        "time": "2014-07-02 12:39:50",
+        "type": "component",
+        "extra": {
+            "component": {
+                "scripts": [
+                    "js/bootstrap.js"
+                ],
+                "files": [
+                    "js/bootstrap.min.js",
+                    "css/*.css",
+                    "fonts/*",
+                    "less/mixins/*.less",
+                    "less/*.less"
+                ],
+                "shim": {
+                    "deps": [
+                        "jquery"
+                    ]
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Twitter, Inc"
+            }
+        ],
+        "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+        "homepage": "http://getbootstrap.com",
+        "keywords": [
+            "bootstrap",
+            "css"
+        ]
+    },
+    {
+        "name": "eternicode/bootstrap-datepicker",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/eternicode/bootstrap-datepicker.git",
+            "reference": "37db99f95ff3a32ccc76b7122b2b73f3b0b9fe42"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/37db99f95ff3a32ccc76b7122b2b73f3b0b9fe42",
+            "reference": "37db99f95ff3a32ccc76b7122b2b73f3b0b9fe42",
+            "shasum": ""
+        },
+        "require": {
+            "components/bootstrap": ">=3.0, <4.0",
+            "components/jquery": ">=1.7.1",
+            "robloach/component-installer": "*"
+        },
+        "time": "2014-01-19 12:18:49",
+        "type": "component",
+        "extra": {
+            "component": {
+                "scripts": [
+                    "js/bootstrap-datepicker.js"
+                ],
+                "styles": [
+                    "css/datepicker.css",
+                    "css/datepicker3.css"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/"
     }
 ]
