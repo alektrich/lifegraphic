@@ -2,6 +2,12 @@
 
 @section('content')
 
+<div class="col-md-5">
+	
+	{{ Form::text('date-filter', null, array('placeholder' => 'Choose Date', 'class' => 'form-control')) }}
+	
+</div>
+
 @if(!empty($submissionValues))
 	<table  class="submissions" border="1">
 		<tr>

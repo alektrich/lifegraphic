@@ -401,8 +401,9 @@ ol.progtrckr li.progtrckr-todo:before {
 }
 
 table.submissions {
-  width: 728px; 
+  width: 713px; 
   margin-top: 50px;
+  margin-left: 15px;
 }
 
 table.submissions tr th, table.submissions tr td {
