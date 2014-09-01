@@ -4,7 +4,7 @@
 
 <div class="col-md-5">
 	
-	{{ Form::text('date-filter', null, array('placeholder' => 'Choose Date', 'class' => 'form-control')) }}
+	{{ Form::text('date-filter', null, array('placeholder' => 'Choose Date', 'class' => 'form-control', 'id' => 'datepicker')) }}
 	
 </div>
 
@@ -37,4 +37,34 @@
 	<h3 style="margin-top: 60px;">No data submitted for any category.</h3>
 @endif			
 	<h2 class="submissions"><a href="{{URL::previous()}}">Go back</a></h2>
+@stop
+
+@section('script')
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			$('input#datepicker').datepicker({
+
+				todayBtn: "linked",
+
+			});
+
+			$('input#datepicker').change(function() {
+
+				console.log( $( this ).val() );
+
+				/*$.ajax({
+					url: 
+					data:
+					type:
+				});*/
+
+			});
+
+		});
+
+	</script>
+
 @stop
