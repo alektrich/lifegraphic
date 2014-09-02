@@ -4,7 +4,8 @@
 
 <div class="col-md-5">
 	
-	{{ Form::text('date-filter', null, array('placeholder' => 'Choose Date', 'class' => 'form-control', 'id' => 'datepicker')) }}
+	{{ Form::text('date-filter', null, array('placeholder' => 'Filter by Date', 'class' => 'form-control', 'id' => 'datepicker')) }}
+	{{-- Form::text('category-filter', null, array('placeholder' => 'Filter by Category', 'class' => 'form-control dropdown', 'id' => 'category-filter')) --}}
 	
 </div>
 
