@@ -18,8 +18,19 @@
 		</tr>
 		<tbody>
 			@foreach($submissionValues as $value)
-				<tr>
-					<td>@if($value['category_id'] === 1) Love @elseif($value['category_id'] === 2) Health @elseif($value['category_id'] === 3) Assets @else Mood @endif</td>
+				@if($value['category_id'] === 1)
+				<tr class="danger">
+					<td>Love</td>
+				@elseif($value['category_id'] === 2)
+				<tr class="success">
+					<td>Health</td>
+				@elseif($value['category_id'] === 3)
+				<tr class="info">
+					<td>Assets</td>
+				@else
+				<tr class="warning">
+					<td>Mood</td>	
+				@endif		
 					<td>{{$value['date']}}</td>
 					<td>
 						<ul>
