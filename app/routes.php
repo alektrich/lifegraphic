@@ -20,13 +20,17 @@ Route::get('/', function()
 	}
 });
 
-Route::get('aboutUs', function() {
+Route::get('aboutus', function() {
 	return View::make('about');
 });
 
 Route::controller('users', 'UsersController');
 
 //Get
+
+Route::get('login', 'UsersController@getLogin');
+
+Route::get('register', 'UsersController@getRegister');
 
 Route::get('logout', 'UsersController@getLogout');
 

@@ -9,7 +9,7 @@
 </div>
 
 @if(!empty($submissionValues))
-	<table  class="submissions" border="1">
+	<table  class="table table-bordered table-responsive submissions">
 		<tr>
 		  <th>Category</th>
 		  <th>Date and Time</th>

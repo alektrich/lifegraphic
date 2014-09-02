@@ -18,9 +18,9 @@
         <div class="navbar-inner">
             <div class="container">
                 <ul class="nav nav-tabs"> 
-                    <li>{{ HTML::link('users/register', 'Register') }}</li>  
-                    <li>{{ HTML::link('/', 'Login') }}</li>  
-                    <li>{{ HTML::link('aboutUs', 'About Us') }}</li>  
+                    <li>{{ HTML::link('register', 'Register') }}</li>  
+                    <li>{{ HTML::link('login', 'Login') }}</li>  
+                    <li>{{ HTML::link('aboutus', 'About Us') }}</li>  
                 </ul> 
             </div>
         </div>

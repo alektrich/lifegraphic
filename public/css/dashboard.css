@@ -404,7 +404,7 @@ table.submissions {
   width: 713px; 
   margin-top: 50px;
   margin-left: 15px;
-  border: 1px solid grey;
+  /*border: 1px solid grey;*/
 }
 
 table.submissions tr th, table.submissions tr td {
