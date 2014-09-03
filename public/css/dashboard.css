@@ -400,6 +400,10 @@ ol.progtrckr li.progtrckr-todo:before {
     /*width: 1.2em;*/
 }
 
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
 table.submissions {
   width: 713px; 
   margin-top: 50px;
