@@ -11,6 +11,8 @@
 |
 */
 
+// Main route
+
 Route::get('/', function()
 {
 	if(Auth::check()) {
@@ -20,13 +22,17 @@ Route::get('/', function()
 	}
 });
 
+// About Us
+
 Route::get('aboutus', function() {
 	return View::make('about');
 });
 
+// Controller
+
 Route::controller('users', 'UsersController');
 
-//Get
+// Get
 
 Route::get('login', 'UsersController@getLogin');
 
@@ -36,10 +42,11 @@ Route::get('logout', 'UsersController@getLogout');
 
 Route::get('viewSubmissions', 'UsersController@viewSubmissions');
 
+Route::get('pullSubmissions', 'UsersController@pullSubmissions');
+
 Route::get('{category}', 'UsersController@getCategory');
 
-
-//Post
+// Post
 
 Route::post('{category}', 'UsersController@postCategory');
 

@@ -119,4 +119,81 @@ class CategoryValue extends Eloquent {
 
     }
 
+    /**
+     * Get descriptive value
+     * @param double
+     * @return string
+     */
+
+    public static function getDescriptiveValue( $value ) 
+    {
+
+    	switch ( $value ) {
+    		case 20:
+    			$descriptive = 'Very Bad';
+    			break;
+
+    		case 40:
+    			$descriptive = 'Bad';
+    			break;
+    			
+    		case 60:
+    			$descriptive = 'OK';
+    			break;
+    			
+    		case 80:
+    			$descriptive = 'Good';
+    			break;			
+    		
+    		case 100:
+    			$descriptive = 'Very Good';
+    			break;
+
+    		default:
+    			$descriptive = 'Undefined';
+    			break;	
+
+    	}
+
+    	return $descriptive;
+
+    }
+
+    /**
+     * Get class
+     * @param int
+     * @return string
+     */
+
+    public static function getClass( $categoryId ) 
+    {
+
+    	switch ( $categoryId ) {
+    		case 1:
+    			$class = 'danger';
+    			break;
+
+    		case 2:
+    			$class = 'success';
+    			break;
+    			
+    		case 3:
+    			$class = 'info';
+    			break;
+    			
+    		case 4:
+    			$class = 'warning';
+    			break;			
+    		
+    		default:
+    			$class = '';
+    			break;	
+
+    	}
+
+    	return $class;
+
+    }
+
+
 }

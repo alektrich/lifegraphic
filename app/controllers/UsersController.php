@@ -297,6 +297,42 @@ class UsersController extends BaseController {
 		}
 	}
 
+	public function pullSubmissions() {
+
+		$submissionData = CategoryValue::where('user_id', '=', Auth::user()->id)
+							// ->where('category_id', '=', $category_id)
+							->orderBy('id', 'desc')
+							->get();
+
+		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));					
+		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
+									// ->where('category_id', '=', $category_id)
+									->where('created_at', '>', $last24Hours)
+									->count();					
+
+		// dd($submissionData);					
+		if(!$submissionData->isEmpty()) {
+			$values = array();
+			foreach ($submissionData as $data) {
+				$category = Category::find($data->category_id)->name;
+				$class = Category::getClass($data->category_id);
+				$categoryValue = CategoryValue::getDescriptiveValue($data->category_value);
+				$values[] = array(
+					'class'    => $class,
+					'category' => ucfirst($category),
+					'date'     => $data->created_at->toDateTimeString(),
+					'reasons'  => $this->toWords(unserialize($data->reasons)),
+					'value'    => $categoryValue
+				); 
+			}
+		} else {
+			$values = array();
+		}
+
+		return json_encode($values);
+
+	}
+
 
 	// Reason slugs to words
 

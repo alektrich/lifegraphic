@@ -11,6 +11,8 @@
     {{ HTML::style('css/submit_buttons.css') }}
     {{ HTML::style('packages/bootstrap-datepicker/css/datepicker.css') }}
     {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
+    {{ HTML::script('//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular.min.js') }}
+    {{ HTML::script('js/submissions.js') }}
     {{ HTML::script('packages/bootstrap/js/bootstrap.min.js') }}
     {{ HTML::script('packages/bootstrap-datepicker/js/bootstrap-datepicker.js') }}
     {{ HTML::script('packages/ChartJS/Chart.js') }}

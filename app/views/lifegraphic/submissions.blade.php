@@ -10,14 +10,14 @@
 </div>
 
 @if(!empty($submissionValues))
-	<table  class="table table-bordered table-responsive submissions">
+	<table  class="table table-bordered table-responsive submissions" ng-app>
 		<tr>
 		  <th>Category</th>
 		  <th>Date and Time</th>
 		  <th style="padding-left: 25px;">Reasons</th>
 		  <th>Value</th>
 		</tr>
-		<tbody>
+		<tbody ng-controller="SubmissionsController">
 			@foreach($submissionValues as $value)
 				@if($value['category_id'] === 1)
 				<tr class="danger">
