@@ -16,7 +16,6 @@
     {{ HTML::script('packages/bootstrap/js/bootstrap.min.js') }}
     {{ HTML::script('packages/bootstrap-datepicker/js/bootstrap-datepicker.js') }}
     {{ HTML::script('packages/ChartJS/Chart.js') }}
-    {{ HTML::script('js/gauge.min.js') }}
   </head>
  
   <body>
@@ -81,7 +80,11 @@
                   <p>&nbsp;</p>
             </div>
             <p>&nbsp;</p>
+            @if(isset($submissionsPage) && $submissionsPage === true) 
+            <ol class="progtrckr" data-progtrckr-steps="7" style="display:none;">
+            @else  
             <ol class="progtrckr" data-progtrckr-steps="7">
+            @endif  
               <li class="progtrckr-todo">1</li><!--
            --><li class="progtrckr-todo">2</li><!--
            --><li class="progtrckr-todo">3</li><!--
@@ -90,7 +93,7 @@
            --><li class="progtrckr-todo">6</li><!--
            --><li class="progtrckr-todo">7</li>
             </ol>
-            <div class="TopsectionDash">
+            <div class="TopsectionDash" ng-app="lifeographicSubmissions">
                 @foreach($errors->all() as $error)
                 <div class="alert alert-danger">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -190,5 +193,5 @@
 
   </script>
 
-  {{ HTML::script('js/graphics.js') }}
+  
 </html>

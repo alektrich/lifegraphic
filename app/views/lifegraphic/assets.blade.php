@@ -117,3 +117,10 @@
           
         @stop
 
+        @section('script')
+
+           {{ HTML::script('js/gauge.min.js') }} 
+           {{ HTML::script('js/graphics.js') }}
+
+        @stop
+

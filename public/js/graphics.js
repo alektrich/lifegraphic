@@ -186,7 +186,7 @@ var totalDataGraph = {
   } else if (Assets) {
     var graphAssets = Assets.getContext("2d");
     var myGraphAssets = new Chart(graphAssets).Line(dataGraphAssets, optionsGraph);
-  } else {
+  } else if (Mood) {
     var graphMood = Mood.getContext("2d");
     var myGraphMood = new Chart(graphMood).Line(dataGraphMood, optionsGraph);
   }
@@ -268,10 +268,12 @@ var totalDataGraph = {
       }
   ];
 
-  var myDoughnut1 = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutDataLove, optionsPie);
-  var myDoughnut2 = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutDataHealth, optionsPie);
-  var myDoughnut3 = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutDataAssets, optionsPie);
-  var myDoughnut4 = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutDataMood, optionsPie);
+  if(document.getElementsByTagName("canvas").length > 0) {
+    var myDoughnut1 = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutDataLove, optionsPie);
+    var myDoughnut2 = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutDataHealth, optionsPie);
+    var myDoughnut3 = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutDataAssets, optionsPie);
+    var myDoughnut4 = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutDataMood, optionsPie);
+  }
 
 
   var opts = {
@@ -290,21 +292,24 @@ var totalDataGraph = {
     strokeColor: '#E0E0E0',   // to see which ones work best for you
     generateGradient: true
   };
-  var target = document.getElementById('canvasTotal'); // your canvas element
-  var gaugeValue = (loveValue+healthValue+assetsValue+moodValue)/4;
-  if(gaugeValue == 0) {
-    opts.angle = 0.15;
-    opts.pointer.length = 0.74;
-    opts.pointer.strokeWidth = 0.044;
-    opts.lineWidth = 0.42;
-  }
-  var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
-  gauge.maxValue = 100; // set max gauge value
-  gauge.animationSpeed = 28; // set animation speed (32 is default value)
-  gauge.set(gaugeValue); // set actual value    
 
-  var totalCatgraph = document.getElementById("totalCanvasGraph").getContext("2d");
-  var TotalGraph = new Chart(totalCatgraph).Line(totalDataGraph, optionsGraph);
+  if(document.getElementsByTagName('canvas').length > 0) {
+    var target = document.getElementById('canvasTotal'); // your canvas element
+    var gaugeValue = (loveValue+healthValue+assetsValue+moodValue)/4;
+    if(gaugeValue == 0) {
+      opts.angle = 0.15;
+      opts.pointer.length = 0.74;
+      opts.pointer.strokeWidth = 0.044;
+      opts.lineWidth = 0.42;
+    }
+    var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = 100; // set max gauge value
+    gauge.animationSpeed = 28; // set animation speed (32 is default value)
+    gauge.set(gaugeValue); // set actual value    
+
+    var totalCatgraph = document.getElementById("totalCanvasGraph").getContext("2d");
+    var TotalGraph = new Chart(totalCatgraph).Line(totalDataGraph, optionsGraph);
+  }
 
   jQuery.fn.darken = function() {
       $(this).each(function() {

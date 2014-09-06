@@ -261,10 +261,10 @@ class UsersController extends BaseController {
 	}
 
 	public function viewSubmissions() {
-		$submissionData = CategoryValue::where('user_id', '=', Auth::user()->id)
+		/*$submissionData = CategoryValue::where('user_id', '=', Auth::user()->id)
 							// ->where('category_id', '=', $category_id)
 							->orderBy('id', 'desc')
-							->get();
+							->get();*/
 
 		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));					
 		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
@@ -273,7 +273,7 @@ class UsersController extends BaseController {
 									->count();					
 
 		// dd($submissionData);					
-		if(!$submissionData->isEmpty()) {
+		/*if(!$submissionData->isEmpty()) {
 			$values = array();
 			foreach ($submissionData as $data) {
 				$values[] = array(
@@ -285,10 +285,11 @@ class UsersController extends BaseController {
 			}
 		} else {
 			$values = array();
-		}
+		}*/
 		if(Auth::check()) {
 			$data = static::getValues();
-			$data['submissionValues'] = $values;
+			$data['$submissionsPage'] = true;
+			// $data['submissionValues'] = $values;
 			$data['numberOfSubmissions'] = $numberOfSubmissions;
 			$data['submissionPreview'] = true;
 			return View::make('lifegraphic.submissions', $data);

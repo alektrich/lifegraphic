@@ -4,13 +4,13 @@
 
 <div class="col-md-5">
 	
-	{{ Form::text('date-filter', null, array('placeholder' => 'Filter by Date', 'class' => 'form-control', 'id' => 'datepicker')) }}
+	{{ Form::text('date-filter', null, array('placeholder' => 'Filter by Date', 'class' => 'form-control', 'id' => 'datepicker', 'ng-model' => 'searchValues')) }}
 	{{-- Form::text('category-filter', null, array('placeholder' => 'Filter by Category', 'class' => 'form-control dropdown', 'id' => 'category-filter')) --}}
 	
 </div>
 
-@if(!empty($submissionValues))
-	<table  class="table table-bordered table-responsive submissions" ng-app>
+
+	<table  class="table table-bordered table-responsive submissions">
 		<tr>
 		  <th>Category</th>
 		  <th>Date and Time</th>
@@ -18,36 +18,24 @@
 		  <th>Value</th>
 		</tr>
 		<tbody ng-controller="SubmissionsController">
-			@foreach($submissionValues as $value)
-				@if($value['category_id'] === 1)
-				<tr class="danger">
-					<td>Love</td>
-				@elseif($value['category_id'] === 2)
-				<tr class="success">
-					<td>Health</td>
-				@elseif($value['category_id'] === 3)
-				<tr class="info">
-					<td>Assets</td>
-				@else
-				<tr class="warning">
-					<td>Mood</td>	
-				@endif		
-					<td>{{$value['date']}}</td>
-					<td>
-						<ul>
-							@foreach($value['reasons'] as $reason)
-							  <li>{{$reason}}</li>
-							@endforeach  
-						</ul>
-					</td>
-					<td>@if($value['value'] == 20) Very Bad @elseif($value['value'] == 40) Bad @elseif($value['value'] == 60) OK @elseif($value['value'] == 80) Good @else Very Good @endif</td>
-				</tr>
-			@endforeach
+			<tr ng-repeat="submission in submissions | filter: searchValues" class={submission.class}>
+				<td>{submission.category}</td>
+				<td>{submission.date}</td>
+				<td>
+					<ul>
+						<li ng-repeat="reason in submission.reasons">
+							{reason}
+						</li>
+					</ul>
+				</td>
+				<td>{submission.value}</td>
+			</tr>
 		</tbody>
+			
 	</table>
-@else 
-	<h3 style="margin-top: 60px;">No data submitted for any category.</h3>
-@endif			
+
+	<!-- <h3 style="margin-top: 60px;">No data submitted for any category.</h3> -->
+		
 	<h2 class="submissions"><a href="{{URL::previous()}}">Go back</a></h2>
 @stop
 
@@ -60,6 +48,7 @@
 			$('input#datepicker').datepicker({
 
 				todayBtn: "linked",
+				format: 'yyyy-mm-dd'
 
 			});
 
