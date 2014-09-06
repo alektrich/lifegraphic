@@ -6,10 +6,10 @@
  
     <title>LifeGraphic</title>
     {{ HTML::style('css/main.css')}}
-    {{ HTML::style('css/dashboard.css')}}
     {{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
     {{ HTML::style('css/submit_buttons.css') }}
     {{ HTML::style('packages/bootstrap-datepicker/css/datepicker.css') }}
+    {{ HTML::style('css/dashboard.css')}}
     {{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}
     {{ HTML::script('//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular.min.js') }}
     {{ HTML::script('js/submissions.js') }}

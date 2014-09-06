@@ -4,8 +4,8 @@
 
 <div class="col-md-5">
 	
-	{{ Form::text('date-filter', null, array('placeholder' => 'Filter by Date', 'class' => 'form-control', 'id' => 'datepicker', 'ng-model' => 'searchValues')) }}
-	{{-- Form::text('category-filter', null, array('placeholder' => 'Filter by Category', 'class' => 'form-control dropdown', 'id' => 'category-filter')) --}}
+		{{ Form::text('date-filter', null, array('placeholder' => 'Click to Filter by Date', 'class' => 'form-control form-group', 'id' => 'datepicker', 'ng-model' => 'searchDate', 'readonly' => 'true', 'onfocus' => 'this.blur()' )) }}
+		{{ Form::text('category-filter', null, array('placeholder' => 'Search by Category, Reason of Value', 'class' => 'form-control form-group dropdown', 'ng-model' => 'searchValues', 'id' => 'search-filter')) }}
 	
 </div>
 
@@ -18,7 +18,7 @@
 		  <th>Value</th>
 		</tr>
 		<tbody ng-controller="SubmissionsController">
-			<tr ng-repeat="submission in submissions | filter: searchValues" class={submission.class}>
+			<tr ng-repeat="submission in submissions | filter: searchValues | filter: searchDate" class={submission.class}>
 				<td>{submission.category}</td>
 				<td>{submission.date}</td>
 				<td>
@@ -48,7 +48,11 @@
 			$('input#datepicker').datepicker({
 
 				todayBtn: "linked",
-				format: 'yyyy-mm-dd'
+				format: 'yyyy-mm-dd',
+				clearBtn: true,
+				autoclose: true,
+				keyboardNavigation: false,
+				orientation: 'right'
 
 			});
 

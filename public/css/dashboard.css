@@ -419,3 +419,7 @@ h2.submissions {
   margin-left: 15px;
 }
 
+input#datepicker {
+  cursor: pointer;
+}
+
