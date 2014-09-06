@@ -182,7 +182,6 @@
       </div>
 
   </body>
-  @yield('script')
   <script type="text/javascript">
   
     var loveValue = {{$loveValue}};
@@ -192,6 +191,7 @@
     var numberOfSubmissions = {{$numberOfSubmissions}};
 
   </script>
+  @yield('script')
 
   
 </html>
