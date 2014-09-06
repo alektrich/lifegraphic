@@ -5,7 +5,7 @@
 <div class="col-md-5">
 	
 		{{ Form::text('date-filter', null, array('placeholder' => 'Click to Filter by Date', 'class' => 'form-control form-group', 'id' => 'datepicker', 'ng-model' => 'searchDate', 'readonly' => 'true', 'onfocus' => 'this.blur()' )) }}
-		{{ Form::text('category-filter', null, array('placeholder' => 'Search by Category, Reason of Value', 'class' => 'form-control form-group dropdown', 'ng-model' => 'searchValues', 'id' => 'search-filter')) }}
+		{{ Form::text('category-filter', null, array('placeholder' => 'Search by Category, Reason or Value', 'class' => 'form-control form-group dropdown', 'ng-model' => 'searchValues', 'id' => 'search-filter')) }}
 	
 </div>
 
