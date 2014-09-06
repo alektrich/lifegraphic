@@ -159,41 +159,5 @@ class CategoryValue extends Eloquent {
 
     }
 
-    /**
-     * Get class
-     * @param int
-     * @return string
-     */
-
-    public static function getClass( $categoryId ) 
-    {
-
-    	switch ( $categoryId ) {
-    		case 1:
-    			$class = 'danger';
-    			break;
-
-    		case 2:
-    			$class = 'success';
-    			break;
-    			
-    		case 3:
-    			$class = 'info';
-    			break;
-    			
-    		case 4:
-    			$class = 'warning';
-    			break;			
-    		
-    		default:
-    			$class = '';
-    			break;	
-
-    	}
-
-    	return $class;
-
-    }
-
 
 }
