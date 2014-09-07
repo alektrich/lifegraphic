@@ -260,59 +260,39 @@ class UsersController extends BaseController {
 		return Redirect::back();
 	}
 
+	/**
+     * View Submissions page
+     * @param none
+     * @return view
+     */
+
 	public function viewSubmissions() {
-		/*$submissionData = CategoryValue::where('user_id', '=', Auth::user()->id)
-							// ->where('category_id', '=', $category_id)
-							->orderBy('id', 'desc')
-							->get();*/
-
-		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));					
-		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
-									// ->where('category_id', '=', $category_id)
-									->where('created_at', '>', $last24Hours)
-									->count();					
-
-		// dd($submissionData);					
-		/*if(!$submissionData->isEmpty()) {
-			$values = array();
-			foreach ($submissionData as $data) {
-				$values[] = array(
-					'category_id' => (int)$data->category_id,
-					'date' => $data->created_at->toDateTimeString(),
-					'reasons' => $this->toWords(unserialize($data->reasons)),
-					'value' => $data->category_value 
-				); 
-			}
-		} else {
-			$values = array();
-		}*/
+		
 		if(Auth::check()) {
 			$data = static::getValues();
 			$data['$submissionsPage'] = true;
 			// $data['submissionValues'] = $values;
-			$data['numberOfSubmissions'] = $numberOfSubmissions;
+			$data['numberOfSubmissions'] = CategoryValue::countSubmissions();
 			$data['submissionPreview'] = true;
 			return View::make('lifegraphic.submissions', $data);
 		} else {
 			return Redirect::to('/');
 		}
+
 	}
+
+
+	/**
+     * Pull submissions with AJAX request
+     * @param none
+     * @return json
+     */
 
 	public function pullSubmissions() {
 
-		$submissionData = CategoryValue::where('user_id', '=', Auth::user()->id)
-							// ->where('category_id', '=', $category_id)
-							->orderBy('id', 'desc')
-							->get();
+		$submissionData = CategoryValue::getSubmissions();
 
-		$last24Hours = date('Y-m-d h:i:s', strtotime('now - 24 hours'));					
-		$numberOfSubmissions = CategoryValue::where('user_id', '=', Auth::user()->id)
-									// ->where('category_id', '=', $category_id)
-									->where('created_at', '>', $last24Hours)
-									->count();					
-
-		// dd($submissionData);					
-		if(!$submissionData->isEmpty()) {
+		if( ! $submissionData->isEmpty() ) {
 			$values = array();
 			foreach ($submissionData as $data) {
 				$category = Category::find($data->category_id)->name;
@@ -322,7 +302,7 @@ class UsersController extends BaseController {
 					'class'    => $class,
 					'category' => ucfirst($category),
 					'date'     => $data->created_at->toDateTimeString(),
-					'reasons'  => $this->toWords(unserialize($data->reasons)),
+					'reasons'  => Reason::toWords(unserialize($data->reasons)),
 					'value'    => $categoryValue
 				); 
 			}
@@ -334,43 +314,5 @@ class UsersController extends BaseController {
 
 	}
 
-
-	// Reason slugs to words
-
-	private function toWords($array) {
-
-		if( ! empty( $array ) ) {
-
-			$newArray = array();
-
-			foreach ($array as $value) {
-				
-				if( strpos( $value, '-' ) ) {
-
-					$words = explode( '-', $value );
-
-					$words[0] = ucfirst( $words[0] );
-
-					$value = implode( ' ', $words );
-
-				} else {
-
-					$value = ucfirst( $value );
-
-				}
-
-				$newArray[] = $value;
-
-			}
-
-			return $newArray;
-			
-		} else {
-
-			return array();
-
-		}
-
-	}
 
 }

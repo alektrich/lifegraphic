@@ -10,7 +10,7 @@
 </div>
 
 
-	<table  class="table table-bordered table-responsive submissions">
+	<table class="table table-bordered table-responsive submissions">
 		<tr>
 		  <th>Category</th>
 		  <th>Date and Time</th>
@@ -34,7 +34,7 @@
 			
 	</table>
 
-	<!-- <h3 style="margin-top: 60px;">No data submitted for any category.</h3> -->
+	<h3 class="ng-hide" style="margin-top: 60px;">No data submitted for any category.</h3>
 		
 	<h2 class="submissions"><a href="{{URL::previous()}}">Go back</a></h2>
 @stop

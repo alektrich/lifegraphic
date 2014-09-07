@@ -36,6 +36,10 @@ class Category extends Eloquent {
 		 		$categoryId = 4;
 		 		break;
 
+		 	default:
+		 		$categoryId = NULL;
+		 		break;	
+
 		} 
 
 		return $categoryId;

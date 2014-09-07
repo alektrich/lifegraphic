@@ -39,4 +39,40 @@ class Reason extends Eloquent {
 		return $userReasonsText;					
 	}
 
+	/**
+	 * Convert reasons slugs to words
+	 *
+	 * @param array
+	 * @return array
+	 */
+
+	public static function ToWords( $array ) {
+
+		if( ! empty( $array ) ) {
+			$newArray = array();
+
+			foreach ($array as $value) {
+
+				if( strpos( $value, '-' ) ) {
+					$words = explode( '-', $value );
+					$words[0] = ucfirst( $words[0] );
+					$value = implode( ' ', $words );
+				} else {
+					$value = ucfirst( $value );
+				}
+
+				$newArray[] = $value;
+
+			}
+
+			return $newArray;
+			
+		} else {
+
+			return $array;
+
+		}
+
+	}
+
 }
