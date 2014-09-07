@@ -38,38 +38,3 @@
 		
 	<h2 class="submissions"><a href="{{URL::previous()}}">Go back</a></h2>
 @stop
-
-@section('script')
-
-	<script type="text/javascript">
-
-		$(document).ready(function() {
-
-			$('input#datepicker').datepicker({
-
-				todayBtn: "linked",
-				format: 'yyyy-mm-dd',
-				clearBtn: true,
-				autoclose: true,
-				keyboardNavigation: false,
-				orientation: 'right'
-
-			});
-
-			$('input#datepicker').change(function() {
-
-				console.log( $( this ).val() );
-
-				/*$.ajax({
-					url: 
-					data:
-					type:
-				});*/
-
-			});
-
-		});
-
-	</script>
-
-@stop
