@@ -188,7 +188,9 @@
     var healthValue = {{$healthValue}};
     var assetsValue = {{$assetsValue}};
     var moodValue = {{$moodValue}};
-    var numberOfSubmissions = {{$numberOfSubmissions}};
+    @if(isset($numberOfTodaySubmissions))
+      var numberOfSubmissions = {{$numberOfTodaySubmissions}};
+    @endif  
 
   </script>
   @yield('script')

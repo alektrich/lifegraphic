@@ -121,7 +121,7 @@ class UsersController extends BaseController {
 			$data 						 = static::getValues();
 			$data['userReasons'] 		 = Reason::getReasons( Auth::user()->id, $categoryId );
 			$data['reasonNames'] 		 = Reason::getReasonsText( Auth::user()->id, $categoryId );
-			$data['numberOfSubmissions'] = CategoryValue::countSubmissions( $categoryId );
+			$data['numberOfTodaySubmissions'] = CategoryValue::countLast24HoursSubmissions( $categoryId );
 
 			return View::make( "lifegraphic.$category", $data );
 
@@ -159,7 +159,7 @@ class UsersController extends BaseController {
 
 		$categoryId          = Category::switchCategory( $category );
 
-		$numberOfSubmissions = CategoryValue::countSubmissions( $categoryId );
+		$numberOfSubmissions = CategoryValue::countLast24HoursSubmissions( $categoryId );
 
 		if( $numberOfSubmissions >= 7 ) 
 		{
@@ -272,7 +272,7 @@ class UsersController extends BaseController {
 			$data = static::getValues();
 			$data['$submissionsPage'] = true;
 			// $data['submissionValues'] = $values;
-			$data['numberOfSubmissions'] = CategoryValue::countSubmissions();
+			$data['numberOfTotalSubmissions'] = CategoryValue::countTotalSubmissions();
 			$data['submissionPreview'] = true;
 			return View::make('lifegraphic.submissions', $data);
 		} else {
